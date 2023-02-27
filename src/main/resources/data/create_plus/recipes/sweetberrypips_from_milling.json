@@ -1,0 +1,19 @@
+{
+    "type": "create:milling",
+    "ingredients": [
+      {
+        "item": "minecraft:sweet_berries"
+      }
+    ],
+    "results": [
+      {
+        "item": "berry_good:sweet_berry_pips",
+        "count": 1
+      },
+      {
+        "item": "berry_good:sweet_berry_pips",
+        "chance": 0.75
+      }
+    ],
+    "processingTime": 150
+  }
