@@ -19,15 +19,14 @@ modId="create_plus" #mandatory
 # The version number of the mod - there's a few well known ${} variables useable here or just hardcode it
 # ${file.jarVersion} will substitute the value of the Implementation-Version as read from the mod's JAR file metadata
 # see the associated build.gradle script for how to populate this completely automatically during a build
-version="${file.jarVersion}" #mandatory
+version="1.0" #mandatory
  # A display name for the mod
-displayName="Example Mod" #mandatory
+displayName="Create++" #mandatory
 # A URL to query for updates for this mod. See the JSON update specification https://mcforge.readthedocs.io/en/latest/gettingstarted/autoupdate/
 #updateJSONURL="https://change.me.example.invalid/updates.json" #optional
 # A URL for the "homepage" for this mod, displayed in the mod UI
 #displayURL="https://change.me.to.your.mods.homepage.example.invalid/" #optional
-# A file name (in the root of the mod JAR) containing a logo for display
-logoFile="examplemod.png" #optional
+# A file name (in the root of the mod JAR) containing a logo for display #optional
 # A text field displayed in the mod UI
 credits='''Thank you Create devs, your mod is amazing.
 It's my favorite mod, and it's *the* best tech mod.
@@ -52,10 +51,17 @@ That is how it works, right? Right?
     # Side this dependency is applied on - BOTH, CLIENT or SERVER
     side="BOTH"
 # Here's another dependency
-[[dependencies.examplemod]]
+[[dependencies.create_plus]]
     modId="minecraft"
     mandatory=true
 # This version range declares a minimum of the current minecraft version up to but not including the next major version
     versionRange="[1.18.2,1.19)"
     ordering="NONE"
     side="BOTH"
+
+[[dependencies.create_plus]]
+modId="create"
+mandatory=true
+versionRange="[0.5.0.i,)"
+ordering="NONE"
+side="BOTH"
