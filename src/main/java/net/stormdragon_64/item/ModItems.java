@@ -19,7 +19,7 @@ public class ModItems {
 
 
     //more stuff to register the items
-    public static void register(IEventBus eventBus) {
-        ITEMS.register(eventBus);
+    public static void register(IEventBus modEventBus) {
+        ITEMS.register(modEventBus);
     }
 }

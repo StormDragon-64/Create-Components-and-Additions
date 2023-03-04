@@ -6,7 +6,7 @@
 # The name of the mod loader type to load - for regular FML @Mod mods it should be javafml
 modLoader="javafml" #mandatory
 # A version range to match for said mod loader - for regular FML @Mod it will be the forge version
-loaderVersion="[40,)" #mandatory This is typically bumped every Minecraft version by Forge. See our download page for lists of versions.
+loaderVersion="[41,)" #mandatory This is typically bumped every Minecraft version by Forge. See our download page for lists of versions.
 # The license for you mod. This is mandatory metadata and allows for easier comprehension of your redistributive properties.
 # Review your options at https://choosealicense.com/. All rights reserved is the default copyright stance, and is thus the default here.
 license="GNU V3"
@@ -28,16 +28,11 @@ displayName="Create++" #mandatory
 #displayURL="https://change.me.to.your.mods.homepage.example.invalid/" #optional
 # A file name (in the root of the mod JAR) containing a logo for display #optional
 # A text field displayed in the mod UI
-credits='''Thank you Create devs, your mod is amazing.
-It's my favorite mod, and it's *the* best tech mod.
-(the latter statement is not an opinion, it's a fact)''' #optional
+credits="Thank you Create devs, your mod is incredible." #optional
 # A text field displayed in the mod UI
-authors="StormDragon_64 (Create+ modpack also made by me!)" #optional
+authors="StormDragon_64" #optional
 # The description text for the mod (multi line!) (#mandatory)
-description='''
-If the Create+ modpack adds to the Create mod, then this mod adds to Create+.
-That is how it works, right? Right?
-'''
+description="Small mod made for the Create+ modpack. More is planned for the future though... 👀"
 # A dependency - use the . to indicate dependency for a specific modid. Dependencies are optional.
 [[dependencies.create_plus]] #optional
     # the modid of the dependency
@@ -45,7 +40,7 @@ That is how it works, right? Right?
     # Does this dependency have to exist - if not, ordering below must be specified
     mandatory=true #mandatory
     # The version range of the dependency
-    versionRange="[40,)" #mandatory
+    versionRange="[41,)" #mandatory
     # An ordering relationship for the dependency - BEFORE or AFTER required if the relationship is not mandatory
     ordering="NONE"
     # Side this dependency is applied on - BOTH, CLIENT or SERVER
@@ -55,7 +50,7 @@ That is how it works, right? Right?
     modId="minecraft"
     mandatory=true
 # This version range declares a minimum of the current minecraft version up to but not including the next major version
-    versionRange="[1.18.2,1.19)"
+    versionRange="[1.19.2,1.19.3)"
     ordering="NONE"
     side="BOTH"
 
