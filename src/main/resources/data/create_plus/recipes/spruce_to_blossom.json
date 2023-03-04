@@ -2,7 +2,7 @@
     "type": "create:haunting",
     "ingredients": [
       {
-        "tag": "minecraft:spruce_logs"
+        "item": "minecraft:spruce_log"
       }
     ],
     "results": [
