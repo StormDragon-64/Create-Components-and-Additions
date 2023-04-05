@@ -9,6 +9,7 @@ import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+import net.stormdragon_64.block.ModBlocks;
 import net.stormdragon_64.item.ModItems;
 import org.slf4j.Logger;
 
@@ -27,6 +28,7 @@ public class CreatePlus {
         modEventBus.addListener(this::commonSetup);
 //registrate stuff; Probably more here in the future
         ModItems.register();
+        ModBlocks.register();
     }
 
     private void commonSetup(final FMLCommonSetupEvent event) {
