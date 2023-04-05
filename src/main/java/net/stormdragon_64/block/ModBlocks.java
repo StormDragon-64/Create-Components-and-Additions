@@ -31,7 +31,7 @@ public class ModBlocks {
             .transform(BlockStressDefaults.setNoImpact())
             .transform(axeOrPickaxe())
             .blockstate((c, p) -> new EncasedBeltGenerator((state, suffix) -> p.models()
-                    .getExistingFile(p.modLoc("block/" + c.getName() + "/" + suffix))).generate(c, p))
+            .getExistingFile(p.modLoc("block/" + c.getName() + "/" + suffix))).generate(c, p))
             .item()
             .transform(customItemModel())
             .register();
