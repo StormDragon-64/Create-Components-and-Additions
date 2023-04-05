@@ -11,15 +11,17 @@ import com.simibubi.create.foundation.data.CreateRegistrate;
 import com.simibubi.create.foundation.data.SharedProperties;
 import com.tterrag.registrate.util.entry.BlockEntry;
 import net.minecraft.world.level.block.state.BlockBehaviour;
-import net.minecraft.world.level.material.MaterialColor;
-
 import static com.simibubi.create.foundation.data.BlockStateGen.axisBlock;
 import static com.simibubi.create.foundation.data.ModelGen.customItemModel;
 import static com.simibubi.create.foundation.data.TagGen.axeOrPickaxe;
 import static net.stormdragon_64.create_plus.CreatePlus.REGISTRATE;
 
 public class ModBlocks {
-    //The Items themselves:
+    //add to Create's creative tab
+    static {
+        REGISTRATE.creativeModeTab(() -> Create.BASE_CREATIVE_TAB);
+    }
+    //The Items themselves
 
     public static final BlockEntry<EncasedBeltBlock> BRASS_CHAIN_DRIVE = REGISTRATE
     .block("brass_chain_drive", EncasedBeltBlock::new)
@@ -33,7 +35,8 @@ public class ModBlocks {
             .transform(customItemModel())
             .register();
 
-    public static final BlockEntry<GearboxBlock> BRASS_GEARBOX = REGISTRATE.block("brass_gearbox", GearboxBlock::new)
+    public static final BlockEntry<GearboxBlock> BRASS_GEARBOX = REGISTRATE
+    .block("brass_gearbox", GearboxBlock::new)
             .initialProperties(SharedProperties::stone)
             .properties(BlockBehaviour.Properties::noOcclusion)
             .transform(BlockStressDefaults.setNoImpact())
