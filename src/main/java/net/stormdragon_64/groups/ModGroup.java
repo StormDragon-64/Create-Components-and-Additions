@@ -1,8 +1,9 @@
-package net.stormdragon_64.group;
+package net.stormdragon_64.groups;
 
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
 import net.stormdragon_64.block.ModBlocks;
+import org.jetbrains.annotations.NotNull;
 
 public class ModGroup extends CreativeModeTab {
     public static ModGroup MAIN_TAB;

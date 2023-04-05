@@ -1,6 +1,5 @@
 package net.stormdragon_64.block;
 import com.simibubi.create.AllSpriteShifts;
-import com.simibubi.create.Create;
 import com.simibubi.create.content.contraptions.relays.encased.EncasedBeltBlock;
 import com.simibubi.create.content.contraptions.relays.encased.EncasedBeltGenerator;
 import com.simibubi.create.content.contraptions.relays.encased.EncasedCTBehaviour;
@@ -11,8 +10,7 @@ import com.simibubi.create.foundation.data.CreateRegistrate;
 import com.simibubi.create.foundation.data.SharedProperties;
 import com.tterrag.registrate.util.entry.BlockEntry;
 import net.minecraft.world.level.block.state.BlockBehaviour;
-import net.stormdragon_64.create_plus.CreatePlus;
-import net.stormdragon_64.group.ModGroup;
+import net.stormdragon_64.groups.ModGroup;
 
 import static com.simibubi.create.foundation.data.BlockStateGen.axisBlock;
 import static com.simibubi.create.foundation.data.ModelGen.customItemModel;
