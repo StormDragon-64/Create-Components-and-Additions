@@ -21,6 +21,7 @@ public class ModBlocks {
                     .getExistingFile(p.modLoc("block/" + c.getName() + "/" + suffix))).generate(c, p))
             .item()
             .transform(customItemModel())
+            .lang("Brass Chain Drive")
             .register();
 
     public static void register() {}
