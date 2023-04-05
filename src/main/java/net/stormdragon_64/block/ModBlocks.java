@@ -11,6 +11,9 @@ import com.simibubi.create.foundation.data.CreateRegistrate;
 import com.simibubi.create.foundation.data.SharedProperties;
 import com.tterrag.registrate.util.entry.BlockEntry;
 import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.stormdragon_64.create_plus.CreatePlus;
+import net.stormdragon_64.group.ModGroup;
+
 import static com.simibubi.create.foundation.data.BlockStateGen.axisBlock;
 import static com.simibubi.create.foundation.data.ModelGen.customItemModel;
 import static com.simibubi.create.foundation.data.TagGen.axeOrPickaxe;
@@ -19,7 +22,7 @@ import static net.stormdragon_64.create_plus.CreatePlus.REGISTRATE;
 public class ModBlocks {
     //add to Create's creative tab
     static {
-        REGISTRATE.creativeModeTab(() -> Create.BASE_CREATIVE_TAB);
+        REGISTRATE.creativeModeTab(() -> ModGroup.MAIN_TAB);
     }
     //The Items themselves
 
