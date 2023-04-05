@@ -1,25 +1,14 @@
 package net.stormdragon_64.item;
-
+import com.tterrag.registrate.util.entry.ItemEntry;
 import net.minecraft.world.item.Item;
-import net.minecraftforge.eventbus.api.IEventBus;
-import net.minecraftforge.registries.DeferredRegister;
-import net.minecraftforge.registries.ForgeRegistries;
-import net.minecraftforge.registries.RegistryObject;
-import net.stormdragon_64.create_plus.CreatePlus;
+import static net.stormdragon_64.create_plus.CreatePlus.REGISTRATE;
 
 public class ModItems {
     //stuff to actually register the items
-    public static final DeferredRegister<Item> ITEMS =
-        DeferredRegister.create(ForgeRegistries.ITEMS, CreatePlus.MOD_ID);
+    public static ItemEntry<Item> INCOMPLETE_COGWHEEL = REGISTRATE
+            .item("incomplete_cogwheel", Item::new)
+            .register();
 
-    //Actual Items go below here
-    public static final RegistryObject<Item> INCOMPLETE_COGWHEEL =
-            ITEMS.register("incomplete_cogwheel",
-                    () -> new Item(new Item.Properties()));
+    public static void register() {}
 
-
-    //more stuff to register the items
-    public static void register(IEventBus modEventBus) {
-        ITEMS.register(modEventBus);
     }
-}
