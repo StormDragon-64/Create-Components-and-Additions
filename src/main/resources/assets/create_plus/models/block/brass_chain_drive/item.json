@@ -3,7 +3,7 @@
 	"parent": "block/block",
 	"textures": {
 		"side": "create_plus:block/brass_chain_drive",
-		"1": "create_plus:block/brass_gearbox",
+		"1": "create:block/brass_gearbox",
 		"particle": "#side",
 		"1_0": "create:block/axis",
 		"1_1": "create:block/axis_top"
