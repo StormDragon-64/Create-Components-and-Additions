@@ -1,5 +1,4 @@
 package net.stormdragon_64.item;
-import com.simibubi.create.Create;
 import com.simibubi.create.content.contraptions.itemAssembly.SequencedAssemblyItem;
 import com.simibubi.create.content.contraptions.relays.gearbox.VerticalGearboxItem;
 import com.simibubi.create.foundation.data.AssetLookup;
@@ -13,8 +12,8 @@ public class ModItems {
             .item("incomplete_cogwheel", SequencedAssemblyItem::new)
             .register();
 
-    public static final ItemEntry<VerticalGearboxItem> VERTICAL_BRASS_GEARBOX =
-            REGISTRATE.item("vertical_brass_gearbox", VerticalGearboxItem::new)
+    public static final ItemEntry<VerticalGearboxItem> VERTICAL_BRASS_GEARBOX = REGISTRATE
+                    .item("vertical_brass_gearbox", VerticalGearboxItem::new)
                     .model(AssetLookup.customBlockItemModel("brass_gearbox", "item_vertical"))
                     .register();
 

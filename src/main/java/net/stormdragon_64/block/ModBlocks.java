@@ -18,7 +18,7 @@ import static com.simibubi.create.foundation.data.TagGen.axeOrPickaxe;
 import static net.stormdragon_64.create_plus.CreatePlus.REGISTRATE;
 
 public class ModBlocks {
-    //add to Create's creative tab
+    //add to my creative tab
     static {
         REGISTRATE.creativeModeTab(() -> ModGroup.MAIN_TAB);
     }
