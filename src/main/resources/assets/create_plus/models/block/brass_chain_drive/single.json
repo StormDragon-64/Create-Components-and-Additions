@@ -2,8 +2,8 @@
 	"credit": "Made with Blockbench",
 	"parent": "block/block",
 	"textures": {
-		"side": "create:block/brass_chain_drive",
-		"1": "create:block/gearbox",
+		"side": "create_plus:block/brass_chain_drive",
+		"1": "create_plus:block/gearbox",
 		"particle": "#side"
 	},
 	"elements": [

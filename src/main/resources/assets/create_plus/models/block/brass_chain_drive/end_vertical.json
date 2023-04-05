@@ -2,8 +2,8 @@
 	"credit": "Made with Blockbench",
 	"parent": "block/block",
 	"textures": {
-		"side": "create:block/brass_chain_drive",
-		"2": "create:block/brass_chain_drive_end",
+		"side": "create_plus:block/brass_chain_drive",
+		"2": "create_plus:block/brass_chain_drive_end",
 		"particle": "#side"
 	},
 	"elements": [
