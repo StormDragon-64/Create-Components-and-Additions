@@ -33,7 +33,7 @@ public class ModBlocks {
             .transform(customItemModel())
             .register();
 
-    public static final BlockEntry<GearboxBlock> BRASS_GEARBOX = Create.REGISTRATE.block("brass_gearbox", GearboxBlock::new)
+    public static final BlockEntry<GearboxBlock> BRASS_GEARBOX = REGISTRATE.block("brass_gearbox", GearboxBlock::new)
             .initialProperties(SharedProperties::stone)
             .properties(BlockBehaviour.Properties::noOcclusion)
             .transform(BlockStressDefaults.setNoImpact())
