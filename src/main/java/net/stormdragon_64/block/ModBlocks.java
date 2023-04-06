@@ -2,7 +2,6 @@ package net.stormdragon_64.block;
 import com.simibubi.create.AllSpriteShifts;
 import com.simibubi.create.content.contraptions.relays.encased.EncasedBeltGenerator;
 import com.simibubi.create.content.contraptions.relays.encased.EncasedCTBehaviour;
-import com.simibubi.create.content.contraptions.relays.gearbox.GearboxBlock;
 import com.simibubi.create.foundation.block.BlockStressDefaults;
 import com.simibubi.create.foundation.data.AssetLookup;
 import com.simibubi.create.foundation.data.CreateRegistrate;
@@ -43,7 +42,7 @@ public class ModBlocks {
             .transform(axeOrPickaxe())
             .onRegister(CreateRegistrate.connectedTextures(() -> new EncasedCTBehaviour(AllSpriteShifts.BRASS_CASING)))
             .onRegister(CreateRegistrate.casingConnectivity((block, cc) -> cc.make(block, AllSpriteShifts.BRASS_CASING,
-                    (s, f) -> f.getAxis() == s.getValue(GearboxBlock.AXIS))))
+                    (s, f) -> f.getAxis() == s.getValue(CustomGearboxBlock.AXIS))))
             .blockstate((c, p) -> axisBlock(c, p, $ -> AssetLookup.partialBaseModel(c, p), true))
             .item()
             .transform(customItemModel())
