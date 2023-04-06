@@ -1,6 +1,5 @@
 package net.stormdragon_64.block;
 import com.simibubi.create.AllSpriteShifts;
-import com.simibubi.create.content.contraptions.relays.encased.EncasedBeltBlock;
 import com.simibubi.create.content.contraptions.relays.encased.EncasedBeltGenerator;
 import com.simibubi.create.content.contraptions.relays.encased.EncasedCTBehaviour;
 import com.simibubi.create.content.contraptions.relays.gearbox.GearboxBlock;
@@ -24,8 +23,8 @@ public class ModBlocks {
     }
     //The Items themselves
 
-    public static final BlockEntry<EncasedBeltBlock> BRASS_CHAIN_DRIVE = REGISTRATE
-    .block("brass_chain_drive", EncasedBeltBlock::new)
+    public static final BlockEntry<CustomChainDriveBlock> BRASS_CHAIN_DRIVE = REGISTRATE
+    .block("brass_chain_drive", CustomChainDriveBlock::new)
             .initialProperties(SharedProperties::stone)
             .properties(BlockBehaviour.Properties::noOcclusion)
             .transform(BlockStressDefaults.setNoImpact())
@@ -36,8 +35,8 @@ public class ModBlocks {
             .transform(customItemModel())
             .register();
 
-    public static final BlockEntry<GearboxBlock> BRASS_GEARBOX = REGISTRATE
-    .block("brass_gearbox", GearboxBlock::new)
+    public static final BlockEntry<CustomGearboxBlock> BRASS_GEARBOX = REGISTRATE
+    .block("brass_gearbox", CustomGearboxBlock::new)
             .initialProperties(SharedProperties::stone)
             .properties(BlockBehaviour.Properties::noOcclusion)
             .transform(BlockStressDefaults.setNoImpact())
