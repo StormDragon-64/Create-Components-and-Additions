@@ -12,8 +12,8 @@ public class ModItems {
             .item("incomplete_cogwheel", SequencedAssemblyItem::new)
             .register();
 
-    public static final ItemEntry<VerticalGearboxItem> VERTICAL_BRASS_GEARBOX = REGISTRATE
-                    .item("vertical_brass_gearbox", VerticalGearboxItem::new)
+    public static final ItemEntry<CustomVerticalGearboxItem> VERTICAL_BRASS_GEARBOX = REGISTRATE
+                    .item("vertical_brass_gearbox", CustomVerticalGearboxItem::new)
                     .model(AssetLookup.customBlockItemModel("brass_gearbox", "item_vertical"))
                     .register();
 
