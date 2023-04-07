@@ -30,7 +30,7 @@ public class CustomVerticalGearboxItem extends BlockItem {
 
     @Override
     public String getDescriptionId() {
-        return "item.create.vertical_gearbox";
+        return "item.create_plus.vertical_brass_gearbox";
     }
 
     @Override
