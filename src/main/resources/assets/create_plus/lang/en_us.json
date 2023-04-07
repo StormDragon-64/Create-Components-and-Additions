@@ -3,5 +3,5 @@
   "block.create_plus.brass_chain_drive": "Brass Chain Drive",
   "block.create_plus.brass_gearbox": "Brass Gearbox",
   "item.create_plus.vertical_brass_gearbox": "Vertical Brass Gearbox",
-  "itemGroup.create_plus:main_tab":"Create++"
+  "itemGroup.create_plus": "Create++"
 }
