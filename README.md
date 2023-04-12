@@ -9,9 +9,9 @@ I have already added:
 I'm working on:
 
 - Brass versions of blocks with more functionality
-- I have already made a brass chain drive and a brass gearbox, but they don't have custom functionality yet  
--The current plan is to make the brass chain drive able to connect in multiple directions at the same time (eg. upwards as well as to the sides)  
--The brass gearbox will be able to be right clicked with casing to block that side from transferring power
+- I have already made a brass chain drive and a brass gearbox, but they don't have custom functionality yet. The current plan is:  
+-To make the brass chain drive able to connect in multiple directions at the same time (eg. upwards as well as to the sides)  
+-To make the brass gearbox able to be right clicked with casing to block that side from transferring power
 
 Planned:
 
