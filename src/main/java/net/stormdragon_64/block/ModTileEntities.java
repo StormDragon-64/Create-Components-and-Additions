@@ -3,10 +3,7 @@ package net.stormdragon_64.block;
 import com.simibubi.create.AllBlocks;
 import com.simibubi.create.Create;
 import com.simibubi.create.content.contraptions.base.KineticTileEntity;
-import com.simibubi.create.content.contraptions.relays.encased.ShaftInstance;
-import com.simibubi.create.content.contraptions.relays.encased.ShaftRenderer;
-import com.simibubi.create.content.contraptions.relays.encased.SplitShaftInstance;
-import com.simibubi.create.content.contraptions.relays.encased.SplitShaftRenderer;
+import com.simibubi.create.content.contraptions.relays.encased.*;
 import com.simibubi.create.content.contraptions.relays.gearbox.GearboxInstance;
 import com.simibubi.create.content.contraptions.relays.gearbox.GearboxRenderer;
 import com.simibubi.create.content.contraptions.relays.gearbox.GearboxTileEntity;
@@ -37,6 +34,15 @@ public class ModTileEntities {
             .validBlocks(ModBlocks.INVERTED_GEARSHIFT)
             .renderer(() -> SplitShaftRenderer::new)
             .register();
+
+    public static final BlockEntityEntry<ClutchTileEntity> CUSTOM_CLUTCH = REGISTRATE
+            .tileEntity("custom_clutch", ClutchTileEntity::new)
+            .instance(() -> SplitShaftInstance::new, false)
+            .validBlocks(ModBlocks.INVERTED_CLUTCH)
+            .renderer(() -> SplitShaftRenderer::new)
+            .register();
+
+
 
     //Register method - Important!
     public static void register() {}
