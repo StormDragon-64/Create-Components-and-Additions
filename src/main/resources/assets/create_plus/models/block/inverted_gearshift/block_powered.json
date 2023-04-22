@@ -1,0 +1,7 @@
+{
+	"parent": "create:block/gearshift/block",
+    "textures": {
+        "0": "create_plus:block/inverted_gearshift_off",
+		"particle": "create_plus:block/inverted_gearshift_off"
+    }
+}
