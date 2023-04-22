@@ -20,4 +20,5 @@ It would be cool if this was a setting that you could toggle on normal clutch/ge
 - Redstone clock: _configurable_ redstone clock (like pulse extender and pulse repeater in base Create)
 - Redstone timer (If you have a better name, tell me!)**:** if a redstone pulse at it's input side lasts for the configured time, send a redstone signal at the output side
 
-Feel Free to suggest more, or make a pull request that adds one of these features or even something you came up with!
+Feel Free to suggest more, or make a pull request that adds one of these features or even something you came up with!  
+Or just make a pull request to clean up my code... pls...
