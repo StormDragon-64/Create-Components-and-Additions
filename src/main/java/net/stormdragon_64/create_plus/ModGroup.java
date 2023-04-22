@@ -5,7 +5,6 @@ import net.minecraft.world.item.ItemStack;
 import net.stormdragon_64.block.ModBlocks;
 
 public class ModGroup{
-//TODO: Fix Create's normal vertical gearbox showing up in my tab >:(
         public static final CreativeModeTab MAIN_TAB = new CreativeModeTab("create_plus") {
             @Override
             public ItemStack makeIcon() {

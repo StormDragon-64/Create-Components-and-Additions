@@ -28,15 +28,15 @@ public BlockEntityType<? extends GearboxTileEntity> getTileEntityType() {
 
     @Override
     public void fillItemCategory(CreativeModeTab group, NonNullList<ItemStack> items) {
-        super.fillItemCategory(group, items);
         items.add(ModItems.VERTICAL_BRASS_GEARBOX.asStack());
+        items.add(ModBlocks.BRASS_GEARBOX.asStack());
     }
 
     @Override
     public List<ItemStack> getDrops(BlockState state, LootContext.Builder builder) {
         if (state.getValue(AXIS).isVertical())
             return super.getDrops(state, builder);
-        return Arrays.asList(new ItemStack(ModItems.VERTICAL_BRASS_GEARBOX.get()));
+        return List.of(new ItemStack(ModItems.VERTICAL_BRASS_GEARBOX.get()));
     }
 
     @Override
