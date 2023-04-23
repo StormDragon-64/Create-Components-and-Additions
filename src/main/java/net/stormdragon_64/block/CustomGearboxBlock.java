@@ -14,7 +14,6 @@ import net.minecraft.world.level.storage.loot.LootContext;
 import net.minecraft.world.phys.HitResult;
 import net.stormdragon_64.item.ModItems;
 
-import java.util.Arrays;
 import java.util.List;
 
 public class CustomGearboxBlock extends GearboxBlock {

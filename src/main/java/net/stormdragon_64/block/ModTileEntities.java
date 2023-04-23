@@ -1,7 +1,5 @@
 package net.stormdragon_64.block;
 
-import com.simibubi.create.AllBlocks;
-import com.simibubi.create.Create;
 import com.simibubi.create.content.contraptions.base.KineticTileEntity;
 import com.simibubi.create.content.contraptions.relays.encased.*;
 import com.simibubi.create.content.contraptions.relays.gearbox.GearboxInstance;
@@ -14,14 +12,14 @@ import static com.simibubi.create.Create.REGISTRATE;
 
 
 public class ModTileEntities {
-    public static final BlockEntityEntry<KineticTileEntity> CUSTOM_CHAIN_DRIVE = Create.REGISTRATE
+    public static final BlockEntityEntry<KineticTileEntity> CUSTOM_CHAIN_DRIVE = REGISTRATE
             .tileEntity("custom_chain_drive", KineticTileEntity::new)
             .instance(() -> ShaftInstance::new, false)
             .validBlocks(ModBlocks.BRASS_CHAIN_DRIVE)
             .renderer(() -> ShaftRenderer::new)
             .register();
 
-    public static final BlockEntityEntry<GearboxTileEntity> CUSTOM_GEARBOX = Create.REGISTRATE
+    public static final BlockEntityEntry<GearboxTileEntity> CUSTOM_GEARBOX = REGISTRATE
             .tileEntity("custom_gearbox", GearboxTileEntity::new)
             .instance(() -> GearboxInstance::new, false)
             .validBlocks(ModBlocks.BRASS_GEARBOX)

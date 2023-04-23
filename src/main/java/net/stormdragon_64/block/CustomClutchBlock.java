@@ -1,7 +1,5 @@
 package net.stormdragon_64.block;
 
-import com.simibubi.create.AllTileEntities;
-import com.simibubi.create.content.contraptions.relays.encased.ClutchBlock;
 import com.simibubi.create.content.contraptions.relays.encased.SplitShaftTileEntity;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.Level;

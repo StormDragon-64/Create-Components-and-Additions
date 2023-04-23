@@ -16,7 +16,7 @@ I want to be able to wrench and right click, shift right click with a redstone t
 
 Working in progress:
 
-- **Brass Chain Gearshift:** self-explanatory, just to better match brass chain drives. No extra functionality. 
+- **Adjustable Brass Chain Gearshift:** self-explanatory, just to better match brass chain drives. No extra functionality. 
 
 Planned:
 
