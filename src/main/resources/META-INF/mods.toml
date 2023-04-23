@@ -28,11 +28,10 @@ displayName="Create++" #mandatory
 #displayURL="https://change.me.to.your.mods.homepage.example.invalid/" #optional
 # A file name (in the root of the mod JAR) containing a logo for display #optional
 # A text field displayed in the mod UI
-credits="Thank you Create devs, your mod is awesome." #optional
 # A text field displayed in the mod UI
 authors="StormDragon_64" #optional
 # The description text for the mod (multi line!) (#mandatory)
-description="Small mod made for the Create+ modpack. More is planned for the future though... 👀"
+description="Small mod made for my modpack, Create+. Currently adds a few new blocks and recipes, but more is planned for the future."
 # A dependency - use the . to indicate dependency for a specific modid. Dependencies are optional.
 [[dependencies.create_plus]] #optional
     # the modid of the dependency

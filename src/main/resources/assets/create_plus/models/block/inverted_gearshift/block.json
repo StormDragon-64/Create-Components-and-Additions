@@ -3,7 +3,7 @@
 	"textures": {
 		"0": "create_plus:block/inverted_gearshift_on",
 		"1": "create:block/gearbox",
-		"particle": "create_plus:block/gearshift_on"
+		"particle": "create_plus:block/inverted_gearshift_on"
 	},
 	"elements": [
 		{
