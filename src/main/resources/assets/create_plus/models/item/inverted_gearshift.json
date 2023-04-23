@@ -1,7 +1,7 @@
 {
   "parent": "block/block",
   "textures": {
-    "0": "create:block/gearshift_on",
+    "0": "create_plus:block/inverted_gearshift_off",
     "1": "create:block/gearbox",
     "particle": "create:block/axis",
     "1_0": "create:block/axis",
