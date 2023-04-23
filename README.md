@@ -5,18 +5,17 @@ Done:
 
 - A cogwheel sequenced assembly recipe, with its own incomplete cogwheel item to go with it
 - Other recipes made for better compat between mods
+- Adjustable chain gearshift
 
 Done, but could have better functionality I don't know how to code yet: (pull request pls 👉👈🥺)
 - **Inverted clutch and gearshift:** works as an inverted clutch and gearshift and has textures, but right now it uses a recipe to convert between inverted and not inverted.  
 I want to be able to wrench and right click, shift right click with a redstone torch, or wrench and scroll (Think of how you can change between clockwise and counter-clockwise on a windmill) on the block to switch modes.
-- **Brass gearbox and brass chain drive:** also works and also has textures, but no functionality difference between andesite versions.  
-**Brass Gearbox:** should be able to block off sides with brass casing  
-**Brass Chain Drive:** should be able to connect in more than 1 direction
 
+Work in progress:
 
-Working in progress:
-
-- **Adjustable Brass Chain Gearshift:** self-explanatory, just to better match brass chain drives. No extra functionality. 
+- **Brass gearbox and brass chain drive:** works and has textures, but no functionality difference between andesite versions.  
+  **Brass Gearbox:** should be able to block off sides with brass casing  
+  **Brass Chain Drive:** should be able to connect in more than 1 direction
 
 Planned:
 

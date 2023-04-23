@@ -40,6 +40,13 @@ public class ModTileEntities {
             .renderer(() -> SplitShaftRenderer::new)
             .register();
 
+    public static final BlockEntityEntry<AdjustablePulleyTileEntity> CUSTOM_ADJUSTABLE_PULLEY = REGISTRATE
+            .tileEntity("custom_adjustable_pulley", AdjustablePulleyTileEntity::new)
+            .instance(() -> ShaftInstance::new, false)
+            .validBlocks(ModBlocks.ADJUSTABLE_BRASS_CHAIN_GEARSHIFT)
+            .renderer(() -> ShaftRenderer::new)
+            .register();
+
 
 
     //Register method - Important!

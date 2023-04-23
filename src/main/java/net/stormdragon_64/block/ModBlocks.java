@@ -1,6 +1,7 @@
 package net.stormdragon_64.block;
 
 import com.simibubi.create.AllSpriteShifts;
+import com.simibubi.create.content.contraptions.relays.encased.AdjustablePulleyBlock;
 import com.simibubi.create.content.contraptions.relays.encased.EncasedBeltGenerator;
 import com.simibubi.create.content.contraptions.relays.encased.EncasedCTBehaviour;
 import com.simibubi.create.foundation.block.BlockStressDefaults;
@@ -69,6 +70,26 @@ public class ModBlocks {
             .item()
             .transform(customItemModel())
             .register();
+
+    public static final BlockEntry<CustomAdjustableChainGearshift> ADJUSTABLE_BRASS_CHAIN_GEARSHIFT =
+            REGISTRATE.block("adjustable_brass_chain_gearshift", CustomAdjustableChainGearshift::new)
+                    .initialProperties(SharedProperties::stone)
+                    .properties(BlockBehaviour.Properties::noOcclusion)
+                    .transform(BlockStressDefaults.setNoImpact())
+                    .transform(axeOrPickaxe())
+                    .blockstate((c, p) -> new EncasedBeltGenerator((state, suffix) -> {
+                        String powered = state.getValue(AdjustablePulleyBlock.POWERED) ? "_powered" : "";
+                        return p.models()
+                                .withExistingParent(c.getName() + "_" + suffix + powered,
+                                        p.modLoc("block/encased_chain_drive/" + suffix))
+                                .texture("side", p.modLoc("block/" + c.getName() + powered));
+                    }).generate(c, p))
+                    .item()
+                    .model((c, p) -> p.withExistingParent(c.getName(), p.modLoc("block/encased_chain_drive/item"))
+                            .texture("side", p.modLoc("block/" + c.getName())))
+                    .build()
+                    .register();
+
 
     //Register Method - Don't touch!
     public static void register() {}
