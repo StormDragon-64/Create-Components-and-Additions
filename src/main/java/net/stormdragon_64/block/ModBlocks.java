@@ -6,7 +6,6 @@ import com.simibubi.create.content.contraptions.relays.encased.EncasedBeltGenera
 import com.simibubi.create.content.contraptions.relays.encased.EncasedCTBehaviour;
 import com.simibubi.create.foundation.block.BlockStressDefaults;
 import com.simibubi.create.foundation.data.AssetLookup;
-import com.simibubi.create.foundation.data.BlockStateGen;
 import com.simibubi.create.foundation.data.CreateRegistrate;
 import com.simibubi.create.foundation.data.SharedProperties;
 import com.tterrag.registrate.util.entry.BlockEntry;
@@ -50,29 +49,29 @@ public class ModBlocks {
             .item()
             .transform(customItemModel())
             .register();
+    /* Replaced by Mixins.
+     public static final BlockEntry<CustomGearshiftBlock> INVERTED_GEARSHIFT = REGISTRATE.block("inverted_gearshift", CustomGearshiftBlock::new)
+                .initialProperties(SharedProperties::stone)
+                .properties(BlockBehaviour.Properties::noOcclusion)
+                .transform(BlockStressDefaults.setNoImpact())
+                .transform(axeOrPickaxe())
+                .blockstate((c, p) -> BlockStateGen.axisBlock(c, p, AssetLookup.forPowered(c, p)))
+                .item()
+                .transform(customItemModel())
+                .register();
 
-    public static final BlockEntry<CustomGearshiftBlock> INVERTED_GEARSHIFT = REGISTRATE.block("inverted_gearshift", CustomGearshiftBlock::new)
-            .initialProperties(SharedProperties::stone)
-            .properties(BlockBehaviour.Properties::noOcclusion)
-            .transform(BlockStressDefaults.setNoImpact())
-            .transform(axeOrPickaxe())
-            .blockstate((c, p) -> BlockStateGen.axisBlock(c, p, AssetLookup.forPowered(c, p)))
-            .item()
-            .transform(customItemModel())
-            .register();
-
-    public static final BlockEntry<CustomClutchBlock> INVERTED_CLUTCH = REGISTRATE.block("inverted_clutch", CustomClutchBlock::new)
-            .initialProperties(SharedProperties::stone)
-            .properties(BlockBehaviour.Properties::noOcclusion)
-            .transform(BlockStressDefaults.setNoImpact())
-            .transform(axeOrPickaxe())
-            .blockstate((c, p) -> BlockStateGen.axisBlock(c, p, AssetLookup.forPowered(c, p)))
-            .item()
-            .transform(customItemModel())
-            .register();
-
-    public static final BlockEntry<CustomAdjustableChainGearshift> ADJUSTABLE_BRASS_CHAIN_GEARSHIFT =
-            REGISTRATE.block("adjustable_brass_chain_gearshift", CustomAdjustableChainGearshift::new)
+        public static final BlockEntry<CustomClutchBlock> INVERTED_CLUTCH = REGISTRATE.block("inverted_clutch", CustomClutchBlock::new)
+                .initialProperties(SharedProperties::stone)
+                .properties(BlockBehaviour.Properties::noOcclusion)
+                .transform(BlockStressDefaults.setNoImpact())
+                .transform(axeOrPickaxe())
+                .blockstate((c, p) -> BlockStateGen.axisBlock(c, p, AssetLookup.forPowered(c, p)))
+                .item()
+                .transform(customItemModel())
+                .register();
+    */
+    public static final BlockEntry<CustomAdjustableChainGearshiftBlock> ADJUSTABLE_BRASS_CHAIN_GEARSHIFT =
+            REGISTRATE.block("adjustable_brass_chain_gearshift", CustomAdjustableChainGearshiftBlock::new)
                     .initialProperties(SharedProperties::stone)
                     .properties(BlockBehaviour.Properties::noOcclusion)
                     .transform(BlockStressDefaults.setNoImpact())

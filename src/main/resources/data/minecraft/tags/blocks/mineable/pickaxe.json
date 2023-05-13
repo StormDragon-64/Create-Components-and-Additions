@@ -2,8 +2,6 @@
   "values": [
     "create_plus:brass_gearbox",
     "create_plus:brass_chain_drive",
-    "create_plus:inverted_gearshift",
-    "create_plus:adjustable_brass_chain_gearshift",
-    "create_plus:inverted_clutch"
+    "create_plus:adjustable_brass_chain_gearshift"
   ]
 }

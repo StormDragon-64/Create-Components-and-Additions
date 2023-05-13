@@ -1,11 +1,12 @@
 package net.stormdragon_64.block;
 
 import com.simibubi.create.content.contraptions.base.KineticTileEntity;
-import com.simibubi.create.content.contraptions.relays.encased.*;
+import com.simibubi.create.content.contraptions.relays.encased.AdjustablePulleyTileEntity;
+import com.simibubi.create.content.contraptions.relays.encased.ShaftInstance;
+import com.simibubi.create.content.contraptions.relays.encased.ShaftRenderer;
 import com.simibubi.create.content.contraptions.relays.gearbox.GearboxInstance;
 import com.simibubi.create.content.contraptions.relays.gearbox.GearboxRenderer;
 import com.simibubi.create.content.contraptions.relays.gearbox.GearboxTileEntity;
-import com.simibubi.create.content.contraptions.relays.gearbox.GearshiftTileEntity;
 import com.tterrag.registrate.util.entry.BlockEntityEntry;
 
 import static com.simibubi.create.Create.REGISTRATE;
@@ -26,6 +27,7 @@ public class ModTileEntities {
             .renderer(() -> GearboxRenderer::new)
             .register();
 
+    /* Also disabled because Mixins
     public static final BlockEntityEntry<GearshiftTileEntity> CUSTOM_GEARSHIFT = REGISTRATE
             .tileEntity("custom_gearshift", GearshiftTileEntity::new)
             .instance(() -> SplitShaftInstance::new, false)
@@ -39,6 +41,9 @@ public class ModTileEntities {
             .validBlocks(ModBlocks.INVERTED_CLUTCH)
             .renderer(() -> SplitShaftRenderer::new)
             .register();
+
+    */
+
 
     public static final BlockEntityEntry<AdjustablePulleyTileEntity> CUSTOM_ADJUSTABLE_PULLEY = REGISTRATE
             .tileEntity("custom_adjustable_pulley", AdjustablePulleyTileEntity::new)

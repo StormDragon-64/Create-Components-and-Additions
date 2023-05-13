@@ -1,0 +1,11 @@
+{
+  "required": true,
+  "priority": 500,
+  "package": "net.stormdragon_64.mixin",
+  "compatibilityLevel": "JAVA_17",
+  "refmap": "mixins.create_plus_plus.refmap.json",
+  "mixins": [
+  "AllowGearshiftInvertMixin",
+    "GearshiftTileEntityMixin"
+  ]
+}

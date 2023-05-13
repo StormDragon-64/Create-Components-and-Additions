@@ -4,8 +4,8 @@ import com.simibubi.create.content.contraptions.base.KineticTileEntity;
 import com.simibubi.create.content.contraptions.relays.encased.AdjustablePulleyBlock;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 
-public class CustomAdjustableChainGearshift extends AdjustablePulleyBlock  {
-    public CustomAdjustableChainGearshift(Properties properties) {
+public class CustomAdjustableChainGearshiftBlock extends AdjustablePulleyBlock  {
+    public CustomAdjustableChainGearshiftBlock(Properties properties) {
         super(properties);
     }
     @Override
