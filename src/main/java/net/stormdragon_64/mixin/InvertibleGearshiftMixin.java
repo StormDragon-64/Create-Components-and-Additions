@@ -17,10 +17,9 @@ import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 
-//This is my first time using mixins. Don't judge me, and submit a pull request if you want to fix it.
 @Mixin(GearshiftBlock.class)
-public abstract class AllowGearshiftInvertMixin  extends AbstractEncasedShaftBlock {
-    public AllowGearshiftInvertMixin(Properties properties) {
+public abstract class InvertibleGearshiftMixin extends AbstractEncasedShaftBlock {
+    public InvertibleGearshiftMixin(Properties properties) {
         super(properties);
     }
 

@@ -60,7 +60,7 @@ public class ModBlocks {
                 .item()
                 .transform(customItemModel())
                 .register();
-/* temp disabled
+
         public static final BlockEntry<CustomClutchBlock> INVERTED_CLUTCH = REGISTRATE.block("inverted_clutch", CustomClutchBlock::new)
                 .initialProperties(SharedProperties::stone)
                 .properties(BlockBehaviour.Properties::noOcclusion)
@@ -70,7 +70,7 @@ public class ModBlocks {
                 .item()
                 .transform(customItemModel())
                 .register();
-    */
+
     public static final BlockEntry<CustomAdjustableChainGearshiftBlock> ADJUSTABLE_BRASS_CHAIN_GEARSHIFT =
             REGISTRATE.block("adjustable_brass_chain_gearshift", CustomAdjustableChainGearshiftBlock::new)
                     .initialProperties(SharedProperties::stone)

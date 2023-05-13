@@ -34,7 +34,6 @@ public class ModTileEntities {
             .renderer(() -> SplitShaftRenderer::new)
             .register();
 
-    /* temp disabled
     public static final BlockEntityEntry<ClutchTileEntity> CUSTOM_CLUTCH = REGISTRATE
             .tileEntity("custom_clutch", ClutchTileEntity::new)
             .instance(() -> SplitShaftInstance::new, false)
@@ -42,7 +41,6 @@ public class ModTileEntities {
             .renderer(() -> SplitShaftRenderer::new)
             .register();
 
-    */
 
 
     public static final BlockEntityEntry<AdjustablePulleyTileEntity> CUSTOM_ADJUSTABLE_PULLEY = REGISTRATE
