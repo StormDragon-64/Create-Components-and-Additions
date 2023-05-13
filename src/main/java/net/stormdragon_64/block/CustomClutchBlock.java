@@ -23,21 +23,18 @@ public class CustomClutchBlock extends CustomGearshiftBlock {
 @Override
     public InteractionResult use(BlockState state, Level level, BlockPos blockPos,
                                  Player player, InteractionHand hand, BlockHitResult result) {
+    ItemStack item = player.getMainHandItem();
+    if (item.getItem() == Items.REDSTONE_TORCH) {
         if (!level.isClientSide() && hand == InteractionHand.MAIN_HAND) {
-            ItemStack item = player.getMainHandItem();
-            if (item.getItem() == Items.REDSTONE_TORCH) {
-                level.setBlockAndUpdate(blockPos, AllBlocks.CLUTCH
-                        .getDefaultState()
-                        .setValue(POWERED, !state.getValue(POWERED))
-                        .setValue(AXIS, state.getValue(AXIS)));
-                return InteractionResult.SUCCESS;
-            } else {
-                return InteractionResult.PASS;
-            }
-        } else {
-            return InteractionResult.PASS;
-        }
-    }
+            level.setBlockAndUpdate(blockPos, AllBlocks.CLUTCH
+                    .getDefaultState()
+                    .setValue(POWERED, !state.getValue(POWERED))
+                    .setValue(AXIS, state.getValue(AXIS)));
+            return InteractionResult.SUCCESS;
+
+        } else {return InteractionResult.CONSUME_PARTIAL;}
+    } else {return InteractionResult.FAIL;}
+}
 
     @Override
     public void neighborChanged(BlockState state, Level worldIn, BlockPos pos, Block blockIn, BlockPos fromPos,

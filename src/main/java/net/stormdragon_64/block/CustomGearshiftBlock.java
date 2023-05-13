@@ -3,7 +3,6 @@ package net.stormdragon_64.block;
 import com.simibubi.create.AllBlocks;
 import com.simibubi.create.content.contraptions.relays.encased.GearshiftBlock;
 import com.simibubi.create.content.contraptions.relays.encased.SplitShaftTileEntity;
-import com.simibubi.create.content.contraptions.relays.gearbox.GearshiftTileEntity;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
@@ -26,20 +25,17 @@ public class CustomGearshiftBlock extends GearshiftBlock  {
     @Override
     public InteractionResult use(BlockState state, Level level, BlockPos blockPos,
                                  Player player, InteractionHand hand, BlockHitResult result) {
-        if (!level.isClientSide() && hand == InteractionHand.MAIN_HAND) {
-            ItemStack item = player.getMainHandItem();
-            if (item.getItem() == Items.REDSTONE_TORCH) {
+        ItemStack item = player.getMainHandItem();
+        if (item.getItem() == Items.REDSTONE_TORCH) {
+            if (!level.isClientSide() && hand == InteractionHand.MAIN_HAND) {
                 level.setBlockAndUpdate(blockPos, AllBlocks.GEARSHIFT
                         .getDefaultState()
                         .setValue(POWERED, !state.getValue(POWERED))
                         .setValue(AXIS, state.getValue(AXIS)));
                 return InteractionResult.SUCCESS;
-            } else {
-                return InteractionResult.FAIL;
-            }
-        } else {
-            return InteractionResult.FAIL;
-        }
+
+            } else {return InteractionResult.CONSUME_PARTIAL;}
+        } else {return InteractionResult.FAIL;}
     }
     //Self explanatory, makes sure that it isn't powered by default
     @Override
