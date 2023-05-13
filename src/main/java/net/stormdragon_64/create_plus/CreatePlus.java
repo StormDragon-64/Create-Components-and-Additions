@@ -8,7 +8,7 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.stormdragon_64.block.ModBlocks;
-import net.stormdragon_64.block.ModTileEntities;
+import net.stormdragon_64.block.tile_entity.ModTileEntities;
 import net.stormdragon_64.item.ModItems;
 import org.slf4j.Logger;
 

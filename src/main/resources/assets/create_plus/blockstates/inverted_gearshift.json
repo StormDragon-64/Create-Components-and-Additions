@@ -1,28 +1,27 @@
-//Don't forget to remove is_inverted if u ever go back
 {
   "variants": {
-    "is_inverted=true,axis=x,powered=false": {
+    ",axis=x,powered=false": {
       "model": "create_plus:block/inverted_gearshift/block",
       "x": 90,
       "y": 90
     },
-    "is_inverted=true,axis=x,powered=true": {
+    ",axis=x,powered=true": {
       "model": "create_plus:block/inverted_gearshift/block_powered",
       "x": 90,
       "y": 90
     },
-    "is_inverted=true,axis=y,powered=false": {
+    ",axis=y,powered=false": {
       "model": "create_plus:block/inverted_gearshift/block"
     },
-    "is_inverted=true,axis=y,powered=true": {
+    ",axis=y,powered=true": {
       "model": "create_plus:block/inverted_gearshift/block_powered"
     },
-    "is_inverted=true,axis=z,powered=false": {
+    ",axis=z,powered=false": {
       "model": "create_plus:block/inverted_gearshift/block",
       "x": 90,
       "y": 180
     },
-    "is_inverted=true,axis=z,powered=true": {
+    ",axis=z,powered=true": {
       "model": "create_plus:block/inverted_gearshift/block_powered",
       "x": 90,
       "y": 180

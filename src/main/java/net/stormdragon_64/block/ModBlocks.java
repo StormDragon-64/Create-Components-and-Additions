@@ -6,6 +6,7 @@ import com.simibubi.create.content.contraptions.relays.encased.EncasedBeltGenera
 import com.simibubi.create.content.contraptions.relays.encased.EncasedCTBehaviour;
 import com.simibubi.create.foundation.block.BlockStressDefaults;
 import com.simibubi.create.foundation.data.AssetLookup;
+import com.simibubi.create.foundation.data.BlockStateGen;
 import com.simibubi.create.foundation.data.CreateRegistrate;
 import com.simibubi.create.foundation.data.SharedProperties;
 import com.tterrag.registrate.util.entry.BlockEntry;
@@ -49,7 +50,7 @@ public class ModBlocks {
             .item()
             .transform(customItemModel())
             .register();
-    /* Replaced by Mixins.
+
      public static final BlockEntry<CustomGearshiftBlock> INVERTED_GEARSHIFT = REGISTRATE.block("inverted_gearshift", CustomGearshiftBlock::new)
                 .initialProperties(SharedProperties::stone)
                 .properties(BlockBehaviour.Properties::noOcclusion)
@@ -59,7 +60,7 @@ public class ModBlocks {
                 .item()
                 .transform(customItemModel())
                 .register();
-
+/* temp disabled
         public static final BlockEntry<CustomClutchBlock> INVERTED_CLUTCH = REGISTRATE.block("inverted_clutch", CustomClutchBlock::new)
                 .initialProperties(SharedProperties::stone)
                 .properties(BlockBehaviour.Properties::noOcclusion)
