@@ -24,7 +24,7 @@ public abstract class InvertibleGearshiftMixin extends AbstractEncasedShaftBlock
     }
 
     @Shadow @Final
-    private static BooleanProperty POWERED;
+    public static BooleanProperty POWERED;
 
     public InteractionResult use(BlockState state, Level level, BlockPos blockPos,
                                  Player player, InteractionHand hand, BlockHitResult result) {

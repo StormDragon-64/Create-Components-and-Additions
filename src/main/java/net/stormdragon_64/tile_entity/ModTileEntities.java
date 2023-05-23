@@ -1,4 +1,4 @@
-package net.stormdragon_64.block.tile_entity;
+package net.stormdragon_64.tile_entity;
 
 import com.simibubi.create.content.contraptions.base.KineticTileEntity;
 import com.simibubi.create.content.contraptions.relays.encased.*;

@@ -15,7 +15,7 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.BlockHitResult;
-import net.stormdragon_64.block.tile_entity.ModTileEntities;
+import net.stormdragon_64.tile_entity.ModTileEntities;
 
 public class CustomGearshiftBlock extends GearshiftBlock  {
     public CustomGearshiftBlock(Properties properties) {

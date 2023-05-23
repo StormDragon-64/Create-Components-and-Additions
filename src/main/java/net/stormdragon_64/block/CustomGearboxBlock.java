@@ -12,8 +12,8 @@ import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.storage.loot.LootContext;
 import net.minecraft.world.phys.HitResult;
-import net.stormdragon_64.block.tile_entity.ModTileEntities;
 import net.stormdragon_64.item.ModItems;
+import net.stormdragon_64.tile_entity.ModTileEntities;
 
 import java.util.List;
 

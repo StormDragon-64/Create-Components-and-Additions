@@ -2,14 +2,17 @@ package net.stormdragon_64.create_plus;
 
 import com.mojang.logging.LogUtils;
 import com.tterrag.registrate.Registrate;
+import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
+import net.minecraftforge.fml.DistExecutor;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.stormdragon_64.block.ModBlocks;
-import net.stormdragon_64.block.tile_entity.ModTileEntities;
 import net.stormdragon_64.item.ModItems;
+import net.stormdragon_64.ponder.PonderAssigner;
+import net.stormdragon_64.tile_entity.ModTileEntities;
 import org.slf4j.Logger;
 
 // The value here should match an entry in the META-INF/mods.toml file
@@ -25,6 +28,8 @@ public class CreatePlus {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
         MinecraftForge.EVENT_BUS.register(this);
         modEventBus.addListener(this::commonSetup);
+
+        DistExecutor.safeRunWhenOn(Dist.CLIENT, () -> CreatePlusClient::new);
 //registrate stuff; Probably more here in the future
         ModItems.register();
         ModBlocks.register();
