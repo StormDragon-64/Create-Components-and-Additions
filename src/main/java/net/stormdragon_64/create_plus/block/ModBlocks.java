@@ -1,10 +1,10 @@
-package net.stormdragon_64.block;
+package net.stormdragon_64.create_plus.block;
 
 import com.simibubi.create.AllSpriteShifts;
-import com.simibubi.create.content.contraptions.relays.encased.AdjustablePulleyBlock;
-import com.simibubi.create.content.contraptions.relays.encased.EncasedBeltGenerator;
-import com.simibubi.create.content.contraptions.relays.encased.EncasedCTBehaviour;
-import com.simibubi.create.foundation.block.BlockStressDefaults;
+import com.simibubi.create.content.decoration.encasing.EncasedCTBehaviour;
+import com.simibubi.create.content.kinetics.BlockStressDefaults;
+import com.simibubi.create.content.kinetics.chainDrive.ChainDriveGenerator;
+import com.simibubi.create.content.kinetics.chainDrive.ChainGearshiftBlock;
 import com.simibubi.create.foundation.data.AssetLookup;
 import com.simibubi.create.foundation.data.BlockStateGen;
 import com.simibubi.create.foundation.data.CreateRegistrate;
@@ -31,7 +31,7 @@ public class ModBlocks {
             .properties(BlockBehaviour.Properties::noOcclusion)
             .transform(BlockStressDefaults.setNoImpact())
             .transform(axeOrPickaxe())
-            .blockstate((c, p) -> new EncasedBeltGenerator((state, suffix) -> p.models()
+            .blockstate((c, p) -> new ChainDriveGenerator((state, suffix) -> p.models()
             .getExistingFile(p.modLoc("block/" + c.getName() + "/" + suffix))).generate(c, p))
             .item()
             .transform(customItemModel())
@@ -51,7 +51,7 @@ public class ModBlocks {
             .transform(customItemModel())
             .register();
 
-     public static final BlockEntry<CustomGearshiftBlock> INVERTED_GEARSHIFT = REGISTRATE.block("inverted_gearshift", CustomGearshiftBlock::new)
+     public static final BlockEntry<InvertedGearshiftBlock> INVERTED_GEARSHIFT = REGISTRATE.block("inverted_gearshift", InvertedGearshiftBlock::new)
                 .initialProperties(SharedProperties::stone)
                 .properties(BlockBehaviour.Properties::noOcclusion)
                 .transform(BlockStressDefaults.setNoImpact())
@@ -61,7 +61,7 @@ public class ModBlocks {
                 .transform(customItemModel())
                 .register();
 
-        public static final BlockEntry<CustomClutchBlock> INVERTED_CLUTCH = REGISTRATE.block("inverted_clutch", CustomClutchBlock::new)
+        public static final BlockEntry<InvertedClutchBlock> INVERTED_CLUTCH = REGISTRATE.block("inverted_clutch", InvertedClutchBlock::new)
                 .initialProperties(SharedProperties::stone)
                 .properties(BlockBehaviour.Properties::noOcclusion)
                 .transform(BlockStressDefaults.setNoImpact())
@@ -77,8 +77,8 @@ public class ModBlocks {
                     .properties(BlockBehaviour.Properties::noOcclusion)
                     .transform(BlockStressDefaults.setNoImpact())
                     .transform(axeOrPickaxe())
-                    .blockstate((c, p) -> new EncasedBeltGenerator((state, suffix) -> {
-                        String powered = state.getValue(AdjustablePulleyBlock.POWERED) ? "_powered" : "";
+                    .blockstate((c, p) -> new ChainDriveGenerator((state, suffix) -> {
+                        String powered = state.getValue(ChainGearshiftBlock.POWERED) ? "_powered" : "";
                         return p.models()
                                 .withExistingParent(c.getName() + "_" + suffix + powered,
                                         p.modLoc("block/encased_chain_drive/" + suffix))

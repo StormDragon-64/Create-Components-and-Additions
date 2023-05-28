@@ -1,7 +1,8 @@
-package net.stormdragon_64.block;
+package net.stormdragon_64.create_plus.block;
 
-import com.simibubi.create.content.contraptions.relays.gearbox.GearboxBlock;
-import com.simibubi.create.content.contraptions.relays.gearbox.GearboxTileEntity;
+
+import com.simibubi.create.content.kinetics.gearbox.GearboxBlock;
+import com.simibubi.create.content.kinetics.gearbox.GearboxBlockEntity;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.NonNullList;
 import net.minecraft.world.entity.player.Player;
@@ -12,8 +13,8 @@ import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.storage.loot.LootContext;
 import net.minecraft.world.phys.HitResult;
-import net.stormdragon_64.item.ModItems;
-import net.stormdragon_64.tile_entity.ModTileEntities;
+import net.stormdragon_64.create_plus.block_entity.ModBlockEntities;
+import net.stormdragon_64.create_plus.item.ModItems;
 
 import java.util.List;
 
@@ -22,9 +23,10 @@ public class CustomGearboxBlock extends GearboxBlock {
         super(properties);
     }
 @Override
-public BlockEntityType<? extends GearboxTileEntity> getTileEntityType() {
-    return ModTileEntities.CUSTOM_GEARBOX.get();
+public BlockEntityType<? extends GearboxBlockEntity> getBlockEntityType() {
+    return ModBlockEntities.CUSTOM_GEARBOX.get();
 }
+
 
     @Override
     public void fillItemCategory(CreativeModeTab group, NonNullList<ItemStack> items) {

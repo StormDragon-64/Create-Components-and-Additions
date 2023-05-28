@@ -1,5 +1,7 @@
-package net.stormdragon_64.item;
-import com.simibubi.create.content.contraptions.base.IRotate;
+package net.stormdragon_64.create_plus.item;
+
+
+import com.simibubi.create.content.kinetics.base.IRotate;
 import com.simibubi.create.foundation.utility.Iterate;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -13,24 +15,19 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
-import net.stormdragon_64.block.ModBlocks;
+import net.stormdragon_64.create_plus.block.ModBlocks;
 
 import java.util.Map;
 
 
 public class CustomVerticalGearboxItem extends BlockItem {
 
+
     public CustomVerticalGearboxItem(Properties builder) {
         super(ModBlocks.BRASS_GEARBOX.get(), builder);
     }
-
     @Override
     public void fillItemCategory(CreativeModeTab p_150895_1_, NonNullList<ItemStack> p_150895_2_) {
-    }
-
-    @Override
-    public String getDescriptionId() {
-        return "item.create_plus.vertical_brass_gearbox";
     }
 
     @Override
@@ -60,6 +57,12 @@ public class CustomVerticalGearboxItem extends BlockItem {
         world.setBlockAndUpdate(pos, state.setValue(BlockStateProperties.AXIS, axis));
         return super.updateCustomBlockEntityTag(pos, world, player, stack, state);
     }
+
+    @Override
+    public String getDescriptionId() {
+        return "item.create_plus.vertical_brass_gearbox";
+    }
+
 
 }
 

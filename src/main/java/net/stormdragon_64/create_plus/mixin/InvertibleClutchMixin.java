@@ -1,7 +1,8 @@
-package net.stormdragon_64.mixin;
+package net.stormdragon_64.create_plus.mixin;
 
-import com.simibubi.create.content.contraptions.relays.encased.ClutchBlock;
-import com.simibubi.create.content.contraptions.relays.encased.GearshiftBlock;
+
+import com.simibubi.create.content.kinetics.transmission.ClutchBlock;
+import com.simibubi.create.content.kinetics.transmission.GearshiftBlock;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
@@ -11,7 +12,7 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.BlockHitResult;
-import net.stormdragon_64.block.ModBlocks;
+import net.stormdragon_64.create_plus.block.ModBlocks;
 import org.spongepowered.asm.mixin.Mixin;
 
 @Mixin(ClutchBlock.class)

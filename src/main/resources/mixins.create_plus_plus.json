@@ -1,11 +1,11 @@
 {
   "required": true,
   "priority": 500,
-  "package": "net.stormdragon_64.mixin",
+  "package": "net.stormdragon_64.create_plus.mixin",
   "compatibilityLevel": "JAVA_17",
   "refmap": "mixins.create_plus_plus.refmap.json",
   "mixins": [
-  "InvertibleGearshiftMixin",
-    "InvertibleClutchMixin"
+    "InvertibleClutchMixin",
+    "InvertibleGearshiftMixin"
   ]
 }

@@ -1,8 +1,8 @@
-package net.stormdragon_64.block;
+package net.stormdragon_64.create_plus.block;
 
 import com.simibubi.create.AllBlocks;
-import com.simibubi.create.content.contraptions.relays.encased.GearshiftBlock;
-import com.simibubi.create.content.contraptions.relays.encased.SplitShaftTileEntity;
+import com.simibubi.create.content.kinetics.transmission.GearshiftBlock;
+import com.simibubi.create.content.kinetics.transmission.SplitShaftBlockEntity;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
@@ -15,10 +15,10 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.BlockHitResult;
-import net.stormdragon_64.tile_entity.ModTileEntities;
+import net.stormdragon_64.create_plus.block_entity.ModBlockEntities;
 
-public class CustomGearshiftBlock extends GearshiftBlock  {
-    public CustomGearshiftBlock(Properties properties) {
+public class InvertedGearshiftBlock extends GearshiftBlock {
+    public InvertedGearshiftBlock(Properties properties) {
         super(properties);
     }
 
@@ -63,9 +63,9 @@ public class CustomGearshiftBlock extends GearshiftBlock  {
     }
 
 
-//Tile entity does have changed code, not just allowing use for this block
-    public BlockEntityType<? extends SplitShaftTileEntity> getTileEntityType() {
-        return ModTileEntities.CUSTOM_GEARSHIFT.get();
+    @Override
+    public BlockEntityType<? extends SplitShaftBlockEntity> getBlockEntityType() {
+        return ModBlockEntities.INVERTED_GEARSHIFT.get();
     }
 
 

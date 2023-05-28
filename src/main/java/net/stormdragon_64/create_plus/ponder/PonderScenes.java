@@ -1,4 +1,4 @@
-package net.stormdragon_64.ponder;
+package net.stormdragon_64.create_plus.ponder;
 
 import com.simibubi.create.foundation.ponder.SceneBuilder;
 import com.simibubi.create.foundation.ponder.SceneBuildingUtil;
@@ -10,7 +10,7 @@ import net.minecraft.core.Direction;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
-import net.stormdragon_64.block.ModBlocks;
+import net.stormdragon_64.create_plus.block.ModBlocks;
 
 
 public class PonderScenes {

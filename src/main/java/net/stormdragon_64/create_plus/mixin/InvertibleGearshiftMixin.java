@@ -1,7 +1,8 @@
-package net.stormdragon_64.mixin;
+package net.stormdragon_64.create_plus.mixin;
 
-import com.simibubi.create.content.contraptions.relays.encased.AbstractEncasedShaftBlock;
-import com.simibubi.create.content.contraptions.relays.encased.GearshiftBlock;
+
+import com.simibubi.create.content.kinetics.base.AbstractEncasedShaftBlock;
+import com.simibubi.create.content.kinetics.transmission.GearshiftBlock;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
@@ -12,7 +13,7 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraft.world.phys.BlockHitResult;
-import net.stormdragon_64.block.ModBlocks;
+import net.stormdragon_64.create_plus.block.ModBlocks;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;

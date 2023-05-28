@@ -1,5 +1,5 @@
-package net.stormdragon_64.item;
-import com.simibubi.create.content.contraptions.itemAssembly.SequencedAssemblyItem;
+package net.stormdragon_64.create_plus.item;
+import com.simibubi.create.content.processing.sequenced.SequencedAssemblyItem;
 import com.simibubi.create.foundation.data.AssetLookup;
 import com.tterrag.registrate.util.entry.ItemEntry;
 
