@@ -13,7 +13,7 @@ import com.simibubi.create.content.kinetics.transmission.GearshiftBlockEntity;
 import com.tterrag.registrate.util.entry.BlockEntityEntry;
 import net.stormdragon_64.create_plus.block.ModBlocks;
 
-import static net.stormdragon_64.create_plus.CreatePlus.REGISTRATE;
+import static com.simibubi.create.Create.REGISTRATE;
 
 
 public class ModBlockEntities {

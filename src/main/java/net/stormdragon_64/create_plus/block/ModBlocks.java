@@ -10,7 +10,9 @@ import com.simibubi.create.foundation.data.BlockStateGen;
 import com.simibubi.create.foundation.data.CreateRegistrate;
 import com.simibubi.create.foundation.data.SharedProperties;
 import com.tterrag.registrate.util.entry.BlockEntry;
+import net.minecraft.client.renderer.RenderType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.material.MaterialColor;
 import net.stormdragon_64.create_plus.ModGroup;
 
 import static com.simibubi.create.foundation.data.BlockStateGen.axisBlock;
@@ -52,14 +54,15 @@ public class ModBlocks {
             .register();
 
      public static final BlockEntry<InvertedGearshiftBlock> INVERTED_GEARSHIFT = REGISTRATE.block("inverted_gearshift", InvertedGearshiftBlock::new)
-                .initialProperties(SharedProperties::stone)
-                .properties(BlockBehaviour.Properties::noOcclusion)
-                .transform(BlockStressDefaults.setNoImpact())
-                .transform(axeOrPickaxe())
-                .blockstate((c, p) -> BlockStateGen.axisBlock(c, p, AssetLookup.forPowered(c, p)))
-                .item()
-                .transform(customItemModel())
-                .register();
+             .initialProperties(SharedProperties::stone)
+             .properties(BlockBehaviour.Properties::noOcclusion)
+             .properties(p -> p.color(MaterialColor.PODZOL))
+             .transform(BlockStressDefaults.setNoImpact())
+             .transform(axeOrPickaxe())
+             .blockstate((c, p) -> BlockStateGen.axisBlock(c, p, AssetLookup.forPowered(c, p)))
+             .item()
+             .transform(customItemModel())
+             .register();
 
         public static final BlockEntry<InvertedClutchBlock> INVERTED_CLUTCH = REGISTRATE.block("inverted_clutch", InvertedClutchBlock::new)
                 .initialProperties(SharedProperties::stone)
