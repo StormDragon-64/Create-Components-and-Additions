@@ -20,6 +20,7 @@ import net.stormdragon_64.create_plus.block_entity.ModBlockEntities;
 public class InvertedGearshiftBlock extends GearshiftBlock {
     public InvertedGearshiftBlock(Properties properties) {
         super(properties);
+        registerDefaultState(defaultBlockState().setValue(POWERED, true));
     }
 
     @Override
@@ -37,7 +38,6 @@ public class InvertedGearshiftBlock extends GearshiftBlock {
             } else {return InteractionResult.CONSUME_PARTIAL;}
         } else {return InteractionResult.FAIL;}
     }
-    //Self explanatory, makes sure that it isn't powered by default
     @Override
     public BlockState getStateForPlacement(BlockPlaceContext context) {
         if (context.getLevel().hasNeighborSignal(context.getClickedPos())) {
@@ -57,8 +57,8 @@ public class InvertedGearshiftBlock extends GearshiftBlock {
 
         boolean previouslyPowered = state.getValue(POWERED);
         if (previouslyPowered == worldIn.hasNeighborSignal(pos)) {
-            detachKinetics(worldIn, pos, true);
             worldIn.setBlock(pos, state.cycle(POWERED), 2);
+            detachKinetics(worldIn, pos, true);
         }
     }
 

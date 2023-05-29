@@ -10,10 +10,12 @@ import com.simibubi.create.content.kinetics.gearbox.GearboxInstance;
 import com.simibubi.create.content.kinetics.gearbox.GearboxRenderer;
 import com.simibubi.create.content.kinetics.transmission.ClutchBlockEntity;
 import com.simibubi.create.content.kinetics.transmission.GearshiftBlockEntity;
+import com.simibubi.create.content.kinetics.transmission.SplitShaftInstance;
+import com.simibubi.create.content.kinetics.transmission.SplitShaftRenderer;
 import com.tterrag.registrate.util.entry.BlockEntityEntry;
 import net.stormdragon_64.create_plus.block.ModBlocks;
 
-import static com.simibubi.create.Create.REGISTRATE;
+import static net.stormdragon_64.create_plus.CreatePlus.REGISTRATE;
 
 
 public class ModBlockEntities {
@@ -22,6 +24,13 @@ public class ModBlockEntities {
             .blockEntity("custom_chain_drive_block_entity", KineticBlockEntity::new)
             .instance(() -> ShaftInstance::new, false)
             .validBlocks(ModBlocks.BRASS_CHAIN_DRIVE)
+            .renderer(() -> ShaftRenderer::new)
+            .register();
+
+    public static final BlockEntityEntry<ChainGearshiftBlockEntity> CUSTOM_ADJUSTABLE_CHAIN_GEARSHIFT = REGISTRATE
+            .blockEntity("custom_adjustable_chain_gearshift_block_entity", ChainGearshiftBlockEntity::new)
+            .instance(() -> ShaftInstance::new, false)
+            .validBlocks(ModBlocks.ADJUSTABLE_BRASS_CHAIN_GEARSHIFT)
             .renderer(() -> ShaftRenderer::new)
             .register();
 
@@ -34,29 +43,17 @@ public class ModBlockEntities {
 
     public static final BlockEntityEntry<GearshiftBlockEntity> INVERTED_GEARSHIFT = REGISTRATE
             .blockEntity("inverted_gearshift_block_entity", GearshiftBlockEntity::new)
-            .instance(() -> ShaftInstance::new, false)
+            .instance(() -> SplitShaftInstance::new, false)
             .validBlocks(ModBlocks.INVERTED_GEARSHIFT)
-            .renderer(() -> ShaftRenderer::new)
+            .renderer(() -> SplitShaftRenderer::new)
             .register();
 
     public static final BlockEntityEntry<ClutchBlockEntity> INVERTED_CLUTCH = REGISTRATE
             .blockEntity("inverted_clutch_block_entity", ClutchBlockEntity::new)
-            .instance(() -> ShaftInstance::new, false)
+            .instance(() -> SplitShaftInstance::new, false)
             .validBlocks(ModBlocks.INVERTED_CLUTCH)
-            .renderer(() -> ShaftRenderer::new)
+            .renderer(() -> SplitShaftRenderer::new)
             .register();
 
-
-
-    public static final BlockEntityEntry<ChainGearshiftBlockEntity> CUSTOM_ADJUSTABLE_CHAIN_GEARSHIFT = REGISTRATE
-            .blockEntity("custom_adjustable_chain_gearshift_block_entity", ChainGearshiftBlockEntity::new)
-            .instance(() -> ShaftInstance::new, false)
-            .validBlocks(ModBlocks.ADJUSTABLE_BRASS_CHAIN_GEARSHIFT)
-            .renderer(() -> ShaftRenderer::new)
-            .register();
-
-
-
-    //Register method - Important!
     public static void register() {}
 }

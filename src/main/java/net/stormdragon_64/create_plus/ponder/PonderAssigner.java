@@ -14,7 +14,8 @@ import net.stormdragon_64.create_plus.item.ModItems;
 public class PonderAssigner {
     static final PonderRegistrationHelper HELPER = new PonderRegistrationHelper(CreatePlus.MOD_ID);
     //Allows access to Create's schematics, so that it's not just a storyboard narrating the void.
-    static final PonderRegistrationHelper CI_HELPER = new PonderRegistrationHelper(Create.ID);
+    //There's another way to do it apparently but IDK how because then what do I replace HELPER with?
+    static final PonderRegistrationHelper CREATE_HELPER = new PonderRegistrationHelper(Create.ID);
 
 
     public static void register() {
@@ -22,12 +23,12 @@ public class PonderAssigner {
                 .addStoryBoard("inverted_gearshift", PonderScenes::invertedGearshift, AllPonderTags.KINETIC_RELAYS);
 
         //Give blocks Create's ponders
-        CI_HELPER.forComponents(ModBlocks.BRASS_GEARBOX, ModItems.VERTICAL_BRASS_GEARBOX)
-                .addStoryBoard("gearbox", KineticsScenes::gearbox);
+        CREATE_HELPER.forComponents(ModBlocks.BRASS_GEARBOX, ModItems.VERTICAL_BRASS_GEARBOX)
+                        .addStoryBoard("gearbox", KineticsScenes::gearbox, AllPonderTags.KINETIC_RELAYS);
 
-        CI_HELPER.addStoryBoard(ModBlocks.BRASS_CHAIN_DRIVE, "chain_drive/relay", ChainDriveScenes::chainDriveAsRelay,
+        CREATE_HELPER.addStoryBoard(ModBlocks.BRASS_CHAIN_DRIVE, "chain_drive/relay", ChainDriveScenes::chainDriveAsRelay,
                 AllPonderTags.KINETIC_RELAYS);
-        CI_HELPER.forComponents(ModBlocks.BRASS_CHAIN_DRIVE, ModBlocks.ADJUSTABLE_BRASS_CHAIN_GEARSHIFT)
+        CREATE_HELPER.forComponents(ModBlocks.BRASS_CHAIN_DRIVE, ModBlocks.ADJUSTABLE_BRASS_CHAIN_GEARSHIFT)
                 .addStoryBoard("chain_drive/gearshift", ChainDriveScenes::adjustableChainGearshift, AllPonderTags.KINETIC_RELAYS);
 
     }
