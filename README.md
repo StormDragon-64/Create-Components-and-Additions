@@ -5,7 +5,7 @@ Done:
 
 - A cogwheel sequenced assembly recipe, with its own incomplete cogwheel item to go with it
 - Other recipes made for better compat between mods
-- **Inverted Gearshift and Clutch:** Work correctly, but ponder is unfinished. Right clicking a gearshift or clutch with a redstone torch turns them into their inverted versions.  
+- **Inverted Gearshift and Clutch:** Work correctly, but ponder is unfinished. Right-clicking a gearshift or clutch with a redstone torch turns them into their inverted versions.  
 When inverted, no power means they will act like their powered, non-inverted counterparts, and when they are powered by redstone, they act like a shaft, just like their unpowered, non-inverted counterparts.
 
 Work in progress:
