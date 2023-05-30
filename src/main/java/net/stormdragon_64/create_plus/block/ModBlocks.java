@@ -27,7 +27,7 @@ public class ModBlocks {
 
     public static final BlockEntry<CustomChainDriveBlock> BRASS_CHAIN_DRIVE = REGISTRATE
     .block("brass_chain_drive", CustomChainDriveBlock::new)
-            .initialProperties(SharedProperties::stone)
+            .initialProperties(SharedProperties::softMetal)
             .properties(BlockBehaviour.Properties::noOcclusion)
             .transform(BlockStressDefaults.setNoImpact())
             .transform(axeOrPickaxe())
@@ -39,7 +39,7 @@ public class ModBlocks {
 
     public static final BlockEntry<CustomGearboxBlock> BRASS_GEARBOX = REGISTRATE
     .block("brass_gearbox", CustomGearboxBlock::new)
-            .initialProperties(SharedProperties::stone)
+            .initialProperties(SharedProperties::softMetal)
             .properties(BlockBehaviour.Properties::noOcclusion)
             .transform(BlockStressDefaults.setNoImpact())
             .transform(axeOrPickaxe())
@@ -73,7 +73,7 @@ public class ModBlocks {
 
     public static final BlockEntry<CustomAdjustableChainGearshiftBlock> ADJUSTABLE_BRASS_CHAIN_GEARSHIFT =
             REGISTRATE.block("adjustable_brass_chain_gearshift", CustomAdjustableChainGearshiftBlock::new)
-                    .initialProperties(SharedProperties::stone)
+                    .initialProperties(SharedProperties::softMetal)
                     .properties(BlockBehaviour.Properties::noOcclusion)
                     .transform(BlockStressDefaults.setNoImpact())
                     .transform(axeOrPickaxe())
@@ -91,5 +91,4 @@ public class ModBlocks {
                     .register();
 
     public static void register() {}
-
     }
