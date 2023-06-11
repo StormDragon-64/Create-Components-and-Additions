@@ -18,7 +18,7 @@ public class CreatePlusClient {
 
     @SubscribeEvent
     public void setup(final FMLClientSetupEvent event) {
-        PonderAssigner.register();
         ModPonderTags.register();
+        PonderAssigner.register();
     }
 }

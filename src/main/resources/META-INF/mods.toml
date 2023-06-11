@@ -56,6 +56,6 @@ description="Small mod made for my modpack, Create+. Currently adds a few new bl
 [[dependencies.create_plus]]
 modId="create"
 mandatory=true
-versionRange="[0.5.0.i,)"
+versionRange="[0.5.1.b,)"
 ordering="NONE"
 side="BOTH"

@@ -3,6 +3,7 @@ package net.stormdragon_64.create_plus.ponder;
 import com.simibubi.create.AllBlocks;
 import com.simibubi.create.Create;
 import com.simibubi.create.foundation.ponder.PonderRegistrationHelper;
+import com.simibubi.create.foundation.ponder.PonderTag;
 import com.simibubi.create.infrastructure.ponder.AllPonderTags;
 import com.simibubi.create.infrastructure.ponder.scenes.ChainDriveScenes;
 import com.simibubi.create.infrastructure.ponder.scenes.KineticsScenes;
@@ -12,15 +13,17 @@ import net.stormdragon_64.create_plus.item.ModItems;
 
 
 public class PonderAssigner {
-    static final PonderRegistrationHelper HELPER = new PonderRegistrationHelper(CreatePlus.MOD_ID);
-    //Allows access to Create's schematics, so that it's not just a storyboard narrating the void.
-    //There's another way to do it apparently but IDK how because then what do I replace HELPER with?
-    static final PonderRegistrationHelper CREATE_HELPER = new PonderRegistrationHelper(Create.ID);
+    //Allows access to schematics included in Create
+    static final PonderRegistrationHelper CREATE_HELPER = new PonderRegistrationHelper("create");
+    //Gets schematics from my namespace
+    static final PonderRegistrationHelper HELPER = new PonderRegistrationHelper("create_plus");
+
 
 
     public static void register() {
-        HELPER.forComponents(AllBlocks.GEARSHIFT, ModBlocks.INVERTED_GEARSHIFT)
-                .addStoryBoard("inverted_gearshift", PonderScenes::invertedGearshift, AllPonderTags.KINETIC_RELAYS);
+        //Fix ponder ordering by redefining Create's ponders before defining my ponders
+        CREATE_HELPER.addStoryBoard(AllBlocks.GEARSHIFT, "gearshift", KineticsScenes::gearshift, AllPonderTags.KINETIC_RELAYS);
+        CREATE_HELPER.addStoryBoard(AllBlocks.CLUTCH, "clutch", KineticsScenes::clutch, AllPonderTags.KINETIC_RELAYS);
 
         //Give blocks Create's ponders
         CREATE_HELPER.forComponents(ModBlocks.BRASS_GEARBOX, ModItems.VERTICAL_BRASS_GEARBOX)
@@ -30,6 +33,15 @@ public class PonderAssigner {
                 AllPonderTags.KINETIC_RELAYS);
         CREATE_HELPER.forComponents(ModBlocks.BRASS_CHAIN_DRIVE, ModBlocks.ADJUSTABLE_BRASS_CHAIN_GEARSHIFT)
                 .addStoryBoard("chain_drive/gearshift", ChainDriveScenes::adjustableChainGearshift, AllPonderTags.KINETIC_RELAYS);
+
+        //Give blocks my ponders
+
+        HELPER.forComponents(ModBlocks.INVERTED_GEARSHIFT, AllBlocks.GEARSHIFT)
+                .addStoryBoard("inverted_gearshift", PonderScenes::invertedGearshift, AllPonderTags.KINETIC_RELAYS);
+
+        HELPER.forComponents(ModBlocks.INVERTED_CLUTCH, AllBlocks.CLUTCH)
+                .addStoryBoard("inverted_clutch", PonderScenes::invertedClutch, AllPonderTags.KINETIC_RELAYS);
+
 
     }
 }
