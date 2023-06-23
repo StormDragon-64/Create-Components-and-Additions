@@ -1,0 +1,71 @@
+{
+  //I FORGOR THAT MULTIPART EXISTS AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+  "variants": {
+    "axis=x": {
+      "model": "create_plus:block/brass_gearbox/block",
+      "uvlock": true,
+      "x": 90,
+      "y": 90
+    },
+
+
+    "axis=y,east_shaft=true,north_shaft=true,south_shaft=true,west_shaft=true": {
+      "model": "create_plus:block/brass_gearbox/block",
+      "uvlock": true
+    },
+    "axis=y,east_shaft=false,north_shaft=false,south_shaft=false,west_shaft=false": {
+      "model": "create:block/brass_casing",
+      "uvlock": true
+    },
+
+    "axis=y,east_shaft=true,north_shaft=false,south_shaft=true,west_shaft=true": {
+      "model": "create_plus:block/brass_gearbox/blocked_variants/one_side/north",
+            "uvlock": false
+    },
+    "axis=y,east_shaft=false,north_shaft=true,south_shaft=true,west_shaft=true": {
+      "model": "create_plus:block/brass_gearbox/blocked_variants/one_side/east",
+            "uvlock": false
+    },
+    "axis=y,east_shaft=true,north_shaft=true,south_shaft=false,west_shaft=true": {
+      "model": "create_plus:block/brass_gearbox/blocked_variants/one_side/south",
+            "uvlock": false
+    },
+    "axis=y,east_shaft=true,north_shaft=true,south_shaft=true,west_shaft=false": {
+      "model": "create_plus:block/brass_gearbox/blocked_variants/one_side/west",
+            "uvlock": false
+    },
+
+    "axis=y,east_shaft=false,north_shaft=true,south_shaft=true,west_shaft=false": {
+      "model": "create_plus:block/brass_gearbox/blocked_variants/two_sides/ew",
+            "uvlock": false
+    },
+    "axis=y,east_shaft=true,north_shaft=false,south_shaft=false,west_shaft=true": {
+      "model": "create_plus:block/brass_gearbox/blocked_variants/two_sides/ns",
+            "uvlock": false
+    },
+    "axis=y,east_shaft=true,north_shaft=true,south_shaft=false,west_shaft=false": {
+      "model": "create_plus:block/brass_gearbox/blocked_variants/two_sides/sw",
+            "uvlock": false
+    },
+    "axis=y,east_shaft=false,north_shaft=true,south_shaft=false,west_shaft=true": {
+      "model": "create_plus:block/brass_gearbox/blocked_variants/two_sides/se",
+            "uvlock": false
+    },
+    "axis=y,east_shaft=true,north_shaft=false,south_shaft=true,west_shaft=false": {
+      "model": "create_plus:block/brass_gearbox/blocked_variants/two_sides/nw",
+            "uvlock": false
+    },
+    "axis=y,east_shaft=false,north_shaft=false,south_shaft=true,west_shaft=true": {
+      "model": "create_plus:block/brass_gearbox/blocked_variants/two_sides/ne",
+            "uvlock": false
+    },
+
+
+    "axis=z": {
+      "model": "create_plus:block/brass_gearbox/block",
+      "uvlock": true,
+      "x": 90,
+      "y": 180
+    }
+  }
+}

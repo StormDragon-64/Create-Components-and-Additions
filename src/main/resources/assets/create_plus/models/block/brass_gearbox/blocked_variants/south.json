@@ -1,0 +1,24 @@
+{
+	"credit": "Made with Blockbench",
+	"parent": "block/block",
+	"textures": {
+		"0": "create:block/brass_casing",
+		"particle": "create:block/brass_casing"
+	},
+	"elements": [
+		{
+			"name": "Top",
+			"from": [0, 0, 14],
+			"to": [16, 16, 16],
+			"rotation": {"angle": 0, "axis": "y", "origin": [8, 16, 8]},
+			"faces": {
+				"north": {"uv": [0, 0, 16, 16], "texture": "#0"},
+				"east": {"uv": [16, 0, 0, 2], "rotation": 270, "texture": "#0"},
+				"south": {"uv": [0, 0, 16, 16], "texture": "#0"},
+				"west": {"uv": [16, 16, 14, 0], "rotation": 180, "texture": "#0"},
+				"up": {"uv": [16, 16, 0, 14], "rotation": 180, "texture": "#0"},
+				"down": {"uv": [16, 2, 0, 0], "rotation": 180, "texture": "#0"}
+			}
+		}
+	]
+}
