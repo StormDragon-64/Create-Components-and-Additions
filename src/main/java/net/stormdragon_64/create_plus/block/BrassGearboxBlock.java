@@ -193,24 +193,4 @@ public BlockEntityType<? extends GearboxBlockEntity> getBlockEntityType() {
             return super.getCloneItemStack(state, target, world, pos, player);
         return new ItemStack(ModItems.VERTICAL_BRASS_GEARBOX.get());
     }
-/* public void updateKinetics(Level level, BlockPos blockPos) {
-    BlockEntity be = level.getBlockEntity(blockPos);
-    if (be instanceof KineticBlockEntity) {
-      detachKinetics(level, blockPos);
-        RotationPropagator.handleAdded(level, blockPos, (KineticBlockEntity) be);
-        level.scheduleTick(blockPos, this, 0, TickPriority.EXTREMELY_HIGH);
-       detachKinetics(level, blockPos);
-        RotationPropagator.handleAdded(level, blockPos, (KineticBlockEntity) be);
-        level.scheduleTick(blockPos, this, 0, TickPriority.EXTREMELY_HIGH);
-    }
-}
-    public  void detachKinetics(Level worldIn, BlockPos pos) {
-        BlockEntity be = worldIn.getBlockEntity(pos);
-        if (be instanceof KineticBlockEntity) {
-            RotationPropagator.handleRemoved(worldIn, pos, (KineticBlockEntity)be);
-                worldIn.scheduleTick(pos, this, 0, TickPriority.EXTREMELY_HIGH);
-
-
-        }
-    } */
 }
