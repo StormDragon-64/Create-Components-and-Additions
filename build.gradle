@@ -130,9 +130,6 @@ repositories {
             includeGroup "curse.maven"
         }
     }
-    flatDir {
-             dir 'libs'
-         }
 }
 
 dependencies {
@@ -146,15 +143,14 @@ dependencies {
     // compileOnly fg.deobf("mezz.jei:jei-${mc_version}:${jei_version}:api") // Adds JEI API as a compile dependency
     // runtimeOnly fg.deobf("mezz.jei:jei-${mc_version}:${jei_version}") // Adds the full JEI mod as a runtime dependency
 
-    //implementation fg.deobf("com.simibubi.create:create-${minecraft_version}:${create_version}:slim") { transitive = false }
-    implementation( fg.deobf("com.jozufozu.flywheel:flywheel-forge-${minecraft_version}:${flywheel_version}"))
-    implementation( fg.deobf("com.tterrag.registrate:Registrate:${registrate_version}"))
-    implementation(fg.deobf("curse.maven:JEI-238222:${jei_file_id}"))
-    implementation(fg.deobf("curse.maven:Crystal_Clear-669724:${crystal_clear_file_id}"))
+    implementation fg.deobf("com.simibubi.create:create-${minecraft_version}:${create_version}:slim") { transitive = false }
+    implementation fg.deobf("com.jozufozu.flywheel:flywheel-forge-${minecraft_version}:${flywheel_version}")
+    implementation fg.deobf("com.tterrag.registrate:Registrate:${registrate_version}")
+    implementation fg.deobf("curse.maven:JEI-238222:${jei_file_id}")
+    implementation fg.deobf("curse.maven:Crystal_Clear-669724:${crystal_clear_file_id}")
 
     // Examples using mod jars from ./libs
     // implementation fg.deobf("blank:coolmod-${mc_version}:${coolmod_version}")
-    implementation fg.deobf("blank:create-${minecraft_version}:0.5.1.c-slim")
 
     // For more info...
     // http://www.gradle.org/docs/current/userguide/artifact_dependencies_tutorial.html

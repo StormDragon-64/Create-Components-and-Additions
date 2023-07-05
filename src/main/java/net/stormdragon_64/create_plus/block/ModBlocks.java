@@ -31,8 +31,8 @@ public class ModBlocks {
     }
     //The Items themselves
 
-    public static final BlockEntry<CustomChainDriveBlock> BRASS_CHAIN_DRIVE = REGISTRATE
-    .block("brass_chain_drive", CustomChainDriveBlock::new)
+    public static final BlockEntry<BrassChainDriveBlock> BRASS_CHAIN_DRIVE = REGISTRATE
+    .block("brass_chain_drive", BrassChainDriveBlock::new)
             .initialProperties(SharedProperties::softMetal)
             .properties(BlockBehaviour.Properties::noOcclusion)
             .transform(BlockStressDefaults.setNoImpact())
@@ -43,15 +43,15 @@ public class ModBlocks {
             .transform(customItemModel())
             .register();
 
-    public static final BlockEntry<CustomGearboxBlock> BRASS_GEARBOX = REGISTRATE
-    .block("brass_gearbox", CustomGearboxBlock::new)
+    public static final BlockEntry<BrassGearboxBlock> BRASS_GEARBOX = REGISTRATE
+    .block("brass_gearbox", BrassGearboxBlock::new)
             .initialProperties(SharedProperties::softMetal)
             .properties(BlockBehaviour.Properties::noOcclusion)
             .transform(BlockStressDefaults.setNoImpact())
             .transform(axeOrPickaxe())
             .onRegister(CreateRegistrate.connectedTextures(() -> new EncasedCTBehaviour(AllSpriteShifts.BRASS_CASING)))
             .onRegister(CreateRegistrate.casingConnectivity((block, cc) -> cc.make(block, AllSpriteShifts.BRASS_CASING,
-                    (s, f) -> f.getAxis() == s.getValue(CustomGearboxBlock.AXIS))))
+                    (s, f) -> f.getAxis() == s.getValue(BrassGearboxBlock.AXIS))))
             .blockstate((c, p) -> axisBlock(c, p, $ -> AssetLookup.partialBaseModel(c, p), true))
             .item()
             .transform(customItemModel())
@@ -77,8 +77,8 @@ public class ModBlocks {
                 .transform(customItemModel())
                 .register();
 
-    public static final BlockEntry<CustomAdjustableChainGearshiftBlock> ADJUSTABLE_BRASS_CHAIN_GEARSHIFT =
-            REGISTRATE.block("adjustable_brass_chain_gearshift", CustomAdjustableChainGearshiftBlock::new)
+    public static final BlockEntry<BrassAdjustableChainGearshiftBlock> ADJUSTABLE_BRASS_CHAIN_GEARSHIFT =
+            REGISTRATE.block("adjustable_brass_chain_gearshift", BrassAdjustableChainGearshiftBlock::new)
                     .initialProperties(SharedProperties::softMetal)
                     .properties(BlockBehaviour.Properties::noOcclusion)
                     .transform(BlockStressDefaults.setNoImpact())

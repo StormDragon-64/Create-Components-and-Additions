@@ -44,6 +44,107 @@
             "apply": {
                 "model": "create_plus:block/brass_gearbox/blocked_variants/west"
             }
+        },
+
+
+
+        {
+            "when": {
+                "axis": "z"
+            },
+            "apply": {
+                "model": "create_plus:block/brass_gearbox/block",
+                "uvlock": true,
+                "x": 90,
+                "y": 180
+            }
+        },
+        {
+            "when": {
+                "axis": "z",
+                "north_shaft": false
+            },
+            "apply": {
+                "model": "create_plus:block/brass_gearbox/blocked_variants/up"
+            }
+        },
+        {
+            "when": {
+                "axis": "z",
+                "east_shaft": false
+            },
+            "apply": {
+                "model": "create_plus:block/brass_gearbox/blocked_variants/east"
+            }
+        },
+        {
+            "when": {
+                "axis": "z",
+                "south_shaft": false
+            },
+            "apply": {
+                "model": "create_plus:block/brass_gearbox/blocked_variants/down"
+            }
+        },
+        {
+            "when": {
+                "axis": "z",
+                "west_shaft": false
+            },
+            "apply": {
+                "model": "create_plus:block/brass_gearbox/blocked_variants/west"
+            }
+        },
+
+
+
+        {
+            "when": {
+                "axis": "x"
+            },
+            "apply": {
+                "model": "create_plus:block/brass_gearbox/block",
+                "uvlock": true,
+                "x": 90,
+                "y": 90
+            }
+        },
+        {
+            "when": {
+                "axis": "x",
+                "north_shaft": false
+            },
+            "apply": {
+                "model": "create_plus:block/brass_gearbox/blocked_variants/north"
+            }
+        },
+        {
+            "when": {
+                "axis": "x",
+                "east_shaft": false
+            },
+            "apply": {
+                "model": "create_plus:block/brass_gearbox/blocked_variants/up"
+            }
+        },
+        {
+            "when": {
+                "axis": "x",
+                "south_shaft": false
+            },
+            "apply": {
+                "model": "create_plus:block/brass_gearbox/blocked_variants/south"
+            }
+        },
+        {
+            "when": {
+                "axis": "x",
+                "west_shaft": false
+            },
+            "apply": {
+                "model": "create_plus:block/brass_gearbox/blocked_variants/down"
+            }
         }
+
     ]
 }
