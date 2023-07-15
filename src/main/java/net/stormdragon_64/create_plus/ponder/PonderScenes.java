@@ -1,5 +1,7 @@
 package net.stormdragon_64.create_plus.ponder;
 
+import com.simibubi.create.AllBlocks;
+import com.simibubi.create.content.kinetics.gearbox.GearboxBlockEntity;
 import com.simibubi.create.foundation.ponder.*;
 import com.simibubi.create.foundation.ponder.element.InputWindowElement;
 import com.simibubi.create.foundation.ponder.element.WorldSectionElement;
@@ -8,6 +10,10 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
+import net.stormdragon_64.create_plus.block.BrassGearboxBlock;
+import net.stormdragon_64.create_plus.block.ModBlocks;
+
+import static net.minecraft.world.level.block.state.properties.BlockStateProperties.AXIS;
 
 
 public class PonderScenes {
@@ -199,6 +205,12 @@ scene.effects.indicateRedstone(middleBlock.atY(3));
         scene.idle(140);
         scene.markAsFinished();
     }
+
+
+
+
+
+
 
 
 
@@ -396,5 +408,117 @@ scene.effects.indicateRedstone(middleBlock.atY(3));
 
         scene.idle(140);
         scene.markAsFinished();
+    }
+
+
+
+
+
+
+
+
+
+
+    public static void brassGearbox(SceneBuilder scene, SceneBuildingUtil util) {
+        //setup
+        Selection secondBelt = util.select.fromTo(2,3,3, 0,0,3)
+                .substract(util.select.fromTo(2,1,3, 1,1,3));
+
+        scene.title("brass_gearbox", "Stopping kinetic transfer by blocking sides of a Brass Gearbox");
+        scene.setSceneOffsetY(-2);
+        scene.removeShadow();
+        scene.world.showSection(util.select.layers(0, 4).substract(secondBelt), Direction.UP);
+
+
+        BlockPos middleBlock = util.grid.at(3,3,3);
+        BlockPos inputShaft = util.grid.at(3,3,2);
+
+        scene.world.modifyBlockEntity(middleBlock, GearboxBlockEntity.class, be -> be.source=inputShaft);
+
+
+        //Actual scene
+        scene.idle(10);
+        scene.overlay.showText(65)
+                .text("The brass gearbox behaves exactly like an andesite gearbox by default")
+                .pointAt(util.vector.centerOf(middleBlock));
+
+        scene.idle(10);
+        scene.effects.rotationSpeedIndicator(inputShaft);
+        scene.effects.rotationSpeedIndicator(util.grid.at(3,3, 5));
+        scene.effects.rotationSpeedIndicator(util.grid.at(5,3,3));
+
+        scene.idle(60);
+        scene.overlay.showText(60)
+                .text("However, it has an extra (toggleable) feature: side blocking!")
+                .independent()
+                        .colored(PonderPalette.GREEN);
+        scene.idle(70);
+        scene.overlay.showText(60)
+                .text("By right clicking the side of a brass gearbox with brass casing...")
+                .pointAt(util.vector.blockSurface(middleBlock, Direction.DOWN))
+                        .attachKeyFrame();
+        scene.idle(20);
+        scene.overlay.showControls(new InputWindowElement(util.vector.of(4, 3.5, 3), Pointing.RIGHT).rightClick()
+                .withItem(new ItemStack(AllBlocks.BRASS_CASING.get().asItem())), 30);
+        scene.idle(15);
+        scene.world.modifyKineticSpeed(util.select.fromTo(3,3,3,3,3,5).add(util.select.fromTo(4,3,3,5,3,3)), f -> 0f);
+        scene.world.setBlock(middleBlock, ModBlocks.BRASS_GEARBOX.getDefaultState().setValue(AXIS, Direction.Axis.Y).setValue(BrassGearboxBlock.SHAFT_N, false), true);
+        scene.idle(35);
+        scene.overlay.showText(60)
+                .text("...that side will be blocked.")
+                .pointAt(util.vector.blockSurface(middleBlock, Direction.NORTH))
+                .placeNearTarget()
+                .colored(PonderPalette.BLUE);
+        scene.idle(70);
+        scene.overlay.showText(60)
+                .text("Blocking one of the sides of a brass gearbox will stop rotation from transferring to...")
+                .pointAt(util.vector.blockSurface(middleBlock, Direction.NORTH))
+                .placeNearTarget()
+                .attachKeyFrame();
+        scene.idle(10);
+        scene.effects.rotationSpeedIndicator(inputShaft);
+        scene.effects.rotationSpeedIndicator(util.grid.at(3,3, 5));
+        scene.effects.rotationSpeedIndicator(util.grid.at(5,3,3));
+        scene.idle(65);
+        scene.rotateCameraY(-180.0F);
+        scene.idle(15);
+        scene.world.showSection(secondBelt, Direction.EAST);
+        scene.idle(16);
+        scene.world.setKineticSpeed(util.select.fromTo(3,3,3,3,3,5), -32f);
+        scene.world.setKineticSpeed(util.select.fromTo(4,3,3,5,3,3), 32f);
+        scene.world.modifyBlockEntity(middleBlock, GearboxBlockEntity.class, be -> be.source=util.grid.at(2,3,3));
+        scene.effects.rotationSpeedIndicator(util.grid.at(2,3, 3));
+        scene.idle(20);
+        scene.overlay.showText(60)
+                .text("...and from a brass gearbox.")
+                .pointAt(util.vector.blockSurface(middleBlock, Direction.SOUTH))
+                .placeNearTarget();
+        scene.idle(20);
+        scene.overlay.showControls(new InputWindowElement(util.vector.of(3, 3.5, 4), Pointing.RIGHT).rightClick()
+                .withItem(new ItemStack(AllBlocks.BRASS_CASING.get().asItem())), 30);
+        scene.world.modifyKineticSpeed(util.select.fromTo(3,3,4,3,3,5), f -> 0f);
+        scene.world.setBlock(middleBlock, ModBlocks.BRASS_GEARBOX.getDefaultState().setValue(AXIS, Direction.Axis.Y).setValue(BrassGearboxBlock.SHAFT_N, false).setValue(BrassGearboxBlock.SHAFT_S, false), true);
+        scene.idle(10);
+        scene.effects.rotationSpeedIndicator(util.grid.at(3,3, 5));
+        scene.effects.rotationSpeedIndicator(util.grid.at(5,3,3));
+        scene.idle(50);
+        scene.overlay.showText(100)
+                .text("In order to unblock the side of a brass gearbox, just click the side you no longer want to be blocked with brass casing again.")
+                .pointAt(util.vector.blockSurface(middleBlock, Direction.SOUTH))
+                .placeNearTarget()
+                .attachKeyFrame()
+                .colored(PonderPalette.BLUE);
+        scene.idle(20);
+        scene.overlay.showControls(new InputWindowElement(util.vector.of(3, 3.5, 4), Pointing.RIGHT).rightClick()
+                .withItem(new ItemStack(AllBlocks.BRASS_CASING.get().asItem())), 30);
+        scene.world.setKineticSpeed(util.select.fromTo(3,3,4,3,3,5), -32f);
+        scene.world.setBlock(middleBlock, ModBlocks.BRASS_GEARBOX.getDefaultState().setValue(AXIS, Direction.Axis.Y).setValue(BrassGearboxBlock.SHAFT_N, false), true);
+        scene.effects.rotationSpeedIndicator(util.grid.at(3,3, 5));
+        scene.idle(10);
+
+
+
+
+
     }
 }
