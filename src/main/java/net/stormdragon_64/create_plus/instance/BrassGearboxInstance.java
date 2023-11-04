@@ -1,4 +1,4 @@
-package net.stormdragon_64.instance;
+package net.stormdragon_64.create_plus.instance;
 
 import com.jozufozu.flywheel.api.InstanceData;
 import com.jozufozu.flywheel.api.Instancer;

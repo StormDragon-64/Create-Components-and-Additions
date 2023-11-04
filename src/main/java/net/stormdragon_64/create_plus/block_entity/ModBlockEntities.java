@@ -15,7 +15,7 @@ import com.simibubi.create.content.processing.basin.BasinBlockEntity;
 import com.simibubi.create.content.processing.basin.BasinRenderer;
 import com.tterrag.registrate.util.entry.BlockEntityEntry;
 import net.stormdragon_64.create_plus.block.ModBlocks;
-import net.stormdragon_64.instance.BrassGearboxInstance;
+import net.stormdragon_64.create_plus.instance.BrassGearboxInstance;
 
 import static net.stormdragon_64.create_plus.CreatePlus.REGISTRATE;
 

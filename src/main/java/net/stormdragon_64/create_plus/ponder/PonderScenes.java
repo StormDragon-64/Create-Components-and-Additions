@@ -14,6 +14,7 @@ import net.stormdragon_64.create_plus.block.BrassGearboxBlock;
 import net.stormdragon_64.create_plus.block.ModBlocks;
 
 import static net.minecraft.world.level.block.state.properties.BlockStateProperties.AXIS;
+import static net.stormdragon_64.create_plus.block.BrassGearboxBlock.SHAFT_N;
 
 
 public class PonderScenes {
@@ -411,7 +412,7 @@ scene.effects.indicateRedstone(middleBlock.atY(3));
     }
 
 
-
+//End of scene
 
 
 
@@ -434,7 +435,6 @@ scene.effects.indicateRedstone(middleBlock.atY(3));
         BlockPos inputShaft = util.grid.at(3,3,2);
 
         scene.world.modifyBlockEntity(middleBlock, GearboxBlockEntity.class, be -> be.source=inputShaft);
-
 
         //Actual scene
         scene.idle(10);
@@ -462,7 +462,7 @@ scene.effects.indicateRedstone(middleBlock.atY(3));
                 .withItem(new ItemStack(AllBlocks.BRASS_CASING.get().asItem())), 30);
         scene.idle(15);
         scene.world.modifyKineticSpeed(util.select.fromTo(3,3,3,3,3,5).add(util.select.fromTo(4,3,3,5,3,3)), f -> 0f);
-        scene.world.setBlock(middleBlock, ModBlocks.BRASS_GEARBOX.getDefaultState().setValue(AXIS, Direction.Axis.Y).setValue(BrassGearboxBlock.SHAFT_N, false), true);
+        scene.world.setBlock(middleBlock, ModBlocks.BRASS_GEARBOX.getDefaultState().setValue(AXIS, Direction.Axis.Y).setValue(SHAFT_N, false), true);
         scene.idle(35);
         scene.overlay.showText(60)
                 .text("...that side will be blocked.")
@@ -497,7 +497,7 @@ scene.effects.indicateRedstone(middleBlock.atY(3));
         scene.overlay.showControls(new InputWindowElement(util.vector.of(3, 3.5, 4), Pointing.RIGHT).rightClick()
                 .withItem(new ItemStack(AllBlocks.BRASS_CASING.get().asItem())), 30);
         scene.world.modifyKineticSpeed(util.select.fromTo(3,3,4,3,3,5), f -> 0f);
-        scene.world.setBlock(middleBlock, ModBlocks.BRASS_GEARBOX.getDefaultState().setValue(AXIS, Direction.Axis.Y).setValue(BrassGearboxBlock.SHAFT_N, false).setValue(BrassGearboxBlock.SHAFT_S, false), true);
+        scene.world.setBlock(middleBlock, ModBlocks.BRASS_GEARBOX.getDefaultState().setValue(AXIS, Direction.Axis.Y).setValue(SHAFT_N, false).setValue(BrassGearboxBlock.SHAFT_S, false), true);
         scene.idle(10);
         scene.effects.rotationSpeedIndicator(util.grid.at(3,3, 5));
         scene.effects.rotationSpeedIndicator(util.grid.at(5,3,3));
@@ -512,13 +512,9 @@ scene.effects.indicateRedstone(middleBlock.atY(3));
         scene.overlay.showControls(new InputWindowElement(util.vector.of(3, 3.5, 4), Pointing.RIGHT).rightClick()
                 .withItem(new ItemStack(AllBlocks.BRASS_CASING.get().asItem())), 30);
         scene.world.setKineticSpeed(util.select.fromTo(3,3,4,3,3,5), -32f);
-        scene.world.setBlock(middleBlock, ModBlocks.BRASS_GEARBOX.getDefaultState().setValue(AXIS, Direction.Axis.Y).setValue(BrassGearboxBlock.SHAFT_N, false), true);
+        scene.world.setBlock(middleBlock, ModBlocks.BRASS_GEARBOX.getDefaultState().setValue(AXIS, Direction.Axis.Y).setValue(SHAFT_N, false), true);
         scene.effects.rotationSpeedIndicator(util.grid.at(3,3, 5));
         scene.idle(10);
-
-
-
-
 
     }
 }

@@ -60,7 +60,6 @@ public class BrassGearboxBlock extends GearboxBlock {
         ItemStack item = player.getMainHandItem();
         if (item.getItem() == AllBlocks.BRASS_CASING.get().asItem()) {
             //update kinetic transfer after side blocked
-
             BlockEntity be = level.getBlockEntity(blockPos);
             if ((be instanceof KineticBlockEntity)) {
                 RotationPropagator.handleRemoved(level, blockPos, (KineticBlockEntity) be);
