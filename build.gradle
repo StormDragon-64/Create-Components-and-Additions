@@ -130,9 +130,17 @@ repositories {
             includeGroup "curse.maven"
         }
     }
-    maven {
-        name = "Jared's maven"
-        url = "https://maven.blamejared.com/"
+    exclusiveContent {
+        forRepository {
+            maven {
+                name = "Modrinth"
+                url = "https://api.modrinth.com/maven"
+            }
+        }
+        forRepositories(fg.repository) // Only add this if you're using ForgeGradle, otherwise remove this line
+        filter {
+            includeGroup "maven.modrinth"
+        }
     }
 }
 
@@ -144,24 +152,22 @@ dependencies {
     annotationProcessor "org.spongepowered:mixin:${mixin_version}:processor"
 
     //deobf'd dependencies
-
+//main dependencies
     implementation fg.deobf("com.simibubi.create:create-${minecraft_version}:${create_version}:slim") { transitive = false }
     implementation fg.deobf("com.jozufozu.flywheel:flywheel-forge-${minecraft_version}:${flywheel_version}")
     implementation fg.deobf("com.tterrag.registrate:Registrate:${registrate_version}")
+//QOL during dev mods
+    implementation fg.deobf("maven.modrinth:jei:${jei_version}")
+    implementation fg.deobf("maven.modrinth:modernfix:${modernfix_version}")
+    implementation fg.deobf("maven.modrinth:embeddium:${embeddium_version}")
 
-    compileOnly(fg.deobf("mezz.jei:jei-${minecraft_version}-common-api:${jei_version}"))
-    compileOnly(fg.deobf("mezz.jei:jei-${minecraft_version}-forge-api:${jei_version}"))
-    runtimeOnly(fg.deobf("mezz.jei:jei-${minecraft_version}-forge:${jei_version}"))
-
-
-        implementation fg.deobf("curse.maven:easy-villagers-400514:${easy_villagers_id}")
-        implementation fg.deobf("curse.maven:berry-good-355589:${berry_good_id}")
-        implementation fg.deobf("curse.maven:iron-chests-228756:${iron_chests_id}")
-        implementation fg.deobf("curse.maven:quark-243121:${quark_id}")
-        implementation fg.deobf("curse.maven:storage-drawers-223852:3884263")
+//compat mods
+    implementation fg.deobf("maven.modrinth:berry-good:${berry_good_version}")
+    implementation fg.deobf("maven.modrinth:quark:${quark_version}")
+    implementation fg.deobf("curse.maven:storage-drawers-223852:${storage_drawers_v_id}")
         //library mods
-        implementation fg.deobf("curse.maven:blueprint-382216:4442628")
-        implementation fg.deobf("curse.maven:autoreglib-250363:4100299")
+    implementation fg.deobf("maven.modrinth:blueprint:${blueprint_version}")
+    implementation fg.deobf("maven.modrinth:autoreglib:${autoreglib_version}")
 
     // Examples using mod jars from ./libs
     // implementation fg.deobf("blank:coolmod-${mc_version}:${coolmod_version}")
