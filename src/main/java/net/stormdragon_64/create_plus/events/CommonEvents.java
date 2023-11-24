@@ -1,4 +1,4 @@
-package net.stormdragon_64.events;
+package net.stormdragon_64.create_plus.events;
 
 import com.simibubi.create.foundation.ModFilePackResources;
 import net.minecraft.server.packs.PackType;
