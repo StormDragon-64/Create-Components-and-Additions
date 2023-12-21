@@ -7,14 +7,11 @@ import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.DistExecutor;
-import net.minecraftforge.fml.ModLoadingContext;
 import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.config.ModConfig;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.stormdragon_64.create_ca.block.ModBlocks;
 import net.stormdragon_64.create_ca.block_entity.ModBlockEntities;
-import net.stormdragon_64.create_ca.config.ClientConfigs;
 import net.stormdragon_64.create_ca.item.ModItems;
 import org.slf4j.Logger;
 
@@ -25,9 +22,7 @@ public class CreateCA {
     public static final Logger LOGGER = LogUtils.getLogger();
 
     public CreateCA() {
-        ModLoadingContext.get().registerConfig(ModConfig.Type.CLIENT, ClientConfigs.SPEC, "createplus-client.toml");
     //forge stuff
-        DistExecutor.safeRunWhenOn(Dist.CLIENT, () -> CreateCAClient::new);
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
         MinecraftForge.EVENT_BUS.register(this);
         modEventBus.addListener(this::commonSetup);
@@ -36,6 +31,8 @@ public class CreateCA {
         ModItems.register();
         ModBlocks.register();
         ModBlockEntities.register();
+    //other stuff
+        DistExecutor.safeRunWhenOn(Dist.CLIENT, () -> CreateCAClient::new);
 
     }
 
