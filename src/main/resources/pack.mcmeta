@@ -1,6 +1,6 @@
 {
     "pack": {
-        "description": "Features for Create+",
+        "description": "Additional features for the Create+ Modpack.",
         "pack_format": 10,
         "forge:resource_pack_format": 9,
         "forge:data_pack_format": 10

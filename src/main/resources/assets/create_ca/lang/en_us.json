@@ -1,0 +1,13 @@
+{
+  "block.create_ca.brass_chain_drive": "Brass Chain Drive",
+  "block.create_ca.brass_gearbox": "Brass Gearbox",
+  "block.create_ca.inverted_gearshift": "Inverted Gearshift",
+  "block.create_ca.inverted_clutch": "Inverted Clutch",
+  "block.create_ca.adjustable_brass_chain_gearshift": "Adjustable Brass Chain Gearshift",
+  "block.create_ca.brass_basin": "Brass Basin",
+
+  "item.create_ca.incomplete_cogwheel": "Incomplete Cogwheel",
+  "item.create_ca.vertical_brass_gearbox": "Vertical Brass Gearbox",
+
+  "itemGroup.create_ca": "Create: Components and Additions"
+}

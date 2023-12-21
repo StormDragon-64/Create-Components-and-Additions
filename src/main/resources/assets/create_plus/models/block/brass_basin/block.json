@@ -1,8 +1,0 @@
-{
-	"render_type": "cutout_mipped",
-	"parent": "create:block/basin/block",
-	"textures": {
-		"12": "create_plus:block/brass_basin",
-		"particle": "create:block/brass_block"
-	}
-}

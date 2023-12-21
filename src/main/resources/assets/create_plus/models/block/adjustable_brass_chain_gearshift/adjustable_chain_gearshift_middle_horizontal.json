@@ -1,6 +1,0 @@
-{
-  "parent": "create_plus:block/brass_chain_drive/middle_horizontal",
-  "textures": {
-    "side": "create_plus:block/adjustable_brass_chain_gearshift"
-  }
-}

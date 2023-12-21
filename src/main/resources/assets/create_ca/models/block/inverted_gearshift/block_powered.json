@@ -1,0 +1,10 @@
+{
+	"parent": "create:block/gearshift/block",
+	"render_type": "cutout_mipped",
+    "textures": {
+        "0": "create_ca:block/inverted_gearshift_off",
+		"1": "create:block/gearbox",
+		"2": "create:block/funnel/andesite_funnel_frame",
+		"particle": "create_ca:block/inverted_clutch_off"
+    }
+}

@@ -1,8 +1,0 @@
-{
-	"parent": "create:block/clutch/block",
-    "render_type": "cutout_mipped",
-    "textures": {
-        "0": "create_plus:block/inverted_clutch_off",
-		"particle": "create_plus:block/inverted_clutch_off"
-    }
-}

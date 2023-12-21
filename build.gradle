@@ -8,8 +8,8 @@ plugins {
 }
 
 version = '2.0 - 1.19.2'
-group = 'net.stormdragon_64.create_plus' // http://maven.apache.org/guides/mini/guide-naming-conventions.html
-archivesBaseName = 'create_plus'
+group = 'net.stormdragon_64.create_ca' // http://maven.apache.org/guides/mini/guide-naming-conventions.html
+archivesBaseName = 'create_ca'
 
 // Mojang ships Java 17 to end users in 1.18+, so your mod should target Java 17.
 java.toolchain.languageVersion = JavaLanguageVersion.of(17)
@@ -53,10 +53,10 @@ minecraft {
             property 'forge.logging.console.level', 'debug'
 
             // Comma-separated list of namespaces to load gametests from. Empty = all namespaces.
-            property 'forge.enabledGameTestNamespaces', 'create_plus'
+            property 'forge.enabledGameTestNamespaces', 'create_ca'
 
             mods {
-                create_plus {
+                create_ca {
                     source sourceSets.main
                 }
             }
@@ -69,10 +69,10 @@ minecraft {
 
             property 'forge.logging.console.level', 'debug'
 
-            property 'forge.enabledGameTestNamespaces', 'create_plus'
+            property 'forge.enabledGameTestNamespaces', 'create_ca'
 
             mods {
-                create_plus {
+                create_ca {
                     source sourceSets.main
                 }
             }
@@ -88,10 +88,10 @@ minecraft {
 
             property 'forge.logging.console.level', 'debug'
 
-            property 'forge.enabledGameTestNamespaces', 'create_plus'
+            property 'forge.enabledGameTestNamespaces', 'create_ca'
 
             mods {
-                create_plus {
+                create_ca {
                     source sourceSets.main
                 }
             }
@@ -105,10 +105,10 @@ minecraft {
             property 'forge.logging.console.level', 'debug'
 
             // Specify the modid for data generation, where to output the resulting resource, and where to look for existing resources.
-            args '--mod', 'create_plus', '--all', '--output', file('src/generated/resources/'), '--existing', file('src/main/resources/')
+            args '--mod', 'create_ca', '--all', '--output', file('src/generated/resources/'), '--existing', file('src/main/resources/')
 
             mods {
-                create_plus {
+                create_ca {
                     source sourceSets.main
                 }
             }
@@ -179,8 +179,8 @@ dependencies {
 
 mixin {
     // MixinGradle Settings
-    add sourceSets.main, "mixins.create_plus_plus.refmap.json"
-    config 'mixins.create_plus_plus.json'
+    add sourceSets.main, "mixins.create_ca.refmap.json"
+    config 'mixins.create_ca.json'
 
     debug.verbose = true
     debug.export = true
@@ -190,12 +190,12 @@ mixin {
 jar {
     manifest {
         attributes([
-                "Specification-Title"     : "create_plus",
-                "Specification-Vendor"    : "create_plussareus",
+                "Specification-Title"     : "create_ca",
+                "Specification-Vendor"    : "create_caareus",
                 "Specification-Version"   : "1", // We are version 1 of ourselves
                 "Implementation-Title"    : project.name,
                 "Implementation-Version"  : project.jar.archiveVersion,
-                "Implementation-Vendor"   : "create_plussareus",
+                "Implementation-Vendor"   : "create_caareus",
                 "Implementation-Timestamp": new Date().format("yyyy-MM-dd'T'HH:mm:ssZ")
         ])
     }
