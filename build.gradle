@@ -124,12 +124,6 @@ repositories {
         name = 'tterrag maven'
         url = 'https://maven.tterrag.com/'
     }
-    maven {
-        url "https://cursemaven.com"
-        content {
-            includeGroup "curse.maven"
-        }
-    }
     exclusiveContent {
         forRepository {
             maven {
@@ -163,9 +157,7 @@ dependencies {
 
 //compat mods
     implementation fg.deobf("maven.modrinth:berry-good:${berry_good_version}")
-    implementation fg.deobf("maven.modrinth:quark:${quark_version}")
-    implementation fg.deobf("curse.maven:storage-drawers-223852:${storage_drawers_v_id}")
-        //library mods
+    //library mods
     implementation fg.deobf("maven.modrinth:blueprint:${blueprint_version}")
     implementation fg.deobf("maven.modrinth:autoreglib:${autoreglib_version}")
 
