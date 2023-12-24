@@ -1,0 +1,25 @@
+{
+	"credit": "Made with Blockbench by StormDragon_64",
+	"parent": "block/block",
+	"render_type": "cutout_mipped",
+	"textures": {
+		"0": "create:block/brass_casing_connected",
+		"particle": "create:block/brass_casing_connected"
+	},
+	"elements": [
+		{
+			"name": "Side",
+			"from": [0, 0, 0],
+			"to": [16, 16, 2],
+			"rotation": {"angle": 0, "axis": "y", "origin": [8, 16, 8]},
+			"faces": {
+				"north": {"uv": [0, 0, 2, 2], "texture": "#0"},
+				"east": {"uv": [16, 16, 15.75, 14], "rotation": 180, "texture": "#0"},
+				"south": {"uv": [0, 0, 2, 2], "texture": "#0"},
+				"west": {"uv": [16, 16, 15.75, 14], "rotation": 180, "texture": "#0"},
+				"up": {"uv": [2, 0.25, 0, 0], "rotation": 180, "texture": "#0"},
+				"down": {"uv": [0, 1.75, 2, 2], "texture": "#0"}
+			}
+		}
+	]
+}

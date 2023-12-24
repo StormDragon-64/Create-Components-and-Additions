@@ -15,7 +15,7 @@
                 "north_shaft": false
             },
             "apply": {
-                "model": "create_ca:block/brass_gearbox/blocked_variants/north"
+                "model": "create_ca:block/brass_gearbox/blocked_variants/y/north"
             }
         },
         {
@@ -24,7 +24,7 @@
                 "east_shaft": false
             },
             "apply": {
-                "model": "create_ca:block/brass_gearbox/blocked_variants/east"
+                "model": "create_ca:block/brass_gearbox/blocked_variants/y/east"
             }
         },
         {
@@ -33,7 +33,7 @@
                 "south_shaft": false
             },
             "apply": {
-                "model": "create_ca:block/brass_gearbox/blocked_variants/south"
+                "model": "create_ca:block/brass_gearbox/blocked_variants/y/south"
             }
         },
         {
@@ -42,7 +42,7 @@
                 "west_shaft": false
             },
             "apply": {
-                "model": "create_ca:block/brass_gearbox/blocked_variants/west"
+                "model": "create_ca:block/brass_gearbox/blocked_variants/y/west"
             }
         },
 
@@ -65,7 +65,7 @@
                 "north_shaft": false
             },
             "apply": {
-                "model": "create_ca:block/brass_gearbox/blocked_variants/up"
+                "model": "create_ca:block/brass_gearbox/blocked_variants/z/up"
             }
         },
         {
@@ -74,7 +74,7 @@
                 "east_shaft": false
             },
             "apply": {
-                "model": "create_ca:block/brass_gearbox/blocked_variants/east"
+                "model": "create_ca:block/brass_gearbox/blocked_variants/z/east"
             }
         },
         {
@@ -83,7 +83,7 @@
                 "south_shaft": false
             },
             "apply": {
-                "model": "create_ca:block/brass_gearbox/blocked_variants/down"
+                "model": "create_ca:block/brass_gearbox/blocked_variants/z/down"
             }
         },
         {
@@ -92,7 +92,7 @@
                 "west_shaft": false
             },
             "apply": {
-                "model": "create_ca:block/brass_gearbox/blocked_variants/west"
+                "model": "create_ca:block/brass_gearbox/blocked_variants/z/west"
             }
         },
 
@@ -115,7 +115,7 @@
                 "north_shaft": false
             },
             "apply": {
-                "model": "create_ca:block/brass_gearbox/blocked_variants/north"
+                "model": "create_ca:block/brass_gearbox/blocked_variants/x/north"
             }
         },
         {
@@ -124,7 +124,7 @@
                 "east_shaft": false
             },
             "apply": {
-                "model": "create_ca:block/brass_gearbox/blocked_variants/up"
+                "model": "create_ca:block/brass_gearbox/blocked_variants/x/up"
             }
         },
         {
@@ -133,7 +133,7 @@
                 "south_shaft": false
             },
             "apply": {
-                "model": "create_ca:block/brass_gearbox/blocked_variants/south"
+                "model": "create_ca:block/brass_gearbox/blocked_variants/x/south"
             }
         },
         {
@@ -142,7 +142,7 @@
                 "west_shaft": false
             },
             "apply": {
-                "model": "create_ca:block/brass_gearbox/blocked_variants/down"
+                "model": "create_ca:block/brass_gearbox/blocked_variants/x/down"
             }
         }
 
