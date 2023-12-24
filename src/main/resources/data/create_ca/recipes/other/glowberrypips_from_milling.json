@@ -1,0 +1,19 @@
+{
+    "type": "create:milling",
+    "ingredients": [
+      {
+        "item": "minecraft:glow_berries"
+      }
+    ],
+    "results": [
+      {
+        "item": "berry_good:glow_berry_pips",
+        "count": 1
+      },
+      {
+        "item": "berry_good:glow_berry_pips",
+        "chance": 0.25
+      }
+    ],
+    "processingTime": 150
+  }
