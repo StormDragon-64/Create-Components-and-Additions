@@ -152,6 +152,7 @@ dependencies {
     implementation fg.deobf("com.tterrag.registrate:Registrate:${registrate_version}")
 //QOL during dev mods
     implementation fg.deobf("maven.modrinth:jei:${jei_version}")
+    implementation fg.deobf("maven.modrinth:emi:${emi_version}")
     implementation fg.deobf("maven.modrinth:modernfix:${modernfix_version}")
     implementation fg.deobf("maven.modrinth:embeddium:${embeddium_version}")
 

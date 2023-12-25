@@ -3,19 +3,28 @@ package net.stormdragon_64.create_ca.block;
 import com.simibubi.create.AllBlocks;
 import com.simibubi.create.content.kinetics.transmission.GearshiftBlock;
 import com.simibubi.create.content.kinetics.transmission.SplitShaftBlockEntity;
+import net.minecraft.ChatFormatting;
+import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.core.BlockPos;
+import net.minecraft.network.chat.Component;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.context.BlockPlaceContext;
+import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.BlockHitResult;
 import net.stormdragon_64.create_ca.block_entity.ModBlockEntities;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
+
+import java.util.List;
 
 public class InvertedGearshiftBlock extends GearshiftBlock {
     public InvertedGearshiftBlock(Properties properties) {
@@ -62,12 +71,16 @@ public class InvertedGearshiftBlock extends GearshiftBlock {
         }
     }
 
-
     @Override
     public BlockEntityType<? extends SplitShaftBlockEntity> getBlockEntityType() {
         return ModBlockEntities.INVERTED_GEARSHIFT.get();
     }
+    @Override
+    public void appendHoverText(ItemStack pStack, @Nullable BlockGetter pLevel, List<Component> pTooltip, TooltipFlag pFlag) {
+        if (Screen.hasShiftDown()) {
+            pTooltip.add(Component.literal("The Inverted Gearshift does exactly what you think. Instead of changing the direction of rotation when powered with redstone like a normal gearshift, it does so when it's unpowered, and acts like a shaft when it is powered.").withStyle(ChatFormatting.YELLOW));
+        } else {            pTooltip.add(Component.translatable("create_ca.ponder.broken.lol").withStyle(ChatFormatting.GOLD));}
 
-
-
+        super.appendHoverText(pStack, pLevel, pTooltip, pFlag);
+    }
 }

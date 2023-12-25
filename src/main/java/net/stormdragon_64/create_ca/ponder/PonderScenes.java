@@ -425,7 +425,7 @@ scene.effects.indicateRedstone(middleBlock.atY(3));
         Selection secondBelt = util.select.fromTo(2,3,3, 0,0,3)
                 .substract(util.select.fromTo(2,1,3, 1,1,3));
 
-        scene.title("brass_gearbox", "Stopping kinetic transfer by blocking sides of a Brass Gearbox");
+        scene.title("brass_gearbox", "Covering the shafts of a Brass Gearbox.");
         scene.setSceneOffsetY(-2);
         scene.removeShadow();
         scene.world.showSection(util.select.layers(0, 4).substract(secondBelt), Direction.UP);
@@ -435,7 +435,6 @@ scene.effects.indicateRedstone(middleBlock.atY(3));
         BlockPos inputShaft = util.grid.at(3,3,2);
 
         scene.world.modifyBlockEntity(middleBlock, GearboxBlockEntity.class, be -> be.source=inputShaft);
-
         //Actual scene
         scene.idle(10);
         scene.overlay.showText(65)

@@ -62,7 +62,5 @@ public class BrassVerticalGearboxItem extends BlockItem {
     public String getDescriptionId() {
         return "item.create_ca.vertical_brass_gearbox";
     }
-
-
 }
 

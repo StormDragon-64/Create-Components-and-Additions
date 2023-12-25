@@ -7,7 +7,6 @@ import static net.stormdragon_64.create_ca.CreateCA.REGISTRATE;
 
 public class ModItems {
 
-    //The items
     public static final ItemEntry<SequencedAssemblyItem> INCOMPLETE_COGWHEEL = REGISTRATE
             .item("incomplete_cogwheel", SequencedAssemblyItem::new)
             .register();
@@ -17,7 +16,5 @@ public class ModItems {
                     .model(AssetLookup.customBlockItemModel("brass_gearbox", "item_vertical"))
                     .register();
 
-    //Register method - important, don't touch!
     public static void register() {}
-
     }

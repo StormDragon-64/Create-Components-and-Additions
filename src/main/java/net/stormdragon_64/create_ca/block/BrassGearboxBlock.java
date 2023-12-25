@@ -6,14 +6,18 @@ import com.simibubi.create.content.kinetics.RotationPropagator;
 import com.simibubi.create.content.kinetics.base.KineticBlockEntity;
 import com.simibubi.create.content.kinetics.gearbox.GearboxBlock;
 import com.simibubi.create.content.kinetics.gearbox.GearboxBlockEntity;
+import net.minecraft.ChatFormatting;
+import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.NonNullList;
+import net.minecraft.network.chat.Component;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelReader;
@@ -29,6 +33,7 @@ import net.minecraft.world.phys.HitResult;
 import net.minecraft.world.ticks.TickPriority;
 import net.stormdragon_64.create_ca.block_entity.ModBlockEntities;
 import net.stormdragon_64.create_ca.item.ModItems;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 
@@ -191,5 +196,13 @@ public BlockEntityType<? extends GearboxBlockEntity> getBlockEntityType() {
         if (state.getValue(AXIS).isVertical())
             return super.getCloneItemStack(state, target, world, pos, player);
         return new ItemStack(ModItems.VERTICAL_BRASS_GEARBOX.get());
+    }
+    @Override
+    public void appendHoverText(ItemStack pStack, @Nullable BlockGetter pLevel, List<Component> pTooltip, TooltipFlag pFlag) {
+        if (Screen.hasShiftDown()) {
+            pTooltip.add(Component.literal("The Brass Gearbox is like a normal gearbox, but you can block the shafts by right clicking them with brass casing. This stops all rotational transfer on that side of the brass gearbox, but allows rotation to transfer through the other sides like normal. Right click that side again to remove the shaft's cover. You can in fact put a cover on multiple sides at once.").withStyle(ChatFormatting.YELLOW));
+        } else {            pTooltip.add(Component.translatable("create_ca.ponder.broken.lol").withStyle(ChatFormatting.GOLD));}
+
+        super.appendHoverText(pStack, pLevel, pTooltip, pFlag);
     }
 }

@@ -9,5 +9,7 @@
   "item.create_ca.incomplete_cogwheel": "Incomplete Cogwheel",
   "item.create_ca.vertical_brass_gearbox": "Vertical Brass Gearbox",
 
-  "itemGroup.create_ca": "Create: Components and Additions"
+  "itemGroup.create_ca": "Create: Components and Additions",
+
+  "create_ca.ponder.broken.lol": "Right before I'm about to upload the mod, all my ponders suddenly break. Just hold SHIFT to get a written summary for now I guess."
 }
