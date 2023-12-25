@@ -62,15 +62,4 @@ public class InvertedClutchBlock extends InvertedGearshiftBlock {
     public BlockEntityType<? extends SplitShaftBlockEntity> getBlockEntityType() {
         return ModBlockEntities.INVERTED_CLUTCH.get();
     }
-    @Override
-    public void appendHoverText(ItemStack pStack, @Nullable BlockGetter pLevel, List<Component> pTooltip, TooltipFlag pFlag) {
-        if (Screen.hasShiftDown()) {
-            pTooltip.add(Component.literal("While a normal clutch prevents rotational transfer when it's powered with redstone, an Inverted Clutch does so when it's unpowered, and acts like a shaft when it is powered.").withStyle(ChatFormatting.YELLOW));
-            //prevent gearshift tooltip from showing
-        } //no default line because it's already there from inverted gearshift.
-
-        super.appendHoverText(pStack, pLevel, pTooltip, pFlag);
-        pTooltip.remove(Component.literal("The Inverted Gearshift does exactly what you think. Instead of changing the direction of rotation when powered with redstone like a normal gearshift, it does so when it's unpowered, and acts like a shaft when it is powered.").withStyle(ChatFormatting.YELLOW));
-    }
-
 }

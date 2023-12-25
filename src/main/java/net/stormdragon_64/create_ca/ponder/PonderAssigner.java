@@ -20,13 +20,10 @@ public class PonderAssigner {
 
     public static void register() {
         //Fix ponder ordering by redefining Create's ponders before defining my ponders
-      //  CREATE_HELPER.addStoryBoard(AllBlocks.GEARSHIFT, "gearshift", KineticsScenes::gearshift, AllPonderTags.KINETIC_RELAYS);
-      //  CREATE_HELPER.addStoryBoard(AllBlocks.CLUTCH, "clutch", KineticsScenes::clutch, AllPonderTags.KINETIC_RELAYS);
         CREATE_HELPER.forComponents(ModBlocks.BRASS_GEARBOX, ModItems.VERTICAL_BRASS_GEARBOX)
                 .addStoryBoard("gearbox", KineticsScenes::gearbox, AllPonderTags.KINETIC_RELAYS);
+
         //Give blocks Create's ponders
-
-
         CREATE_HELPER.addStoryBoard(ModBlocks.BRASS_CHAIN_DRIVE, "chain_drive/relay", ChainDriveScenes::chainDriveAsRelay,
                 AllPonderTags.KINETIC_RELAYS);
         CREATE_HELPER.forComponents(ModBlocks.BRASS_CHAIN_DRIVE, ModBlocks.ADJUSTABLE_BRASS_CHAIN_GEARSHIFT)
@@ -37,7 +34,6 @@ public class PonderAssigner {
                 .addStoryBoard("mechanical_press/compacting", ProcessingScenes::compacting);
 
         //Give blocks my ponders
-
         HELPER.forComponents(ModBlocks.INVERTED_GEARSHIFT, AllBlocks.GEARSHIFT)
                 .addStoryBoard("inverted_gearshift", PonderScenes::invertedGearshift, AllPonderTags.KINETIC_RELAYS);
 

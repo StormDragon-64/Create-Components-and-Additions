@@ -11,5 +11,45 @@
 
   "itemGroup.create_ca": "Create: Components and Additions",
 
-  "create_ca.ponder.broken.lol": "Right before I'm about to upload the mod, all my ponders suddenly break. Just hold SHIFT to get a written summary for now I guess."
+
+  "create_ca.ponder.brass_gearbox.header": "Covering the shafts of a Brass Gearbox.",
+  "create_ca.ponder.brass_gearbox.text_1": "The brass gearbox behaves exactly like an andesite gearbox by default",
+  "create_ca.ponder.brass_gearbox.text_2": "However, it has an extra (toggleable) feature: side blocking!",
+  "create_ca.ponder.brass_gearbox.text_3": "By right clicking the side of a brass gearbox with brass casing...",
+  "create_ca.ponder.brass_gearbox.text_4": "...that side will be blocked.",
+  "create_ca.ponder.brass_gearbox.text_5": "Blocking one of the sides of a brass gearbox will stop rotation from transferring to...",
+  "create_ca.ponder.brass_gearbox.text_6": "...and from a brass gearbox.",
+  "create_ca.ponder.brass_gearbox.text_7": "In order to unblock the side of a brass gearbox, just click the side you no longer want to be blocked with brass casing again.",
+
+  "create_ca.ponder.inverted_gearshift.header": "Converting to and using Inverted Gearshifts",
+  "create_ca.ponder.inverted_gearshift.text_1": "While the gearshift is useful, it doesn't fit all use cases.",
+  "create_ca.ponder.inverted_gearshift.text_2": "For example, what if you wanted a gearshift that reverses the direction of rotation when §nnot powered§r, and acts like a shaft when it §nis powered§r?",
+  "create_ca.ponder.inverted_gearshift.text_3": "Or in other words, you want an inverted form of a gearshift?",
+  "create_ca.ponder.inverted_gearshift.text_4": "While you could use a redstone torch to do just that...",
+  "create_ca.ponder.inverted_gearshift.text_5": "This can easily be considered bulky depending on the machine your making.",
+  "create_ca.ponder.inverted_gearshift.text_6": "This is where the inverted gearshift comes into play.",
+  "create_ca.ponder.inverted_gearshift.text_7": "By right clicking a gearshift with a redstone torch...",
+  "create_ca.ponder.inverted_gearshift.text_8": "...it will be converted into an inverted gearshift.",
+  "create_ca.ponder.inverted_gearshift.text_9": "An inverted gearshift reverses rotation direction when §nnot powered§r...",
+  "create_ca.ponder.inverted_gearshift.text_10": "...and simply relays rotation when it §nis powered§.",
+  "create_ca.ponder.inverted_gearshift.text_11": "Just like you wanted in the example from earlier!",
+  "create_ca.ponder.inverted_gearshift.text_12": "Not only does this mean that we don't need that bulky redstone torch setup anymore...",
+  "create_ca.ponder.inverted_gearshift.text_13": "...it also means that you don't need to power the gearshift just to change the direction of rotation, compacting things further!",
+  "create_ca.ponder.inverted_gearshift.text_14": "This means that not only will the inverted gearshift take at least 1 less block of space, but it also fixes the problem of everything around the power source being powered, since you no longer need one!",
+
+  "create_ca.ponder.inverted_clutch.header": "Converting to and using Inverted Clutches",
+  "create_ca.ponder.inverted_clutch.text_1": "While the clutch is useful, it doesn't fit all use cases.",
+  "create_ca.ponder.inverted_clutch.text_2": "For example, what if you wanted a clutch that blocks rotation when §nnot powered§r, and acts like a shaft when it §nis powered§r?",
+  "create_ca.ponder.inverted_clutch.text_3": "Or in other words, you want an inverted form of a clutch?",
+  "create_ca.ponder.inverted_clutch.text_4": "While you could use a redstone torch to do just that...",
+  "create_ca.ponder.inverted_clutch.text_5": "This can easily be considered bulky depending on the machine your making.",
+  "create_ca.ponder.inverted_clutch.text_6": "This is where the inverted clutch comes into play.",
+  "create_ca.ponder.inverted_clutch.text_7": "By right clicking a clutch with a redstone torch...",
+  "create_ca.ponder.inverted_clutch.text_8": "...it will be converted into an inverted clutch.",
+  "create_ca.ponder.inverted_clutch.text_9": "An inverted clutch prevents rotation when §nnot powered§r...",
+  "create_ca.ponder.inverted_clutch.text_10": "...and simply relays rotation when it §nis powered§.",
+  "create_ca.ponder.inverted_clutch.text_11": "Just like you wanted in the example from earlier!",
+  "create_ca.ponder.inverted_clutch.text_12": "Not only does this mean that we don't need that bulky redstone torch setup anymore...",
+  "create_ca.ponder.inverted_clutch.text_13": "...it also means that you don't need to power the clutch just to prevent rotation, compacting things further!",
+  "create_ca.ponder.inverted_clutch.text_14": "This means that not only will the inverted gearshift take at least 1 less block of space, but it also fixes the problem of everything around the power source being powered, since you no longer need one!"
 }

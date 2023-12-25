@@ -75,12 +75,4 @@ public class InvertedGearshiftBlock extends GearshiftBlock {
     public BlockEntityType<? extends SplitShaftBlockEntity> getBlockEntityType() {
         return ModBlockEntities.INVERTED_GEARSHIFT.get();
     }
-    @Override
-    public void appendHoverText(ItemStack pStack, @Nullable BlockGetter pLevel, List<Component> pTooltip, TooltipFlag pFlag) {
-        if (Screen.hasShiftDown()) {
-            pTooltip.add(Component.literal("The Inverted Gearshift does exactly what you think. Instead of changing the direction of rotation when powered with redstone like a normal gearshift, it does so when it's unpowered, and acts like a shaft when it is powered.").withStyle(ChatFormatting.YELLOW));
-        } else {            pTooltip.add(Component.translatable("create_ca.ponder.broken.lol").withStyle(ChatFormatting.GOLD));}
-
-        super.appendHoverText(pStack, pLevel, pTooltip, pFlag);
-    }
 }
