@@ -197,12 +197,4 @@ public BlockEntityType<? extends GearboxBlockEntity> getBlockEntityType() {
             return super.getCloneItemStack(state, target, world, pos, player);
         return new ItemStack(ModItems.VERTICAL_BRASS_GEARBOX.get());
     }
-    @Override
-    public void appendHoverText(ItemStack pStack, @Nullable BlockGetter pLevel, List<Component> pTooltip, TooltipFlag pFlag) {
-        if (Screen.hasShiftDown()) {
-            pTooltip.add(Component.literal("The Brass Gearbox is like a normal gearbox, but you can block the shafts by right clicking them with brass casing. This stops all rotational transfer on that side of the brass gearbox, but allows rotation to transfer through the other sides like normal. Right click that side again to remove the shaft's cover. You can in fact put a cover on multiple sides at once.").withStyle(ChatFormatting.YELLOW));
-        } else {            pTooltip.add(Component.translatable("create_ca.ponder.broken.lol").withStyle(ChatFormatting.GOLD));}
-
-        super.appendHoverText(pStack, pLevel, pTooltip, pFlag);
-    }
 }
