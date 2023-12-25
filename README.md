@@ -11,16 +11,16 @@ _A small Create addon I'm making for my modpack, [Create+](https://www.curseforg
 
 ### Kinks in finished stuff:
 
-- **Brass gearbox ponder** is kinda weird
-- **Z-Fighting** in brass gearbox because the panels don't have connected textures like te rest of te block does.
+- **Brass gearbox ponder** has very tiny issues (but my brother didn't notice them, so...)
 
 ### Work in progress:
 
 - **Brass chain drive:** works and has textures, but no functionality difference between andesite version.  
 It should be able to connect in more than 1 direction, but I have no idea how to implement that.
+  (aka this will never happen)
 
 ### Planned:
 
-- **Redstone Clock:** A configurable single-block redstone clock, where you choose how often it will output a pulse.
+- **Redstone Clock:** A _configurable_ single-block redstone clock, where you choose how often it will output a pulse.
 
 _Feel Free to suggest more, or make a pull request that adds one of these features or even something you came up with!_

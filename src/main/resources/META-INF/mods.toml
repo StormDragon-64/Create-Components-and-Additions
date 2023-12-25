@@ -20,6 +20,8 @@ modId="create_ca" #mandatory
 # ${file.jarVersion} will substitute the value of the Implementation-Version as read from the mod's JAR file metadata
 # see the associated build.gradle script for how to populate this completely automatically during a build
 version="2.0" #mandatory
+#Logo?!?!!
+logoFile = "logo.png"
  # A display name for the mod
 displayName="Create: Components and Additions" #mandatory
 # A URL to query for updates for this mod. See the JSON update specification https://mcforge.readthedocs.io/en/latest/gettingstarted/autoupdate/
@@ -31,7 +33,7 @@ displayName="Create: Components and Additions" #mandatory
 # A text field displayed in the mod UI
 authors="StormDragon_64" #optional
 # The description text for the mod (multi line!) (#mandatory)
-description="Small mod made for my modpack, Create+. Currently adds a few new blocks (such as the brass gearbox) and recipes."
+description="A small mod made for my modpack, Create+. Currently adds a few new kinetic blocks, such as the brass gearbox."
 # A dependency - use the . to indicate dependency for a specific modid. Dependencies are optional.
 [[dependencies.create_ca]] #optional
     # the modid of the dependency
