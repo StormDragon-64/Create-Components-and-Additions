@@ -34,7 +34,7 @@ public class ModBlocks {
     public static final BlockEntry<BrassChainDriveBlock> BRASS_CHAIN_DRIVE = REGISTRATE
     .block("brass_chain_drive", BrassChainDriveBlock::new)
             .initialProperties(SharedProperties::softMetal)
-            .properties(BlockBehaviour.Properties::noOcclusion)
+            .properties(p -> p.noOcclusion().color(MaterialColor.TERRACOTTA_BROWN))
             .transform(BlockStressDefaults.setNoImpact())
             .transform(axeOrPickaxe())
             .blockstate((c, p) -> new ChainDriveGenerator((state, suffix) -> p.models()
@@ -46,7 +46,7 @@ public class ModBlocks {
     public static final BlockEntry<BrassGearboxBlock> BRASS_GEARBOX = REGISTRATE
     .block("brass_gearbox", BrassGearboxBlock::new)
             .initialProperties(SharedProperties::softMetal)
-            .properties(BlockBehaviour.Properties::noOcclusion)
+            .properties(p -> p.noOcclusion().color(MaterialColor.TERRACOTTA_BROWN))
             .transform(BlockStressDefaults.setNoImpact())
             .transform(axeOrPickaxe())
             .onRegister(CreateRegistrate.connectedTextures(() -> new EncasedCTBehaviour(AllSpriteShifts.BRASS_CASING)))
@@ -59,7 +59,7 @@ public class ModBlocks {
 
      public static final BlockEntry<InvertedGearshiftBlock> INVERTED_GEARSHIFT = REGISTRATE.block("inverted_gearshift", InvertedGearshiftBlock::new)
              .initialProperties(SharedProperties::stone)
-             .properties(BlockBehaviour.Properties::noOcclusion)
+             .properties(p -> p.noOcclusion().color(MaterialColor.PODZOL))
              .transform(BlockStressDefaults.setNoImpact())
              .transform(axeOrPickaxe())
              .blockstate((c, p) -> BlockStateGen.axisBlock(c, p, AssetLookup.forPowered(c, p)))
@@ -69,7 +69,7 @@ public class ModBlocks {
 
         public static final BlockEntry<InvertedClutchBlock> INVERTED_CLUTCH = REGISTRATE.block("inverted_clutch", InvertedClutchBlock::new)
                 .initialProperties(SharedProperties::stone)
-                .properties(BlockBehaviour.Properties::noOcclusion)
+                .properties(p -> p.noOcclusion().color(MaterialColor.PODZOL))
                 .transform(BlockStressDefaults.setNoImpact())
                 .transform(axeOrPickaxe())
                 .blockstate((c, p) -> BlockStateGen.axisBlock(c, p, AssetLookup.forPowered(c, p)))
@@ -80,7 +80,7 @@ public class ModBlocks {
     public static final BlockEntry<BrassAdjustableChainGearshiftBlock> ADJUSTABLE_BRASS_CHAIN_GEARSHIFT =
             REGISTRATE.block("adjustable_brass_chain_gearshift", BrassAdjustableChainGearshiftBlock::new)
                     .initialProperties(SharedProperties::softMetal)
-                    .properties(BlockBehaviour.Properties::noOcclusion)
+                    .properties(p -> p.noOcclusion().color(MaterialColor.TERRACOTTA_BROWN))
                     .transform(BlockStressDefaults.setNoImpact())
                     .transform(axeOrPickaxe())
                     .blockstate((c, p) -> new ChainDriveGenerator((state, suffix) -> {
@@ -98,7 +98,7 @@ public class ModBlocks {
 
     public static final BlockEntry<BrassBasinBlock> BRASS_BASIN = REGISTRATE.block("brass_basin", BrassBasinBlock::new)
             .initialProperties(SharedProperties::stone)
-            .properties(p -> p.color(MaterialColor.COLOR_GRAY))
+            .properties(p -> p.color(MaterialColor.TERRACOTTA_YELLOW))
             .properties(p -> p.sound(SoundType.NETHERITE_BLOCK))
             .transform(pickaxeOnly())
             .blockstate(new BasinGenerator()::generate)
