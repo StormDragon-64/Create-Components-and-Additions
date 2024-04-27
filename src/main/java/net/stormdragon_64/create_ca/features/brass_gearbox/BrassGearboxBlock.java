@@ -1,4 +1,4 @@
-package net.stormdragon_64.create_ca.block;
+package net.stormdragon_64.create_ca.features.brass_gearbox;
 
 
 import com.simibubi.create.AllBlocks;
@@ -27,8 +27,9 @@ import net.minecraft.world.level.storage.loot.LootContext;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.HitResult;
 import net.minecraft.world.ticks.TickPriority;
-import net.stormdragon_64.create_ca.block_entity.ModBlockEntities;
-import net.stormdragon_64.create_ca.item.ModItems;
+import net.stormdragon_64.create_ca.ModBlockEntities;
+import net.stormdragon_64.create_ca.ModBlocks;
+import net.stormdragon_64.create_ca.ModItems;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.List;

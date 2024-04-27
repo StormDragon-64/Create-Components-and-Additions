@@ -10,9 +10,6 @@ import net.minecraftforge.fml.DistExecutor;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
-import net.stormdragon_64.create_ca.block.ModBlocks;
-import net.stormdragon_64.create_ca.block_entity.ModBlockEntities;
-import net.stormdragon_64.create_ca.item.ModItems;
 import org.slf4j.Logger;
 
 @Mod(CreateCA.MOD_ID)

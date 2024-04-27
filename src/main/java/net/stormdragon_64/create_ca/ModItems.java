@@ -1,7 +1,8 @@
-package net.stormdragon_64.create_ca.item;
+package net.stormdragon_64.create_ca;
 import com.simibubi.create.content.processing.sequenced.SequencedAssemblyItem;
 import com.simibubi.create.foundation.data.AssetLookup;
 import com.tterrag.registrate.util.entry.ItemEntry;
+import net.stormdragon_64.create_ca.features.brass_gearbox.BrassVerticalGearboxItem;
 
 import static net.stormdragon_64.create_ca.CreateCA.REGISTRATE;
 

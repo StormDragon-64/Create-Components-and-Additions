@@ -1,6 +1,7 @@
-package net.stormdragon_64.create_ca.block;
+package net.stormdragon_64.create_ca;
 
 import com.simibubi.create.AllSpriteShifts;
+import com.simibubi.create.AllTags;
 import com.simibubi.create.content.decoration.encasing.EncasedCTBehaviour;
 import com.simibubi.create.content.kinetics.BlockStressDefaults;
 import com.simibubi.create.content.kinetics.chainDrive.ChainDriveGenerator;
@@ -13,9 +14,13 @@ import com.simibubi.create.foundation.data.CreateRegistrate;
 import com.simibubi.create.foundation.data.SharedProperties;
 import com.tterrag.registrate.util.entry.BlockEntry;
 import net.minecraft.world.level.block.SoundType;
-import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.MaterialColor;
-import net.stormdragon_64.create_ca.ModGroup;
+import net.stormdragon_64.create_ca.features.brass_basin.BrassBasinBlock;
+import net.stormdragon_64.create_ca.features.brass_gearbox.BrassGearboxBlock;
+import net.stormdragon_64.create_ca.features.inverted_blocks.InvertedClutchBlock;
+import net.stormdragon_64.create_ca.features.inverted_blocks.InvertedGearshiftBlock;
+import net.stormdragon_64.create_ca.features.no_extra_function_blocks.BrassAdjustableChainGearshiftBlock;
+import net.stormdragon_64.create_ca.features.no_extra_function_blocks.BrassChainDriveBlock;
 
 import static com.simibubi.create.AllMovementBehaviours.movementBehaviour;
 import static com.simibubi.create.foundation.data.BlockStateGen.axisBlock;
@@ -100,6 +105,7 @@ public class ModBlocks {
             .initialProperties(SharedProperties::stone)
             .properties(p -> p.color(MaterialColor.TERRACOTTA_YELLOW))
             .properties(p -> p.sound(SoundType.NETHERITE_BLOCK))
+            .tag(AllTags.AllBlockTags.BASIN.tag)
             .transform(pickaxeOnly())
             .blockstate(new BasinGenerator()::generate)
             .onRegister(movementBehaviour(new BasinMovementBehaviour()))

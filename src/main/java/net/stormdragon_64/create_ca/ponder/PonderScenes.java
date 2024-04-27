@@ -10,11 +10,11 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
-import net.stormdragon_64.create_ca.block.BrassGearboxBlock;
-import net.stormdragon_64.create_ca.block.ModBlocks;
+import net.stormdragon_64.create_ca.ModBlocks;
+import net.stormdragon_64.create_ca.features.brass_gearbox.BrassGearboxBlock;
 
 import static net.minecraft.world.level.block.state.properties.BlockStateProperties.AXIS;
-import static net.stormdragon_64.create_ca.block.BrassGearboxBlock.SHAFT_N;
+import static net.stormdragon_64.create_ca.features.brass_gearbox.BrassGearboxBlock.SHAFT_N;
 
 
 public class PonderScenes {

@@ -1,4 +1,4 @@
-package net.stormdragon_64.create_ca.block;
+package net.stormdragon_64.create_ca.features.inverted_blocks;
 
 import com.simibubi.create.AllBlocks;
 import com.simibubi.create.content.kinetics.transmission.SplitShaftBlockEntity;
@@ -13,7 +13,7 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.BlockHitResult;
-import net.stormdragon_64.create_ca.block_entity.ModBlockEntities;
+import net.stormdragon_64.create_ca.ModBlockEntities;
 import org.jetbrains.annotations.NotNull;
 
 public class InvertedClutchBlock extends InvertedGearshiftBlock {

@@ -1,4 +1,4 @@
-package net.stormdragon_64.create_ca.instance;
+package net.stormdragon_64.create_ca.features.brass_gearbox;
 
 import com.jozufozu.flywheel.api.InstanceData;
 import com.jozufozu.flywheel.api.Instancer;
@@ -13,7 +13,6 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.level.LightLayer;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
-import net.stormdragon_64.create_ca.block.BrassGearboxBlock;
 
 import java.util.EnumMap;
 import java.util.Map;
@@ -42,8 +41,58 @@ public class BrassGearboxInstance extends KineticBlockEntityInstance<GearboxBloc
 
             Instancer<RotatingData> shaft = rotatingMaterial.getModel(AllPartialModels.SHAFT_HALF, blockState, direction);
 
-            RotatingData key = shaft.createInstance();
 
+//Custom code for Brass Gearbox that deletes shafts that you shouldn't be able to see
+            RotatingData key = shaft.createInstance();
+            switch (blockState.getValue(BrassGearboxBlock.AXIS)) {
+                case Y -> {
+                    //What shaft are we currently rendering?             //Is that side of the gearbox covered?
+                    if (direction == Direction.NORTH && !blockState.getValue(BrassGearboxBlock.SHAFT_N)) {
+                        key.delete(); //If it is, delete it before we continue rendering.
+                    }
+                    if (direction == Direction.EAST && !blockState.getValue(BrassGearboxBlock.SHAFT_E)) {
+                        key.delete();
+                    }
+                    if (direction == Direction.SOUTH && !blockState.getValue(BrassGearboxBlock.SHAFT_S)) {
+                        key.delete();
+                    }
+                    if (direction == Direction.WEST && !blockState.getValue(BrassGearboxBlock.SHAFT_W)) {
+                        key.delete();
+                    }
+                }
+
+
+                case X -> {
+                    if (direction == Direction.NORTH && !blockState.getValue(BrassGearboxBlock.SHAFT_N)) {
+                        key.delete();
+                    }
+                    if (direction == Direction.UP && !blockState.getValue(BrassGearboxBlock.SHAFT_E)) {
+                        key.delete();
+                    }
+                    if (direction == Direction.SOUTH && !blockState.getValue(BrassGearboxBlock.SHAFT_S)) {
+                        key.delete();
+                    }
+                    if (direction == Direction.DOWN && !blockState.getValue(BrassGearboxBlock.SHAFT_W)) {
+                        key.delete();
+                    }
+                }
+
+
+                case Z -> {
+                    if (direction == Direction.UP && !blockState.getValue(BrassGearboxBlock.SHAFT_N)) {
+                        key.delete();
+                    }
+                    if (direction == Direction.EAST && !blockState.getValue(BrassGearboxBlock.SHAFT_E)) {
+                        key.delete();
+                    }
+                    if (direction == Direction.DOWN && !blockState.getValue(BrassGearboxBlock.SHAFT_S)) {
+                        key.delete();
+                    }
+                    if (direction == Direction.WEST && !blockState.getValue(BrassGearboxBlock.SHAFT_W)) {
+                        key.delete();
+                    }
+                }
+            }
             key.setRotationAxis(Direction.get(Direction.AxisDirection.POSITIVE, axis).step())
                     .setRotationalSpeed(getSpeed(direction))
                     .setRotationOffset(getRotationOffset(axis)).setColor(blockEntity)
@@ -52,73 +101,8 @@ public class BrassGearboxInstance extends KineticBlockEntityInstance<GearboxBloc
                     .setSkyLight(skyLight);
 
             keys.put(direction, key);
-            //Custom code
-            if (blockState.getValue(BrassGearboxBlock.AXIS) == Direction.Axis.Y) {
-                if (!blockState.getValue(BrassGearboxBlock.SHAFT_N)) {
-                    if (direction == Direction.NORTH) {
-                        key.delete();
-                    }
-                }
-                if (!blockState.getValue(BrassGearboxBlock.SHAFT_E)) {
-                    if (direction == Direction.EAST) {
-                        key.delete();
-                    }
-                }
-                if (!blockState.getValue(BrassGearboxBlock.SHAFT_S)) {
-                    if (direction == Direction.SOUTH) {
-                        key.delete();
-                    }
-                }
-                if (!blockState.getValue(BrassGearboxBlock.SHAFT_W)) {
-                    if (direction == Direction.WEST) {
-                        key.delete();
-                    }
-                }
 
-            } else if (blockState.getValue(BrassGearboxBlock.AXIS) == Direction.Axis.X) {
-                if (!blockState.getValue(BrassGearboxBlock.SHAFT_N)) {
-                    if (direction == Direction.NORTH) {
-                        key.delete();
-                    }
-                }
-                if (!blockState.getValue(BrassGearboxBlock.SHAFT_E)) {
-                    if (direction == Direction.UP) {
-                        key.delete();
-                    }
-                }
-                if (!blockState.getValue(BrassGearboxBlock.SHAFT_S)) {
-                    if (direction == Direction.SOUTH) {
-                        key.delete();
-                    }
-                }
-                if (!blockState.getValue(BrassGearboxBlock.SHAFT_W)) {
-                    if (direction == Direction.DOWN) {
-                        key.delete();
-                    }
-                }
 
-            } else if (blockState.getValue(BrassGearboxBlock.AXIS) == Direction.Axis.Z) {
-                if (!blockState.getValue(BrassGearboxBlock.SHAFT_N)) {
-                    if (direction == Direction.UP) {
-                        key.delete();
-                    }
-                }
-                if (!blockState.getValue(BrassGearboxBlock.SHAFT_E)) {
-                    if (direction == Direction.EAST) {
-                        key.delete();
-                    }
-                }
-                if (!blockState.getValue(BrassGearboxBlock.SHAFT_S)) {
-                    if (direction == Direction.DOWN) {
-                        key.delete();
-                    }
-                }
-                if (!blockState.getValue(BrassGearboxBlock.SHAFT_W)) {
-                    if (direction == Direction.WEST) {
-                        key.delete();
-                    }
-                }
-            }
         }
     }
 

@@ -1,9 +1,9 @@
-package net.stormdragon_64.create_ca.block;
+package net.stormdragon_64.create_ca.features.no_extra_function_blocks;
 
 import com.simibubi.create.content.kinetics.base.KineticBlockEntity;
 import com.simibubi.create.content.kinetics.chainDrive.ChainDriveBlock;
 import net.minecraft.world.level.block.entity.BlockEntityType;
-import net.stormdragon_64.create_ca.block_entity.ModBlockEntities;
+import net.stormdragon_64.create_ca.ModBlockEntities;
 
 
 public class BrassChainDriveBlock extends ChainDriveBlock {

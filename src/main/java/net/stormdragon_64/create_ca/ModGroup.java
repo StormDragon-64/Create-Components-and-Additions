@@ -2,7 +2,6 @@ package net.stormdragon_64.create_ca;
 
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
-import net.stormdragon_64.create_ca.block.ModBlocks;
 import org.jetbrains.annotations.NotNull;
 
 public class ModGroup{

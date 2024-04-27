@@ -12,17 +12,16 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.BlockHitResult;
-import net.stormdragon_64.create_ca.block.ModBlocks;
+import net.stormdragon_64.create_ca.ModBlocks;
 import org.spongepowered.asm.mixin.Mixin;
 
 @Mixin(ClutchBlock.class)
-public class InvertibleClutchMixin extends GearshiftBlock {
+public class InvertableClutchMixin extends GearshiftBlock {
 
-    public InvertibleClutchMixin(Properties properties) {
+    public InvertableClutchMixin(Properties properties) {
         super(properties);
     }
 
-    //I know it would be better to swap the item check and serverside/mainhand check, but I'm too lazy and this already works.
     @Override
     public InteractionResult use(BlockState state, Level level, BlockPos blockPos,
                                  Player player, InteractionHand hand, BlockHitResult result) {

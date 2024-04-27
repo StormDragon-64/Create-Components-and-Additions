@@ -6,8 +6,8 @@ import com.simibubi.create.infrastructure.ponder.AllPonderTags;
 import com.simibubi.create.infrastructure.ponder.scenes.ChainDriveScenes;
 import com.simibubi.create.infrastructure.ponder.scenes.KineticsScenes;
 import com.simibubi.create.infrastructure.ponder.scenes.ProcessingScenes;
-import net.stormdragon_64.create_ca.block.ModBlocks;
-import net.stormdragon_64.create_ca.item.ModItems;
+import net.stormdragon_64.create_ca.ModBlocks;
+import net.stormdragon_64.create_ca.ModItems;
 
 
 public class PonderAssigner {

@@ -1,8 +1,8 @@
 package net.stormdragon_64.create_ca.ponder;
 
 import com.simibubi.create.foundation.ponder.PonderRegistry;
-import net.stormdragon_64.create_ca.block.ModBlocks;
-import net.stormdragon_64.create_ca.item.ModItems;
+import net.stormdragon_64.create_ca.ModBlocks;
+import net.stormdragon_64.create_ca.ModItems;
 
 import static com.simibubi.create.infrastructure.ponder.AllPonderTags.KINETIC_RELAYS;
 

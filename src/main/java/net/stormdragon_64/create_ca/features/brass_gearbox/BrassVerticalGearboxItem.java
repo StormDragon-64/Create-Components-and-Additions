@@ -1,4 +1,4 @@
-package net.stormdragon_64.create_ca.item;
+package net.stormdragon_64.create_ca.features.brass_gearbox;
 
 
 import com.simibubi.create.content.kinetics.base.IRotate;
@@ -15,7 +15,7 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
-import net.stormdragon_64.create_ca.block.ModBlocks;
+import net.stormdragon_64.create_ca.ModBlocks;
 
 import java.util.Map;
 
