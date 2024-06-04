@@ -105,7 +105,7 @@ public class ModBlocks {
             .initialProperties(SharedProperties::stone)
             .properties(p -> p.mapColor(MapColor.TERRACOTTA_YELLOW))
             .properties(p -> p.sound(SoundType.NETHERITE_BLOCK))
-      //      .tag(AllTags.AllBlockTags.BASIN.tag)
+            .tag(AllTags.AllBlockTags.BASIN.tag)
             .transform(pickaxeOnly())
             .blockstate(new BasinGenerator()::generate)
             .onRegister(movementBehaviour(new BasinMovementBehaviour()))
