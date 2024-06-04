@@ -28,6 +28,7 @@ public class CreateCA {
         ModItems.register();
         ModBlocks.register();
         ModBlockEntities.register();
+        ModCreativeTab.register(modEventBus);
     //other stuff
         DistExecutor.safeRunWhenOn(Dist.CLIENT, () -> CreateCAClient::new);
 
