@@ -29,7 +29,7 @@ minecraft {
     //
     // Use non-default mappings at your own risk. They may not always work.
     // Simply re-run your setup task after changing the mappings to update your workspace.
-    mappings channel: 'parchment', version: '2022.11.27-1.19.2'
+    mappings channel: 'parchment', version: "${parchment_version}-${minecraft_version}"
 
     // accessTransformer = file('src/main/resources/META-INF/accesstransformer.cfg') // Currently, this location cannot be changed from the default.
 
@@ -136,9 +136,9 @@ repositories {
             includeGroup "maven.modrinth"
         }
     }
-    flatDir {
+   /* flatDir {
         dir 'libs'
-    }
+    }*/
 }
 
 dependencies {
@@ -150,17 +150,16 @@ dependencies {
 
 //main dependencies
     //Maven build
-    //implementation fg.deobf("com.simibubi.create:create-${minecraft_version}:${create_version}-${create_build_number}:slim") { transitive = false }
-    //Based off of a jar,if functionality I need is not available in a official 1.19.2 build of create yet
-    implementation fg.deobf("create:create-${minecraft_version}:${create_version}-slim")
+    implementation fg.deobf("com.simibubi.create:create-${minecraft_version}:${create_version}-${create_build_number}:slim") { transitive = false } //Maven version
+    // implementation fg.deobf("create:create-${minecraft_version}:${create_version}-slim")  //jar from libs folder version
 
     implementation fg.deobf("com.jozufozu.flywheel:flywheel-forge-${minecraft_version}:${flywheel_version}")
     implementation fg.deobf("com.tterrag.registrate:Registrate:${registrate_version}")
 //QOL for dev
-    implementation fg.deobf("maven.modrinth:jei:${jei_version}")
-    implementation fg.deobf("maven.modrinth:emi:${emi_version}")
-    implementation fg.deobf("maven.modrinth:modernfix:${modernfix_version}")
-    implementation fg.deobf("maven.modrinth:embeddium:${embeddium_version}")
+    implementation fg.deobf("maven.modrinth:jei:${jei_version}-forge")
+    implementation fg.deobf("maven.modrinth:emi:${emi_version}+${minecraft_version}+forge")
+    implementation fg.deobf("maven.modrinth:modernfix:${modernfix_version}+mc${minecraft_version}-forge")
+    implementation fg.deobf("maven.modrinth:embeddium:${embeddium_version}+mc${minecraft_version}-forge")
 
 //compat mods
     implementation fg.deobf("maven.modrinth:berry-good:${berry_good_version}")

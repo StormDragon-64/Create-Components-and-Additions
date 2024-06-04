@@ -7,5 +7,6 @@
   "mixins": [
     "InvertableClutchMixin",
     "InvertableGearshiftMixin"
-  ]
+  ],
+  "minVersion": "0.8"
 }

@@ -14,7 +14,7 @@ import com.simibubi.create.foundation.data.CreateRegistrate;
 import com.simibubi.create.foundation.data.SharedProperties;
 import com.tterrag.registrate.util.entry.BlockEntry;
 import net.minecraft.world.level.block.SoundType;
-import net.minecraft.world.level.material.MaterialColor;
+import net.minecraft.world.level.material.MapColor;
 import net.stormdragon_64.create_ca.features.brass_basin.BrassBasinBlock;
 import net.stormdragon_64.create_ca.features.brass_gearbox.BrassGearboxBlock;
 import net.stormdragon_64.create_ca.features.inverted_blocks.InvertedClutchBlock;
@@ -32,14 +32,14 @@ import static net.stormdragon_64.create_ca.CreateCA.REGISTRATE;
 public class ModBlocks {
     //add to my creative tab
     static {
-        REGISTRATE.creativeModeTab(() -> ModGroup.MAIN_TAB);
+        REGISTRATE.setCreativeTab(ModCreativeTab.CREATIVE_MODE_TAB);
     }
     //The Items themselves
 
     public static final BlockEntry<BrassChainDriveBlock> BRASS_CHAIN_DRIVE = REGISTRATE
     .block("brass_chain_drive", BrassChainDriveBlock::new)
             .initialProperties(SharedProperties::softMetal)
-            .properties(p -> p.noOcclusion().color(MaterialColor.TERRACOTTA_BROWN))
+            .properties(p -> p.noOcclusion().mapColor(MapColor.TERRACOTTA_BROWN))
             .transform(BlockStressDefaults.setNoImpact())
             .transform(axeOrPickaxe())
             .blockstate((c, p) -> new ChainDriveGenerator((state, suffix) -> p.models()
@@ -51,7 +51,7 @@ public class ModBlocks {
     public static final BlockEntry<BrassGearboxBlock> BRASS_GEARBOX = REGISTRATE
     .block("brass_gearbox", BrassGearboxBlock::new)
             .initialProperties(SharedProperties::softMetal)
-            .properties(p -> p.noOcclusion().color(MaterialColor.TERRACOTTA_BROWN))
+            .properties(p -> p.noOcclusion().mapColor(MapColor.TERRACOTTA_BROWN))
             .transform(BlockStressDefaults.setNoImpact())
             .transform(axeOrPickaxe())
             .onRegister(CreateRegistrate.connectedTextures(() -> new EncasedCTBehaviour(AllSpriteShifts.BRASS_CASING)))
@@ -64,7 +64,7 @@ public class ModBlocks {
 
      public static final BlockEntry<InvertedGearshiftBlock> INVERTED_GEARSHIFT = REGISTRATE.block("inverted_gearshift", InvertedGearshiftBlock::new)
              .initialProperties(SharedProperties::stone)
-             .properties(p -> p.noOcclusion().color(MaterialColor.PODZOL))
+             .properties(p -> p.noOcclusion().mapColor(MapColor.PODZOL))
              .transform(BlockStressDefaults.setNoImpact())
              .transform(axeOrPickaxe())
              .blockstate((c, p) -> BlockStateGen.axisBlock(c, p, AssetLookup.forPowered(c, p)))
@@ -74,7 +74,7 @@ public class ModBlocks {
 
         public static final BlockEntry<InvertedClutchBlock> INVERTED_CLUTCH = REGISTRATE.block("inverted_clutch", InvertedClutchBlock::new)
                 .initialProperties(SharedProperties::stone)
-                .properties(p -> p.noOcclusion().color(MaterialColor.PODZOL))
+                .properties(p -> p.noOcclusion().mapColor(MapColor.PODZOL))
                 .transform(BlockStressDefaults.setNoImpact())
                 .transform(axeOrPickaxe())
                 .blockstate((c, p) -> BlockStateGen.axisBlock(c, p, AssetLookup.forPowered(c, p)))
@@ -85,7 +85,7 @@ public class ModBlocks {
     public static final BlockEntry<BrassAdjustableChainGearshiftBlock> ADJUSTABLE_BRASS_CHAIN_GEARSHIFT =
             REGISTRATE.block("adjustable_brass_chain_gearshift", BrassAdjustableChainGearshiftBlock::new)
                     .initialProperties(SharedProperties::softMetal)
-                    .properties(p -> p.noOcclusion().color(MaterialColor.TERRACOTTA_BROWN))
+                    .properties(p -> p.noOcclusion().mapColor(MapColor.TERRACOTTA_BROWN))
                     .transform(BlockStressDefaults.setNoImpact())
                     .transform(axeOrPickaxe())
                     .blockstate((c, p) -> new ChainDriveGenerator((state, suffix) -> {
@@ -103,9 +103,9 @@ public class ModBlocks {
 
     public static final BlockEntry<BrassBasinBlock> BRASS_BASIN = REGISTRATE.block("brass_basin", BrassBasinBlock::new)
             .initialProperties(SharedProperties::stone)
-            .properties(p -> p.color(MaterialColor.TERRACOTTA_YELLOW))
+            .properties(p -> p.mapColor(MapColor.TERRACOTTA_YELLOW))
             .properties(p -> p.sound(SoundType.NETHERITE_BLOCK))
-            .tag(AllTags.AllBlockTags.BASIN.tag)
+      //      .tag(AllTags.AllBlockTags.BASIN.tag)
             .transform(pickaxeOnly())
             .blockstate(new BasinGenerator()::generate)
             .onRegister(movementBehaviour(new BasinMovementBehaviour()))

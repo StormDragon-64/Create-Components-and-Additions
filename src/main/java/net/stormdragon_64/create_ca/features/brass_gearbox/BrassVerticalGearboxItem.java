@@ -26,9 +26,6 @@ public class BrassVerticalGearboxItem extends BlockItem {
     public BrassVerticalGearboxItem(Properties builder) {
         super(ModBlocks.BRASS_GEARBOX.get(), builder);
     }
-    @Override
-    public void fillItemCategory(CreativeModeTab p_150895_1_, NonNullList<ItemStack> p_150895_2_) {
-    }
 
     @Override
     public void registerBlocks(Map<Block, Item> p_195946_1_, Item p_195946_2_) {

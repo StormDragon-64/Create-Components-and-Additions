@@ -24,6 +24,7 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraft.world.level.storage.loot.LootContext;
+import net.minecraft.world.level.storage.loot.LootParams;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.HitResult;
 import net.minecraft.world.ticks.TickPriority;
@@ -174,14 +175,9 @@ public BlockEntityType<? extends GearboxBlockEntity> getBlockEntityType() {
 
 
 //Vertical gearbox
-    @Override
-    public void fillItemCategory(CreativeModeTab group, NonNullList<ItemStack> items) {
-        items.add(ModItems.VERTICAL_BRASS_GEARBOX.asStack());
-        items.add(ModBlocks.BRASS_GEARBOX.asStack());
-    }
 
     @Override
-    public List<ItemStack> getDrops(BlockState state, LootContext.Builder builder) {
+    public List<ItemStack> getDrops(BlockState state, LootParams.Builder builder) {
         if (state.getValue(AXIS).isVertical())
             return super.getDrops(state, builder);
         return List.of(new ItemStack(ModItems.VERTICAL_BRASS_GEARBOX.get()));
