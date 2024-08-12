@@ -149,10 +149,9 @@ dependencies {
     annotationProcessor "org.spongepowered:mixin:${mixin_version}:processor"
 
 //main dependencies
-    //Maven build
-    //implementation fg.deobf("com.simibubi.create:create-${minecraft_version}:${create_version}-${create_build_number}:slim") { transitive = false }
-    //Based off of a jar,if functionality I need is not available in a official 1.19.2 build of create yet
-    implementation fg.deobf("create:create-${minecraft_version}:${create_version}-slim")
+
+     implementation fg.deobf("com.simibubi.create:create-${minecraft_version}:${create_version}-${create_build_number}:slim") { transitive = false } //From Maven
+   // implementation fg.deobf("create:create-${minecraft_version}:${create_version}-slim") //From Jar if version isn't on maven yet (eg. I need something from pull request)
 
     implementation fg.deobf("com.jozufozu.flywheel:flywheel-forge-${minecraft_version}:${flywheel_version}")
     implementation fg.deobf("com.tterrag.registrate:Registrate:${registrate_version}")

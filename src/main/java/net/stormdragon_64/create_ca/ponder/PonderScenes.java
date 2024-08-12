@@ -11,10 +11,10 @@ import net.minecraft.core.Direction;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.stormdragon_64.create_ca.ModBlocks;
-import net.stormdragon_64.create_ca.features.brass_gearbox.BrassGearboxBlock;
 
 import static net.minecraft.world.level.block.state.properties.BlockStateProperties.AXIS;
 import static net.stormdragon_64.create_ca.features.brass_gearbox.BrassGearboxBlock.SHAFT_N;
+import static net.stormdragon_64.create_ca.features.brass_gearbox.BrassGearboxBlock.SHAFT_S;
 
 
 public class PonderScenes {
@@ -416,10 +416,6 @@ scene.effects.indicateRedstone(middleBlock.atY(3));
 
 
 
-
-
-
-
     public static void brassGearbox(SceneBuilder scene, SceneBuildingUtil util) {
         //setup
         Selection secondBelt = util.select.fromTo(2,3,3, 0,0,3)
@@ -460,8 +456,8 @@ scene.effects.indicateRedstone(middleBlock.atY(3));
         scene.overlay.showControls(new InputWindowElement(util.vector.of(4, 3.5, 3), Pointing.RIGHT).rightClick()
                 .withItem(new ItemStack(AllBlocks.BRASS_CASING.get().asItem())), 30);
         scene.idle(15);
+        scene.world.modifyBlock(middleBlock, b -> b.setValue(SHAFT_N, false), true);
         scene.world.modifyKineticSpeed(util.select.fromTo(3,3,3,3,3,5).add(util.select.fromTo(4,3,3,5,3,3)), f -> 0f);
-        scene.world.setBlock(middleBlock, ModBlocks.BRASS_GEARBOX.getDefaultState().setValue(AXIS, Direction.Axis.Y).setValue(SHAFT_N, false), true);
         scene.idle(35);
         scene.overlay.showText(60)
                 .text("...that side will be blocked.")
@@ -495,8 +491,8 @@ scene.effects.indicateRedstone(middleBlock.atY(3));
         scene.idle(20);
         scene.overlay.showControls(new InputWindowElement(util.vector.of(3, 3.5, 4), Pointing.RIGHT).rightClick()
                 .withItem(new ItemStack(AllBlocks.BRASS_CASING.get().asItem())), 30);
+        scene.world.modifyBlock(middleBlock, b -> b.setValue(SHAFT_S, false), true);
         scene.world.modifyKineticSpeed(util.select.fromTo(3,3,4,3,3,5), f -> 0f);
-        scene.world.setBlock(middleBlock, ModBlocks.BRASS_GEARBOX.getDefaultState().setValue(AXIS, Direction.Axis.Y).setValue(SHAFT_N, false).setValue(BrassGearboxBlock.SHAFT_S, false), true);
         scene.idle(10);
         scene.effects.rotationSpeedIndicator(util.grid.at(3,3, 5));
         scene.effects.rotationSpeedIndicator(util.grid.at(5,3,3));

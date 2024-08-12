@@ -1,7 +1,6 @@
 package net.stormdragon_64.create_ca;
 
 import com.simibubi.create.AllSpriteShifts;
-import com.simibubi.create.AllTags;
 import com.simibubi.create.content.decoration.encasing.EncasedCTBehaviour;
 import com.simibubi.create.content.kinetics.BlockStressDefaults;
 import com.simibubi.create.content.kinetics.chainDrive.ChainDriveGenerator;
@@ -105,7 +104,6 @@ public class ModBlocks {
             .initialProperties(SharedProperties::stone)
             .properties(p -> p.color(MaterialColor.TERRACOTTA_YELLOW))
             .properties(p -> p.sound(SoundType.NETHERITE_BLOCK))
-            .tag(AllTags.AllBlockTags.BASIN.tag)
             .transform(pickaxeOnly())
             .blockstate(new BasinGenerator()::generate)
             .onRegister(movementBehaviour(new BasinMovementBehaviour()))
@@ -115,4 +113,4 @@ public class ModBlocks {
 
 
     public static void register() {}
-    }
+}
