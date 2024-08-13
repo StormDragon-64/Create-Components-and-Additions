@@ -1,7 +1,6 @@
 package net.stormdragon_64.create_ca;
 
 import com.simibubi.create.AllSpriteShifts;
-import com.simibubi.create.AllTags;
 import com.simibubi.create.content.decoration.encasing.EncasedCTBehaviour;
 import com.simibubi.create.content.kinetics.BlockStressDefaults;
 import com.simibubi.create.content.kinetics.chainDrive.ChainDriveGenerator;

@@ -19,7 +19,7 @@ modId="create_ca" #mandatory
 # The version number of the mod - there's a few well known ${} variables useable here or just hardcode it
 # ${file.jarVersion} will substitute the value of the Implementation-Version as read from the mod's JAR file metadata
 # see the associated build.gradle script for how to populate this completely automatically during a build
-version="2.0d" #mandatory
+version="2.1" #mandatory
 #Logo?!?!!
 logoFile = "logo.png"
  # A display name for the mod
@@ -58,6 +58,6 @@ description="A small mod made for my modpack, Create+. Currently adds a few new 
 [[dependencies.create_ca]]
 modId="create"
 mandatory=true
-versionRange="[0.5.1.f,)"
+versionRange="[0.5.1.g,)"
 ordering="NONE"
 side="BOTH"
