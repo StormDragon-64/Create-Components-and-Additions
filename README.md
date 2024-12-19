@@ -1,5 +1,5 @@
 # Create: Components and Additions
-_A small Create addon I'm making for my modpack, [Create+](https://www.curseforge.com/minecraft/modpacks/create-mod-plus)._
+_A small Create addon I originally made for my modpack, [Create+](https://modrinth.com/modpack/create_plus)._
 
 ### Done:
 
@@ -9,18 +9,18 @@ _A small Create addon I'm making for my modpack, [Create+](https://www.curseforg
 - **Brass Gearbox:** has sides you can cover by right-clicking with brass casing in your hand. Covering sides prevents rotation for transferring to and from that side.
 - **Ponders** for new blocks
 
-### Kinks in finished stuff:
+### Issues with finished stuff:
 
-- **Brass gearbox ponder** has very tiny issues (but my brother didn't notice them, so...)
+- **Brass gearbox ponder** has very tiny issues (but my friends didn't notice them, so hopefully you won't either)
 
 ### Work in progress:
+
+- Who do you think I am, ChatGPT or something? I've got other stuff to do
+
+### Planned:
 
 - **Brass chain drive:** works and has textures, but no functionality difference between andesite version.  
 It should be able to connect in more than 1 direction, but I have no idea how to implement that.
   (aka this will never happen)
-
-### Planned:
-
-- **Redstone Clock:** A _configurable_ single-block redstone clock, where you choose how often it will output a pulse.
 
 _Feel Free to suggest more, or make a pull request that adds one of these features or even something you came up with!_
