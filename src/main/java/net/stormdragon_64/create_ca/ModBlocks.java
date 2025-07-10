@@ -2,7 +2,6 @@ package net.stormdragon_64.create_ca;
 
 import com.simibubi.create.AllSpriteShifts;
 import com.simibubi.create.content.decoration.encasing.EncasedCTBehaviour;
-import com.simibubi.create.content.kinetics.BlockStressDefaults;
 import com.simibubi.create.content.kinetics.chainDrive.ChainDriveGenerator;
 import com.simibubi.create.content.kinetics.chainDrive.ChainGearshiftBlock;
 import com.simibubi.create.content.processing.basin.BasinGenerator;
@@ -14,6 +13,7 @@ import com.simibubi.create.foundation.data.SharedProperties;
 import com.tterrag.registrate.util.entry.BlockEntry;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.material.MapColor;
+import net.stormdragon_64.create_ca.config.CCAStress;
 import net.stormdragon_64.create_ca.features.brass_basin.BrassBasinBlock;
 import net.stormdragon_64.create_ca.features.brass_gearbox.BrassGearboxBlock;
 import net.stormdragon_64.create_ca.features.inverted_blocks.InvertedClutchBlock;
@@ -21,7 +21,7 @@ import net.stormdragon_64.create_ca.features.inverted_blocks.InvertedGearshiftBl
 import net.stormdragon_64.create_ca.features.no_extra_function_blocks.BrassAdjustableChainGearshiftBlock;
 import net.stormdragon_64.create_ca.features.no_extra_function_blocks.BrassChainDriveBlock;
 
-import static com.simibubi.create.AllMovementBehaviours.movementBehaviour;
+import static com.simibubi.create.api.behaviour.movement.MovementBehaviour.movementBehaviour;
 import static com.simibubi.create.foundation.data.BlockStateGen.axisBlock;
 import static com.simibubi.create.foundation.data.ModelGen.customItemModel;
 import static com.simibubi.create.foundation.data.TagGen.axeOrPickaxe;
@@ -37,21 +37,23 @@ public class ModBlocks {
 
     public static final BlockEntry<BrassChainDriveBlock> BRASS_CHAIN_DRIVE = REGISTRATE
     .block("brass_chain_drive", BrassChainDriveBlock::new)
-            .initialProperties(SharedProperties::softMetal)
-            .properties(p -> p.noOcclusion().mapColor(MapColor.TERRACOTTA_BROWN))
-            .transform(BlockStressDefaults.setNoImpact())
+            .initialProperties(SharedProperties::stone)
+            .properties(p -> p.noOcclusion()
+                    .mapColor(MapColor.TERRACOTTA_BROWN))
             .transform(axeOrPickaxe())
+            .transform(CCAStress.setNoImpact())
             .blockstate((c, p) -> new ChainDriveGenerator((state, suffix) -> p.models()
-            .getExistingFile(p.modLoc("block/" + c.getName() + "/" + suffix))).generate(c, p))
+                    .getExistingFile(p.modLoc("block/" + c.getName() + "/" + suffix))).generate(c, p))
             .item()
             .transform(customItemModel())
             .register();
 
     public static final BlockEntry<BrassGearboxBlock> BRASS_GEARBOX = REGISTRATE
     .block("brass_gearbox", BrassGearboxBlock::new)
-            .initialProperties(SharedProperties::softMetal)
-            .properties(p -> p.noOcclusion().mapColor(MapColor.TERRACOTTA_BROWN))
-            .transform(BlockStressDefaults.setNoImpact())
+            .initialProperties(SharedProperties::stone)
+            .properties(p -> p.noOcclusion()
+                    .mapColor(MapColor.TERRACOTTA_BROWN))
+            .transform(CCAStress.setNoImpact())
             .transform(axeOrPickaxe())
             .onRegister(CreateRegistrate.connectedTextures(() -> new EncasedCTBehaviour(AllSpriteShifts.BRASS_CASING)))
             .onRegister(CreateRegistrate.casingConnectivity((block, cc) -> cc.make(block, AllSpriteShifts.BRASS_CASING,
@@ -63,8 +65,8 @@ public class ModBlocks {
 
      public static final BlockEntry<InvertedGearshiftBlock> INVERTED_GEARSHIFT = REGISTRATE.block("inverted_gearshift", InvertedGearshiftBlock::new)
              .initialProperties(SharedProperties::stone)
-             .properties(p -> p.noOcclusion().mapColor(MapColor.PODZOL))
-             .transform(BlockStressDefaults.setNoImpact())
+             .properties(p -> p.noOcclusion().mapColor(MapColor.TERRACOTTA_BROWN))
+             .transform(CCAStress.setNoImpact())
              .transform(axeOrPickaxe())
              .blockstate((c, p) -> BlockStateGen.axisBlock(c, p, AssetLookup.forPowered(c, p)))
              .item()
@@ -74,7 +76,7 @@ public class ModBlocks {
         public static final BlockEntry<InvertedClutchBlock> INVERTED_CLUTCH = REGISTRATE.block("inverted_clutch", InvertedClutchBlock::new)
                 .initialProperties(SharedProperties::stone)
                 .properties(p -> p.noOcclusion().mapColor(MapColor.PODZOL))
-                .transform(BlockStressDefaults.setNoImpact())
+                .transform(CCAStress.setNoImpact())
                 .transform(axeOrPickaxe())
                 .blockstate((c, p) -> BlockStateGen.axisBlock(c, p, AssetLookup.forPowered(c, p)))
                 .item()
@@ -85,17 +87,17 @@ public class ModBlocks {
             REGISTRATE.block("adjustable_brass_chain_gearshift", BrassAdjustableChainGearshiftBlock::new)
                     .initialProperties(SharedProperties::softMetal)
                     .properties(p -> p.noOcclusion().mapColor(MapColor.TERRACOTTA_BROWN))
-                    .transform(BlockStressDefaults.setNoImpact())
+                    .transform(CCAStress.setNoImpact())
                     .transform(axeOrPickaxe())
                     .blockstate((c, p) -> new ChainDriveGenerator((state, suffix) -> {
                         String powered = state.getValue(ChainGearshiftBlock.POWERED) ? "_powered" : "";
                         return p.models()
                                 .withExistingParent(c.getName() + "_" + suffix + powered,
-                                        p.modLoc("block/encased_chain_drive/" + suffix))
+                                        p.modLoc("block/brass_chain_drive/" + suffix))
                                 .texture("side", p.modLoc("block/" + c.getName() + powered));
                     }).generate(c, p))
                     .item()
-                    .model((c, p) -> p.withExistingParent(c.getName(), p.modLoc("block/encased_chain_drive/item"))
+                    .model((c, p) -> p.withExistingParent(c.getName(), p.modLoc("block/brass_chain_drive/item"))
                             .texture("side", p.modLoc("block/" + c.getName())))
                     .build()
                     .register();

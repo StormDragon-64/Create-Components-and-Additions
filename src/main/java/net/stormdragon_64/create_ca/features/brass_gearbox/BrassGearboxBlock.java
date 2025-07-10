@@ -8,11 +8,9 @@ import com.simibubi.create.content.kinetics.gearbox.GearboxBlock;
 import com.simibubi.create.content.kinetics.gearbox.GearboxBlockEntity;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
-import net.minecraft.core.NonNullList;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
@@ -23,15 +21,12 @@ import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BooleanProperty;
-import net.minecraft.world.level.storage.loot.LootContext;
 import net.minecraft.world.level.storage.loot.LootParams;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.HitResult;
 import net.minecraft.world.ticks.TickPriority;
 import net.stormdragon_64.create_ca.ModBlockEntities;
-import net.stormdragon_64.create_ca.ModBlocks;
 import net.stormdragon_64.create_ca.ModItems;
-import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
 
@@ -58,8 +53,8 @@ public class BrassGearboxBlock extends GearboxBlock {
     }
 
     @Override
-    public @NotNull InteractionResult use(@NotNull BlockState state, @NotNull Level level, @NotNull BlockPos blockPos,
-                                          Player player, @NotNull InteractionHand hand, @NotNull BlockHitResult result) {
+    public InteractionResult use( BlockState state, Level level, BlockPos blockPos,
+                                          Player player, InteractionHand hand, BlockHitResult result) {
         ItemStack item = player.getMainHandItem();
         if (item.getItem() == AllBlocks.BRASS_CASING.get().asItem()) {
             //update kinetic transfer after side blocked

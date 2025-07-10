@@ -1,114 +1,105 @@
 package net.stormdragon_64.create_ca.features.brass_gearbox;
 
-import com.jozufozu.flywheel.api.InstanceData;
-import com.jozufozu.flywheel.api.Instancer;
-import com.jozufozu.flywheel.api.Material;
-import com.jozufozu.flywheel.api.MaterialManager;
 import com.simibubi.create.AllPartialModels;
-import com.simibubi.create.content.kinetics.base.KineticBlockEntityInstance;
-import com.simibubi.create.content.kinetics.base.flwdata.RotatingData;
+import com.simibubi.create.content.kinetics.base.KineticBlockEntityVisual;
+import com.simibubi.create.content.kinetics.base.RotatingInstance;
 import com.simibubi.create.content.kinetics.gearbox.GearboxBlockEntity;
-import com.simibubi.create.foundation.utility.Iterate;
+import com.simibubi.create.foundation.render.AllInstanceTypes;
+import dev.engine_room.flywheel.api.instance.Instance;
+import dev.engine_room.flywheel.api.visualization.VisualizationContext;
+import dev.engine_room.flywheel.lib.instance.AbstractInstance;
+import dev.engine_room.flywheel.lib.instance.FlatLit;
+import dev.engine_room.flywheel.lib.model.Models;
+import net.createmod.catnip.data.Iterate;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
-import net.minecraft.world.level.LightLayer;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 
 import java.util.EnumMap;
 import java.util.Map;
+import java.util.function.Consumer;
 
-public class BrassGearboxInstance extends KineticBlockEntityInstance<GearboxBlockEntity> {
-    EnumMap<Direction, RotatingData> keys;
+public class BrassGearboxVisual extends KineticBlockEntityVisual<GearboxBlockEntity> {
+    protected final EnumMap<Direction, RotatingInstance> keys = new EnumMap<>(Direction.class);
     protected Direction sourceFacing;
 
-    public BrassGearboxInstance(MaterialManager materialManager, GearboxBlockEntity blockEntity) {
-        super(materialManager, blockEntity);
-
-    keys = new EnumMap<>(Direction.class);
+    public BrassGearboxVisual(VisualizationContext context, GearboxBlockEntity blockEntity, float partialTick) {
+        super(context, blockEntity, partialTick);
 
         final Direction.Axis boxAxis = blockState.getValue(BlockStateProperties.AXIS);
 
-        int blockLight = world.getBrightness(LightLayer.BLOCK, pos);
-        int skyLight = world.getBrightness(LightLayer.SKY, pos);
         updateSourceFacing();
 
-        Material<RotatingData> rotatingMaterial = getRotatingMaterial();
+        var instancer = instancerProvider().instancer(AllInstanceTypes.ROTATING, Models.partial(AllPartialModels.SHAFT_HALF));
 
         for (Direction direction : Iterate.directions) {
             final Direction.Axis axis = direction.getAxis();
-            if (boxAxis == axis)
+            if (boxAxis == axis) {
                 continue;
+            }
 
-            Instancer<RotatingData> shaft = rotatingMaterial.getModel(AllPartialModels.SHAFT_HALF, blockState, direction);
-
-
-//Custom code for Brass Gearbox that deletes shafts that you shouldn't be able to see
-            RotatingData key = shaft.createInstance();
+            RotatingInstance instance = instancer.createInstance();
+            //Note: I've already tried only *creating* instances when a side is unblocked but flywheel doesn't like that.
+            //So instead, we delete the shaft instance when that side is blocked.
             switch (blockState.getValue(BrassGearboxBlock.AXIS)) {
                 case Y -> {
                     //What shaft are we currently rendering?             //Is that side of the gearbox covered?
                     if (direction == Direction.NORTH && !blockState.getValue(BrassGearboxBlock.SHAFT_N)) {
-                        key.delete(); //If it is, delete it before we continue rendering.
+                        instance.delete(); //If it is, delete it before we continue rendering.
                     }
                     if (direction == Direction.EAST && !blockState.getValue(BrassGearboxBlock.SHAFT_E)) {
-                        key.delete();
+                        instance.delete();
                     }
                     if (direction == Direction.SOUTH && !blockState.getValue(BrassGearboxBlock.SHAFT_S)) {
-                        key.delete();
+                        instance.delete();
                     }
                     if (direction == Direction.WEST && !blockState.getValue(BrassGearboxBlock.SHAFT_W)) {
-                        key.delete();
+                        instance.delete();
                     }
                 }
 
 
                 case X -> {
                     if (direction == Direction.NORTH && !blockState.getValue(BrassGearboxBlock.SHAFT_N)) {
-                        key.delete();
+                        instance.delete();
                     }
                     if (direction == Direction.UP && !blockState.getValue(BrassGearboxBlock.SHAFT_E)) {
-                        key.delete();
+                        instance.delete();
                     }
                     if (direction == Direction.SOUTH && !blockState.getValue(BrassGearboxBlock.SHAFT_S)) {
-                        key.delete();
+                        instance.delete();
                     }
                     if (direction == Direction.DOWN && !blockState.getValue(BrassGearboxBlock.SHAFT_W)) {
-                        key.delete();
+                        instance.delete();
                     }
                 }
 
 
                 case Z -> {
                     if (direction == Direction.UP && !blockState.getValue(BrassGearboxBlock.SHAFT_N)) {
-                        key.delete();
+                        instance.delete();
                     }
                     if (direction == Direction.EAST && !blockState.getValue(BrassGearboxBlock.SHAFT_E)) {
-                        key.delete();
+                        instance.delete();
                     }
                     if (direction == Direction.DOWN && !blockState.getValue(BrassGearboxBlock.SHAFT_S)) {
-                        key.delete();
+                        instance.delete();
                     }
                     if (direction == Direction.WEST && !blockState.getValue(BrassGearboxBlock.SHAFT_W)) {
-                        key.delete();
+                        instance.delete();
                     }
                 }
             }
-            key.setRotationAxis(Direction.get(Direction.AxisDirection.POSITIVE, axis).step())
-                    .setRotationalSpeed(getSpeed(direction))
-                    .setRotationOffset(getRotationOffset(axis)).setColor(blockEntity)
-                    .setPosition(getInstancePosition())
-                    .setBlockLight(blockLight)
-                    .setSkyLight(skyLight);
 
-            keys.put(direction, key);
+            
+            instance.setup(blockEntity, axis, getSpeed(direction))
+                    .setPosition(getVisualPosition())
+                    .rotateToFace(Direction.SOUTH, direction)
+                    .setChanged();
 
-
+            keys.put(direction, instance);
         }
     }
-
-
-
-
 
     private float getSpeed(Direction direction) {
         float speed = blockEntity.getSpeed();
@@ -122,7 +113,6 @@ public class BrassGearboxInstance extends KineticBlockEntityInstance<GearboxBloc
         return speed;
     }
 
-
     protected void updateSourceFacing() {
         if (blockEntity.hasSource()) {
             BlockPos source = blockEntity.source.subtract(pos);
@@ -133,24 +123,32 @@ public class BrassGearboxInstance extends KineticBlockEntityInstance<GearboxBloc
     }
 
     @Override
-    public void update() {
+    public void update(float pt) {
         updateSourceFacing();
-        for (Map.Entry<Direction, RotatingData> key : keys.entrySet()) {
+        for (Map.Entry<Direction, RotatingInstance> key : keys.entrySet()) {
             Direction direction = key.getKey();
             Direction.Axis axis = direction.getAxis();
 
-            updateRotation(key.getValue(), axis, getSpeed(direction));
+            key.getValue()
+                    .setup(blockEntity, axis, getSpeed(direction))
+                    .setChanged();
         }
-    }
-    @Override
-    public void updateLight() {
-        relight(pos, keys.values().stream());
     }
 
     @Override
-    public void remove() {
-        keys.values().forEach(InstanceData::delete);
+    public void updateLight(float partialTick) {
+        relight(keys.values().toArray(FlatLit[]::new));
+    }
+
+    @Override
+    protected void _delete() {
+        keys.values().forEach(AbstractInstance::delete);
         keys.clear();
     }
 
+    @Override
+    public void collectCrumblingInstances(Consumer<Instance> consumer) {
+        keys.values()
+                .forEach(consumer);
+    }
 }

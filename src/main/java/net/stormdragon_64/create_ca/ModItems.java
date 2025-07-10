@@ -10,6 +10,7 @@ public class ModItems {
 
     public static final ItemEntry<SequencedAssemblyItem> INCOMPLETE_COGWHEEL = REGISTRATE
             .item("incomplete_cogwheel", SequencedAssemblyItem::new)
+            .model(AssetLookup.existingItemModel())
             .register();
 
     public static final ItemEntry<BrassVerticalGearboxItem> VERTICAL_BRASS_GEARBOX = REGISTRATE

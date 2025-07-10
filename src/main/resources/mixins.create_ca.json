@@ -6,7 +6,8 @@
   "refmap": "mixins.create_ca.refmap.json",
   "mixins": [
     "InvertableClutchMixin",
-    "InvertableGearshiftMixin"
+    "InvertableGearshiftMixin",
+    "PonderSceneBuilderMixin"
   ],
   "minVersion": "0.8"
 }

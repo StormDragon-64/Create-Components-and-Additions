@@ -1,14 +1,21 @@
 package net.stormdragon_64.create_ca.ponder;
 
-import com.simibubi.create.foundation.ponder.PonderRegistry;
+
+import com.tterrag.registrate.util.entry.RegistryEntry;
+import net.createmod.ponder.api.registration.PonderTagRegistrationHelper;
+import net.minecraft.resources.ResourceLocation;
 import net.stormdragon_64.create_ca.ModBlocks;
 import net.stormdragon_64.create_ca.ModItems;
 
-import static com.simibubi.create.infrastructure.ponder.AllPonderTags.KINETIC_RELAYS;
+import static com.simibubi.create.infrastructure.ponder.AllCreatePonderTags.KINETIC_RELAYS;
+
 
 public class ModPonderTags {
-    public static void register() {
-        PonderRegistry.TAGS.forTag(KINETIC_RELAYS)
+
+    public static void register(PonderTagRegistrationHelper<ResourceLocation> helper) {
+        PonderTagRegistrationHelper<RegistryEntry<?>> HELPER = helper.withKeyFunction(RegistryEntry::getId);
+
+       HELPER.addToTag(KINETIC_RELAYS)
                 .add(ModItems.VERTICAL_BRASS_GEARBOX)
                 .add(ModBlocks.BRASS_CHAIN_DRIVE)
                 .add(ModBlocks.INVERTED_CLUTCH)

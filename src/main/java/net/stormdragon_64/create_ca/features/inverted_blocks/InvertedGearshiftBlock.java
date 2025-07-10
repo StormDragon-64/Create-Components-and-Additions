@@ -16,7 +16,6 @@ import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.BlockHitResult;
 import net.stormdragon_64.create_ca.ModBlockEntities;
-import org.jetbrains.annotations.NotNull;
 
 public class InvertedGearshiftBlock extends GearshiftBlock {
     public InvertedGearshiftBlock(Properties properties) {
@@ -25,8 +24,8 @@ public class InvertedGearshiftBlock extends GearshiftBlock {
     }
 
     @Override
-    public @NotNull InteractionResult use(@NotNull BlockState state, @NotNull Level level, @NotNull BlockPos blockPos,
-                                          Player player, @NotNull InteractionHand hand, @NotNull BlockHitResult result) {
+    public  InteractionResult use(BlockState state, Level level, BlockPos blockPos,
+                                          Player player, InteractionHand hand, BlockHitResult result) {
         ItemStack item = player.getMainHandItem();
         if (item.getItem() == Items.REDSTONE_TORCH) {
             if (!level.isClientSide() && hand == InteractionHand.MAIN_HAND) {

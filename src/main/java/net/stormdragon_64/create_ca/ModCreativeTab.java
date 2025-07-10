@@ -1,20 +1,14 @@
 package net.stormdragon_64.create_ca;
 
-import com.simibubi.create.AllBlocks;
-import com.simibubi.create.AllCreativeModeTabs;
-import com.simibubi.create.Create;
-import com.simibubi.create.foundation.utility.Components;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.item.CreativeModeTab;
-import net.minecraft.world.item.CreativeModeTabs;
-import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.RegistryObject;
-import org.jetbrains.annotations.NotNull;
 
 import static com.simibubi.create.AllCreativeModeTabs.PALETTES_CREATIVE_TAB;
+import static net.minecraft.network.chat.Component.translatable;
 
 
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
@@ -25,7 +19,7 @@ public class ModCreativeTab {
 
     public static final RegistryObject<CreativeModeTab> CREATIVE_MODE_TAB = REGISTER.register("create_ca",
             () -> CreativeModeTab.builder()
-                    .title(Components.translatable("itemGroup.create_ca"))
+                    .title(translatable("itemGroup.create_ca"))
                     .withTabsBefore(PALETTES_CREATIVE_TAB.getKey())
                     .icon(ModBlocks.BRASS_GEARBOX::asStack)
                     .displayItems((params, output) -> {
