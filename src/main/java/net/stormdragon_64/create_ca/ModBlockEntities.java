@@ -6,7 +6,6 @@ import com.simibubi.create.content.kinetics.base.ShaftRenderer;
 import com.simibubi.create.content.kinetics.base.SingleAxisRotatingVisual;
 import com.simibubi.create.content.kinetics.chainDrive.ChainGearshiftBlockEntity;
 import com.simibubi.create.content.kinetics.gearbox.GearboxBlockEntity;
-import com.simibubi.create.content.kinetics.gearbox.GearboxRenderer;
 import com.simibubi.create.content.kinetics.transmission.ClutchBlockEntity;
 import com.simibubi.create.content.kinetics.transmission.GearshiftBlockEntity;
 import com.simibubi.create.content.kinetics.transmission.SplitShaftRenderer;
@@ -14,6 +13,7 @@ import com.simibubi.create.content.kinetics.transmission.SplitShaftVisual;
 import com.simibubi.create.content.processing.basin.BasinBlockEntity;
 import com.simibubi.create.content.processing.basin.BasinRenderer;
 import com.tterrag.registrate.util.entry.BlockEntityEntry;
+import net.stormdragon_64.create_ca.features.brass_gearbox.BrassGearboxRenderer;
 import net.stormdragon_64.create_ca.features.brass_gearbox.BrassGearboxVisual;
 
 import static net.stormdragon_64.create_ca.CreateCA.REGISTRATE;
@@ -39,7 +39,7 @@ public class ModBlockEntities {
             .blockEntity("custom_gearbox", GearboxBlockEntity::new)
             .visual(() -> BrassGearboxVisual::new, false)
             .validBlocks(ModBlocks.BRASS_GEARBOX)
-            .renderer(() -> GearboxRenderer::new)
+            .renderer(() -> BrassGearboxRenderer::new)
             .register();
 
     public static final BlockEntityEntry<GearshiftBlockEntity> INVERTED_GEARSHIFT = REGISTRATE
