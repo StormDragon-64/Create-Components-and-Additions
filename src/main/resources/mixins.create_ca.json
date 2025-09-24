@@ -7,7 +7,8 @@
   "mixins": [
     "InvertableClutchMixin",
     "InvertableGearshiftMixin",
-    "PonderSceneBuilderMixin"
+    "PonderSceneBuilderMixin",
+    "EffectInstructionsMixin"
   ],
   "minVersion": "0.8"
 }

@@ -1,4 +1,4 @@
-package net.stormdragon_64.create_ca.features.brass_basin;
+package net.stormdragon_64.create_ca.features.variants;
 
 import com.simibubi.create.content.equipment.wrench.IWrenchable;
 import com.simibubi.create.content.processing.basin.BasinBlock;

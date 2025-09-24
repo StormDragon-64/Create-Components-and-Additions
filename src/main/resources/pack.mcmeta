@@ -1,8 +1,6 @@
 {
     "pack": {
-        "description": "Additional features for the Create+ Modpack.",
-        "pack_format": 11,
-        "forge:resource_pack_format": 10,
-        "forge:data_pack_format": 11
+        "description": "Bringing the Brass Gearbox to a modpack near you!",
+        "pack_format": 15
     }
 }

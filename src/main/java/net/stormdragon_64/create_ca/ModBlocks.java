@@ -14,12 +14,12 @@ import com.tterrag.registrate.util.entry.BlockEntry;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.material.MapColor;
 import net.stormdragon_64.create_ca.config.CCAStress;
-import net.stormdragon_64.create_ca.features.brass_basin.BrassBasinBlock;
+import net.stormdragon_64.create_ca.features.variants.BrassBasinBlock;
 import net.stormdragon_64.create_ca.features.brass_gearbox.BrassGearboxBlock;
-import net.stormdragon_64.create_ca.features.inverted_blocks.InvertedClutchBlock;
-import net.stormdragon_64.create_ca.features.inverted_blocks.InvertedGearshiftBlock;
-import net.stormdragon_64.create_ca.features.no_extra_function_blocks.BrassAdjustableChainGearshiftBlock;
-import net.stormdragon_64.create_ca.features.no_extra_function_blocks.BrassChainDriveBlock;
+import net.stormdragon_64.create_ca.features.inverted.InvertedClutchBlock;
+import net.stormdragon_64.create_ca.features.inverted.InvertedGearshiftBlock;
+import net.stormdragon_64.create_ca.features.variants.BrassAdjustableChainGearshiftBlock;
+import net.stormdragon_64.create_ca.features.variants.BrassChainDriveBlock;
 
 import static com.simibubi.create.api.behaviour.movement.MovementBehaviour.movementBehaviour;
 import static com.simibubi.create.foundation.data.BlockStateGen.axisBlock;

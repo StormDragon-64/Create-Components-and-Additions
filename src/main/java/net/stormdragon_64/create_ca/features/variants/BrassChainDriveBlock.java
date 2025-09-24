@@ -1,4 +1,4 @@
-package net.stormdragon_64.create_ca.features.no_extra_function_blocks;
+package net.stormdragon_64.create_ca.features.variants;
 
 import com.simibubi.create.content.kinetics.base.KineticBlockEntity;
 import com.simibubi.create.content.kinetics.chainDrive.ChainDriveBlock;

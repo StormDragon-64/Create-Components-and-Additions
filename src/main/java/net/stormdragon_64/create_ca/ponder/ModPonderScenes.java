@@ -139,8 +139,8 @@ public class ModPonderScenes {
                 .placeNearTarget()
                 .text("...it will be converted into an inverted gearshift.");
         scene.idle(60);
-        scene.effects().rotationDirectionIndicator(/*invertedBlock.south(2),*/ middleBlock.south(2));
-        scene.effects().rotationDirectionIndicator(/*invertedBlock.north(2),*/ middleBlock.north(2));
+        ((ISceneBuilder) scene.effects()).rotationDirectionIndicator(invertedBlock.south(2), middleBlock.south(2));
+        ((ISceneBuilder) scene.effects()).rotationDirectionIndicator(invertedBlock.north(2), middleBlock.north(2));
 
         scene.overlay().showText(50)
                 .pointAt(util.vector().centerOf(middleBlock.south(2)))
@@ -164,8 +164,8 @@ public class ModPonderScenes {
 scene.effects().indicateRedstone(middleBlock.atY(3));
         scene.world().modifyKineticSpeed(util.select().fromTo(0,3,2, 0,3,4), f -> -f);
 
-        scene.effects().rotationDirectionIndicator(/*invertedBlock.south(2),*/ middleBlock.south(2));
-        scene.effects().rotationDirectionIndicator(/*.north(2),*/ middleBlock.north(2));
+        ((ISceneBuilder) scene.effects()).rotationDirectionIndicator(invertedBlock.south(2), middleBlock.south(2));
+        ((ISceneBuilder) scene.effects()).rotationDirectionIndicator(invertedBlock.north(2), middleBlock.north(2));
         scene.idle(60);
 
         scene.overlay().showText(45)
@@ -215,8 +215,8 @@ scene.effects().indicateRedstone(middleBlock.atY(3));
                 .placeNearTarget()
                 .text("This means that not only will the inverted gearshift take at least 1 less block of space, but it also fixes the problem of everything around the power source being powered, since you no longer need one!");
         scene.idle(10);
-        scene.effects().rotationDirectionIndicator(/*util.grid().at(2,3,4),*/ middleBlock.south(2).west(1));
-        scene.effects().rotationDirectionIndicator(/*util.grid().at(0,3,4),*/ middleBlock.south(2).east(1));
+        ((ISceneBuilder) scene.effects()).rotationDirectionIndicator(util.grid().at(2,3,4), middleBlock.south(2).west(1));
+        ((ISceneBuilder) scene.effects()).rotationDirectionIndicator(util.grid().at(0,3,4), middleBlock.south(2).east(1));
 
         scene.idle(140);
         scene.markAsFinished();
@@ -344,8 +344,8 @@ scene.effects().indicateRedstone(middleBlock.atY(3));
                 .placeNearTarget()
                 .text("...it will be converted into an inverted clutch.");
         scene.idle(60);
-        scene.effects().rotationDirectionIndicator(/*invertedBlock.south(2),*/ middleBlock.south(2));
-        scene.effects().rotationDirectionIndicator(/*invertedBlock.north(2),*/ middleBlock.north(2));
+        ((ISceneBuilder) scene.effects()).rotationDirectionIndicator(invertedBlock.south(2), middleBlock.south(2));
+        ((ISceneBuilder) scene.effects()).rotationDirectionIndicator(invertedBlock.north(2), middleBlock.north(2));
 
         scene.overlay().showText(50)
                 .pointAt(util.vector().centerOf(middleBlock.south(2)))
@@ -369,8 +369,8 @@ scene.effects().indicateRedstone(middleBlock.atY(3));
         scene.effects().indicateRedstone(middleBlock.atY(3));
         scene.world().setKineticSpeed(util.select().fromTo(0,3,2, 0,3,4), -32f);
 
-        scene.effects().rotationDirectionIndicator(/*invertedBlock.south(2),*/ middleBlock.south(2));
-        scene.effects().rotationDirectionIndicator(/*invertedBlock.north(2),*/ middleBlock.north(2));
+        ((ISceneBuilder) scene.effects()).rotationDirectionIndicator(invertedBlock.south(2), middleBlock.south(2));
+        ((ISceneBuilder) scene.effects()).rotationDirectionIndicator(invertedBlock.north(2), middleBlock.north(2));
         scene.idle(60);
 
         scene.overlay().showText(45)
@@ -420,8 +420,8 @@ scene.effects().indicateRedstone(middleBlock.atY(3));
                 .placeNearTarget()
                 .text("This means that not only will the inverted clutch take at least 1 less block of space, but it also fixes the problem of everything around the power source being powered, since you no longer need one!");
         scene.idle(10);
-        scene.effects().rotationDirectionIndicator(/*util.grid().at(2,3,4),*/ middleBlock.south(2).west(1));
-        scene.effects().rotationDirectionIndicator(/*util.grid().at(0,3,4),*/ middleBlock.south(2).east(1));
+        ((ISceneBuilder) scene.effects()).rotationDirectionIndicator(util.grid().at(2,3,4), middleBlock.south(2).west(1));
+        ((ISceneBuilder) scene.effects()).rotationDirectionIndicator(util.grid().at(0,3,4), middleBlock.south(2).east(1));
 
         scene.idle(140);
         scene.markAsFinished();
@@ -534,7 +534,7 @@ scene.effects().indicateRedstone(middleBlock.atY(3));
 
     }
 
-    // Wrapper methods so I can mixin hideIndependentSectionImmediately() into existence without it breaking everything else
+    // Wrapper methods so I can mixin hideIndependentSectionImmediately() back into existence without it breaking everything else
 
     public static void invertedGearshiftWrapper(SceneBuilder builder, SceneBuildingUtil util) {
         invertedGearshift((ISceneBuilder) builder, util);
@@ -560,7 +560,6 @@ scene.effects().indicateRedstone(middleBlock.atY(3));
         HELPER.addStoryBoard(ModBlocks.BRASS_CHAIN_DRIVE, "chain_drive/relay", ChainDriveScenes::chainDriveAsRelay,
                 AllCreatePonderTags.KINETIC_RELAYS);
         HELPER.forComponents(ModBlocks.BRASS_CHAIN_DRIVE, ModBlocks.ADJUSTABLE_BRASS_CHAIN_GEARSHIFT)
-                //.addStoryBoard("chain_drive/gearshift", ChainDriveScenes::adjustableChainGearshift, AllCreatePonderTags.KINETIC_RELAYS)
                         .addStoryBoard("chain_drive/gearshift", ChainDriveScenes::adjustableChainGearshift, AllCreatePonderTags.KINETIC_RELAYS);
         HELPER.forComponents(ModBlocks.BRASS_BASIN)
                 .addStoryBoard("basin", ProcessingScenes::basin)

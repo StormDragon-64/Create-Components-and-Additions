@@ -1,4 +1,4 @@
-package net.stormdragon_64.create_ca.features.inverted_blocks;
+package net.stormdragon_64.create_ca.features.inverted;
 
 import com.simibubi.create.AllBlocks;
 import com.simibubi.create.content.kinetics.transmission.GearshiftBlock;
