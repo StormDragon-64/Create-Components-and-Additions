@@ -5,17 +5,17 @@
       "item": "create:brass_casing"
     },
     {
-      "tag": "forge:nuggets/brass"
+      "tag": "c:nuggets/brass"
     },
     {
-      "tag": "forge:nuggets/brass"
+      "tag": "c:nuggets/brass"
     },
     {
-      "tag": "forge:nuggets/brass"
+      "tag": "c:nuggets/brass"
     }
   ],
   "result": {
-    "item": "create_ca:brass_chain_drive",
-    "count": 3
+    "id": "create_ca:brass_chain_drive",
+    "count": 2
   }
 }

@@ -2,10 +2,10 @@
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {
-      "item": "create_ca:brass_gearbox"
+      "item": "create_ca:vertical_brass_gearbox"
     }
   ],
   "result": {
-    "item": "create_ca:vertical_brass_gearbox"
+    "id": "create_ca:brass_gearbox"
   }
 }

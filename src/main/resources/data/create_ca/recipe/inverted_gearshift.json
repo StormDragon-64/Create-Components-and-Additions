@@ -2,10 +2,10 @@
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {
-      "item": "create_ca:inverted_clutch"
+      "item": "create:gearshift"
     }
   ],
   "result": {
-    "item": "create:clutch"
+    "id": "create_ca:inverted_gearshift"
   }
 }

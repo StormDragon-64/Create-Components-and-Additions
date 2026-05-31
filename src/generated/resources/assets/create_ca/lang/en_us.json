@@ -79,7 +79,6 @@
   "create_ca.ponder.mechanical_press_compacting.text_2": "Compacting includes any filled 2x2 or 3x3 Crafting Recipe, plus a couple extra ones",
   "create_ca.ponder.mechanical_press_compacting.text_3": "Some of those recipes may require the heat of a Blaze Burner",
   "create_ca.ponder.mechanical_press_compacting.text_4": "The filter slot can be used in case two recipes are conflicting.",
-  "item.create_ca.incomplete_cogwheel": "Incomplete Cogwheel",
   "item.create_ca.vertical_brass_gearbox": "Vertical Brass Gearbox",
   "itemGroup.create_ca": "Create: Components and Additions"
 }
