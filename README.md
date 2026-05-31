@@ -1,5 +1,5 @@
 # Create: Components and Additions
-_A small Create addon I'm making for my modpack, [Create+](https://www.curseforge.com/minecraft/modpacks/create-mod-plus)._
+_A small Create addon I'm making for my modpack, [Create+](https://modrinth.com/modpack/create_plus)._
 
 Currently includess the following:
 - **Inverted Gearshift and Clutch:** Right-clicking a gearshift or clutch with a redstone torch turns them into their inverted versions. (When inverted, no power means they will act like their powered, non-inverted counterparts, and when they are powered by redstone, they act like a shaft, just like their unpowered, non-inverted counterparts.)

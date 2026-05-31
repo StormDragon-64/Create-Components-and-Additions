@@ -69,19 +69,19 @@ public class ModPonderScenes {
         scene.overlay().showText(80)
                 .placeNearTarget()
                 .colored(PonderPalette.BLUE)
-                .text("For example, what if you wanted a gearshift that reverses the direction of rotation when §nnot powered§r, and acts like a shaft when it §nis powered§r?");
+                .text("Often, you might wish for a gearshift that reverses the direction of rotation when §nnot powered§r, and acts like a shaft when it §nis powered§r, since it works better for your application.");
         scene.idle(90);
 
         scene.overlay().showText(60)
                 .placeNearTarget()
-                .text("Or in other words, you want an inverted form of a gearshift?");
+                .text("Or in other words, you wish for an inverted form of a gearshift.");
         scene.idle(70);
         //Redstone Torch
         scene.overlay().showText(45)
                 .pointAt(util.vector().centerOf(middleBlock.above(1)))
                 .attachKeyFrame()
                 .placeNearTarget()
-                .text("While you could use a redstone torch to do just that...");
+                .text("You could use a redstone torch to do just that...");
         scene.idle(10);
 
         scene.world().moveSection(mainSection, util.vector().of(0, 2, 0), 15);
@@ -94,7 +94,7 @@ public class ModPonderScenes {
                 .pointAt(util.vector().centerOf(middleBlock.above(1)))
                 .colored(PonderPalette.RED)
                 .placeNearTarget()
-                .text("This can easily be considered bulky depending on the machine your making.");
+                .text("However, this can easily be considered bulky depending on what you are making.");
 
         scene.idle(55);
         scene.world().hideSection(torchStuff, Direction.SOUTH);
@@ -168,15 +168,8 @@ scene.effects().indicateRedstone(middleBlock.atY(3));
         ((ISceneBuilder) scene.effects()).rotationDirectionIndicator(invertedBlock.north(2), middleBlock.north(2));
         scene.idle(60);
 
-        scene.overlay().showText(45)
-                .independent()
-                .placeNearTarget()
-                .colored(PonderPalette.GREEN)
-                .text("Just like you wanted in the example from earlier!");
-        scene.idle(55);
-
-      scene.world().hideIndependentSection(powerablelamp, Direction.UP);
-       scene.world().toggleRedstonePower(util.select().position(invertedBlock));
+        scene.world().hideIndependentSection(powerablelamp, Direction.UP);
+        scene.world().toggleRedstonePower(util.select().position(invertedBlock));
         scene.world().modifyKineticSpeed(util.select().fromTo(0,3,2, 0,3,4), f -> -f);
 
         scene.idle(20);
@@ -190,7 +183,6 @@ scene.effects().indicateRedstone(middleBlock.atY(3));
         scene.overlay().showText(90)
                 .placeNearTarget()
                 .text("...it also means that you don't need to power the gearshift just to change the direction of rotation, compacting things further!");
-        scene.idle(10);
         //Show both
         ElementLink<WorldSectionElement> mainSectionAgain =
                 scene.world().showIndependentSectionImmediately(kineticPoweredSection);
@@ -199,7 +191,7 @@ scene.effects().indicateRedstone(middleBlock.atY(3));
         scene.world().moveSection(mainSectionAgain, util.vector().of(-1,0,0), 10);
         scene.world().moveSection(invertedGearshift, util.vector().of(1,0,0), 10);
 
-        scene.idle(80);
+        scene.idle(5);
         ElementLink<WorldSectionElement> powerableLampAgain =
                 scene.world().showIndependentSectionImmediately(leverSection);
         scene.world().moveSection(powerableLampAgain, util.vector().of(-1,0,0), 0);
@@ -208,12 +200,6 @@ scene.effects().indicateRedstone(middleBlock.atY(3));
         scene.world().toggleRedstonePower(util.select().position(2,3,2));
         scene.effects().indicateRedstone(middleBlock.west());
         scene.world().modifyKineticSpeed(util.select().fromTo(2,3,2, 2,3,4), f -> -f);
-        scene.idle(5);
-        scene.overlay().showText(120)
-                .colored(PonderPalette.GREEN)
-                .attachKeyFrame()
-                .placeNearTarget()
-                .text("This means that not only will the inverted gearshift take at least 1 less block of space, but it also fixes the problem of everything around the power source being powered, since you no longer need one!");
         scene.idle(10);
         ((ISceneBuilder) scene.effects()).rotationDirectionIndicator(util.grid().at(2,3,4), middleBlock.south(2).west(1));
         ((ISceneBuilder) scene.effects()).rotationDirectionIndicator(util.grid().at(0,3,4), middleBlock.south(2).east(1));
@@ -272,19 +258,19 @@ scene.effects().indicateRedstone(middleBlock.atY(3));
         scene.overlay().showText(80)
                 .placeNearTarget()
                 .colored(PonderPalette.BLUE)
-                .text("For example, what if you wanted a clutch that blocks rotation when §nnot powered§r, and acts like a shaft when it §nis powered§r?");
+                .text("Often, you might wish for a clutch that blocks rotation when §nnot powered§r, and acts like a shaft when it §nis powered§r, since it works better for your application.");
         scene.idle(90);
 
         scene.overlay().showText(60)
                 .placeNearTarget()
-                .text("Or in other words, you want an inverted form of a clutch?");
+                .text("Or in other words, you wish for an inverted form of a clutch.");
         scene.idle(70);
         //Redstone Torch
         scene.overlay().showText(45)
                 .pointAt(util.vector().centerOf(middleBlock.above(1)))
                 .attachKeyFrame()
                 .placeNearTarget()
-                .text("While you could use a redstone torch to do just that...");
+                .text("You could use a redstone torch to do just that...");
         scene.idle(10);
 
         scene.world().moveSection(mainSection, util.vector().of(0, 2, 0), 15);
@@ -297,7 +283,7 @@ scene.effects().indicateRedstone(middleBlock.atY(3));
                 .pointAt(util.vector().centerOf(middleBlock.above(1)))
                 .colored(PonderPalette.RED)
                 .placeNearTarget()
-                .text("This can easily be considered bulky depending on the machine your making.");
+                .text("However, this can easily be considered bulky depending on what you are making.");
 
         scene.idle(55);
         scene.world().hideSection(torchStuff, Direction.SOUTH);
@@ -373,13 +359,6 @@ scene.effects().indicateRedstone(middleBlock.atY(3));
         ((ISceneBuilder) scene.effects()).rotationDirectionIndicator(invertedBlock.north(2), middleBlock.north(2));
         scene.idle(60);
 
-        scene.overlay().showText(45)
-                .independent()
-                .placeNearTarget()
-                .colored(PonderPalette.GREEN)
-                .text("Just like you wanted in the example from earlier!");
-        scene.idle(55);
-
         scene.world().hideIndependentSection(powerablelamp, Direction.UP);
         scene.world().toggleRedstonePower(util.select().position(invertedBlock));
         scene.world().modifyKineticSpeed(util.select().fromTo(0,3,3, 0,3,4), f -> 0f);
@@ -395,7 +374,6 @@ scene.effects().indicateRedstone(middleBlock.atY(3));
         scene.overlay().showText(90)
                 .placeNearTarget()
                 .text("...it also means that you don't need to power the clutch just to prevent rotation, compacting things further!");
-        scene.idle(10);
         //Show both
         ElementLink<WorldSectionElement> mainSectionAgain =
                 scene.world().showIndependentSectionImmediately(kineticPoweredSection);
@@ -403,7 +381,7 @@ scene.effects().indicateRedstone(middleBlock.atY(3));
         scene.world().moveSection(mainSectionAgain, util.vector().of(-1,0,0), 10);
         scene.world().moveSection(invertedClutch, util.vector().of(1,0,0), 10);
 
-        scene.idle(80);
+        scene.idle(5);
         ElementLink<WorldSectionElement> powerableLampAgain =
                 scene.world().showIndependentSectionImmediately(leverSection);
         scene.world().moveSection(powerableLampAgain, util.vector().of(-1,0,0), 0);
@@ -413,12 +391,6 @@ scene.effects().indicateRedstone(middleBlock.atY(3));
         scene.effects().indicateRedstone(middleBlock.west());
         scene.world().modifyKineticSpeed(util.select().fromTo(2,3,3, 2,3,4), f -> 0f);
 
-        scene.idle(5);
-        scene.overlay().showText(120)
-                .colored(PonderPalette.GREEN)
-                .attachKeyFrame()
-                .placeNearTarget()
-                .text("This means that not only will the inverted clutch take at least 1 less block of space, but it also fixes the problem of everything around the power source being powered, since you no longer need one!");
         scene.idle(10);
         ((ISceneBuilder) scene.effects()).rotationDirectionIndicator(util.grid().at(2,3,4), middleBlock.south(2).west(1));
         ((ISceneBuilder) scene.effects()).rotationDirectionIndicator(util.grid().at(0,3,4), middleBlock.south(2).east(1));
@@ -455,7 +427,7 @@ scene.effects().indicateRedstone(middleBlock.atY(3));
         //Actual scene
         scene.idle(10);
         scene.overlay().showText(65)
-                .text("The brass gearbox behaves exactly like an andesite gearbox by default")
+                .text("The brass gearbox behaves exactly like an andesite gearbox by default.")
                 .pointAt(util.vector().centerOf(middleBlock));
 
         scene.idle(10);
@@ -465,7 +437,7 @@ scene.effects().indicateRedstone(middleBlock.atY(3));
 
         scene.idle(60);
         scene.overlay().showText(60)
-                .text("However, it has an extra (toggleable) feature: side blocking!")
+                .text("However, it does have some additional functionality available: side blocking!")
                 .independent()
                         .colored(PonderPalette.GREEN);
         scene.idle(70);
@@ -548,7 +520,7 @@ scene.effects().indicateRedstone(middleBlock.atY(3));
         brassGearbox((ISceneBuilder) builder, util);
     }
 
-    //Assign Ponder scenes to different blocks. Probably not be able to access Create's ponders with my helper, but I guess we'll see.
+    //Assign Ponder scenes to different blocks.
 
     public static void register(PonderSceneRegistrationHelper<ResourceLocation> helper) {
         PonderSceneRegistrationHelper<ItemProviderEntry<?, ?>> HELPER = helper.withKeyFunction(RegistryEntry::getId);

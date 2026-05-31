@@ -19,8 +19,7 @@ modId="${mod_id}" #mandatory
 version="${mod_version}" #mandatory
 logoFile = "logo.png"
 displayName="${mod_name}" #mandatory
-# A URL for the "homepage" for this mod, displayed in the mod UI
-#displayURL="https://change.me.to.your.mods.homepage.example.invalid/" #optional
+displayURL="https://modrinth.com/mod/create-ca" #optional
 authors="sudopositon" #optional #cringe
 # The description text for the mod (multi line!) (#mandatory)
 description="A small mod made for my modpack, Create+. Currently adds a few new kinetic blocks, such as a brass gearbox."
