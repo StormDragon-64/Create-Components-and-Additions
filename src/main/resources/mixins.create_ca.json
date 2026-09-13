@@ -1,14 +1,14 @@
 {
   "required": true,
   "priority": 500,
-  "package": "net.sudopos.create_ca.mixin",
+  "package": "net.sshmoob.create_ca.mixin",
   "compatibilityLevel": "JAVA_17",
   "refmap": "mixins.create_ca.refmap.json",
   "mixins": [
+    "EffectInstructionsMixin",
     "InvertableClutchMixin",
     "InvertableGearshiftMixin",
-    "PonderSceneBuilderMixin",
-    "EffectInstructionsMixin"
+    "PonderSceneBuilderMixin"
   ],
   "minVersion": "0.8"
 }

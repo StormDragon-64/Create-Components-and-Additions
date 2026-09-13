@@ -7,7 +7,7 @@ plugins {
 
 
 version = "${mod_version} - ${minecraft_version}"
-group = 'net.sudopos.create_ca' // http://maven.apache.org/guides/mini/guide-naming-conventions.html
+group = 'net.sshmoob.create_ca' // http://maven.apache.org/guides/mini/guide-naming-conventions.html
 
 java.toolchain.languageVersion = JavaLanguageVersion.of(21)
 //println "Java: ${System.getProperty 'java.version'}, JVM: ${System.getProperty 'java.vm.version'} (${System.getProperty 'java.vendor'}), Arch: ${System.getProperty 'os.arch'}"
@@ -70,8 +70,16 @@ configurations {
 repositories {
     maven { url = "https://maven.createmod.net" } // Create, Ponder, Flywheel
     maven { url = "https://maven.ithundxr.dev/snapshots" } // Registrate
-    maven { url = "https://raw.githubusercontent.com/Fuzss/modresources/main/maven/" } // ForgeConfigAPIPort
+//    maven { url = "https://raw.githubusercontent.com/Fuzss/modresources/main/maven/" } // ForgeConfigAPIPort
     maven { url = "https://api.modrinth.com/maven" }
+    maven {
+        name = "CaffeineMC"
+        url = "https://maven.caffeinemc.net/releases"
+    }
+    maven {
+        name = "Sinytra"
+        url = uri("https://maven.su5ed.dev/releases")
+    }
 }
 
 dependencies {
@@ -83,11 +91,21 @@ dependencies {
     implementation("com.tterrag.registrate:Registrate:${registrate_version}")
 
     if(enable_extras.toBoolean()) {
-//QOL for dev
+    //Not required, mostly QOL for dev
+      //  implementation("maven.modrinth:modernfix:${modernfix_version}+mc${minecraft_version}")
+        // I know, translation to EMI instead of just using JEI, but it mimics Create+ so...
         implementation("maven.modrinth:tmrv:${tmrv_version}+mc.21.1")
         implementation("maven.modrinth:emi:${emi_version}+${minecraft_version}+neoforge")
-        implementation("maven.modrinth:modernfix:${modernfix_version}+mc${minecraft_version}")
-        implementation("maven.modrinth:sodium:mc${minecraft_version}-${sodium_version}-neoforge")
+
+        // Modern Sodium in dev env shenanigans
+        implementation("net.caffeinemc:sodium-neoforge-mod:${sodium_version}+mc${minecraft_version}")
+        additionalRuntimeClasspath("net.caffeinemc:sodium-neoforge:${sodium_version}+mc${minecraft_version}") {
+            transitive = false
+        }
+        implementation ("org.sinytra.forgified-fabric-api:fabric-api-base:${ffapi_base_version}")
+        implementation ("org.sinytra.forgified-fabric-api:fabric-block-view-api-v2:${ffapi_block_view_version}")
+        implementation ("org.sinytra.forgified-fabric-api:fabric-renderer-api-v1:${ffapi_renderer_version}")
+        implementation ("org.sinytra.forgified-fabric-api:fabric-rendering-data-attachment-v1:${ffapi_render_data_attach_version}")
 
     }
 }
